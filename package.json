@@ -1,9 +1,9 @@
 {
-  "name": "typescript-starter",
+  "name": "figma-js",
   "version": "1.0.0",
   "description": "A simple wrapper for the Figma API",
   "main": "build/main/index.js",
-  "typings": "build/main/index.d.ts",
+  "types": "build/main/index.d.ts",
   "module": "build/module/index.js",
   "repository": "https://github.com/jongold/figma-js",
   "license": "MIT",
@@ -52,7 +52,9 @@
   "engines": {
     "node": ">=8.9"
   },
-  "dependencies": {},
+  "dependencies": {
+    "axios": "^0.18.0"
+  },
   "devDependencies": {
     "ava": "^1.0.0-beta.3",
     "codecov": "^3.0.0",
