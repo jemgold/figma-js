@@ -20,15 +20,27 @@ export interface PostCommentParams {
   readonly client_meta: Figma.Vector;
 }
 
+export interface ClientOptions {
+  /** access token returned from OAuth authentication */
+  readonly accessToken?: string;
+  /** personal access token obtained from account settings */
+  readonly personalAccessToken?: string;
+  /** custom API root */
+  readonly apiRoot?: string;
 }
 
+export const Client = (opts: ClientOptions) => {
+  const headers = opts.accessToken
+    ? {
+        Authorization: `Bearer: ${opts.accessToken}`
+      }
+    : {
+        'X-Figma-Token': opts.personalAccessToken
+      };
 
-export const Client = (accessToken: string, apiRoot?: string) => {
   const client = axios.create({
-    baseURL: `${apiRoot || 'api.figma.com'}/v1/`,
-    headers: {
-      Authorization: `Bearer ${accessToken}`
-    }
+    baseURL: `https://${opts.apiRoot || 'api.figma.com'}/v1/`,
+    headers
   });
 
   return {
