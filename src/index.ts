@@ -2,7 +2,6 @@
 import * as Figma from './figmaTypes';
 export * from './figmaTypes';
 import axios, { AxiosPromise } from 'axios';
-type id = string;
 
 export interface FileImageParams {
   /** A list of node IDs to render */
@@ -29,7 +28,69 @@ export interface ClientOptions {
   readonly apiRoot?: string;
 }
 
-export const Client = (opts: ClientOptions) => {
+export interface ClientInterface {
+  /**
+   * Returns the document refered to by :key as a JSON object.
+   * The file key can be parsed from any Figma file url:
+   * https://www.figma.com/file/:key/:title.
+   * The "document" attribute contains a Node of type DOCUMENT.
+   * @param {fileId} String File to export JSON from
+   */
+  readonly file: (fileId: string) => AxiosPromise<Figma.FileResponse>;
+
+  /**
+   * If no error occurs, "images" will be populated with a map from
+   * node IDs to URLs of the rendered images, and "status" will be omitted.
+   * Important: the image map may contain values that are null.
+   * This indicates that rendering of that specific node has failed.
+   * This may be due to the node id not existing, or other reasons such
+   * has the node having no renderable components. It is guaranteed that
+   * any node that was requested for rendering will be represented in this
+   * map whether or not the render succeeded.
+   * @param {fileId} String File to export images from
+   * @param {params} FileImageParams
+   */
+  readonly fileImages: (
+    fileId: string,
+    params: FileImageParams
+  ) => AxiosPromise<Figma.FileImageResponse>;
+
+  /**
+   * A list of comments left on the file
+   * @param {fileId} String File to get comments from
+   */
+  readonly comments: (fileId: string) => AxiosPromise<Figma.CommentsResponse>;
+
+  /**
+   * Posts a new comment on the file.
+   * @param {fileId} String File to get comments from
+   * @param {params} PostCommentParams
+   */
+  readonly postComment: (
+    fileId: string,
+    params: PostCommentParams
+  ) => AxiosPromise<Figma.Comment>;
+
+  /**
+   * Lists the projects for a specified team. Note that this will only
+   * return projects visible to the authenticated user or owner of the
+   * developer token.
+   * @param {teamId} String Id of the team to list projects from
+   */
+  readonly teamProjects: (
+    teamId: string
+  ) => AxiosPromise<Figma.TeamProjectsResponse>;
+
+  /**
+   * List the files in a given project.
+   * @param {projectId} String Id of the project to list files from
+   */
+  readonly projectFiles: (
+    projectId: string
+  ) => AxiosPromise<Figma.ProjectFilesResponse>;
+}
+
+export const Client = (opts: ClientOptions): ClientInterface => {
   const headers = opts.accessToken
     ? {
         Authorization: `Bearer: ${opts.accessToken}`
@@ -44,32 +105,9 @@ export const Client = (opts: ClientOptions) => {
   });
 
   return {
-    /**
-     * Returns the document refered to by :key as a JSON object.
-     * The file key can be parsed from any Figma file url:
-     * https://www.figma.com/file/:key/:title.
-     * The "document" attribute contains a Node of type DOCUMENT.
-     * @param {fileId} String File to export JSON from
-     */
-    file: (fileId: id): AxiosPromise<Figma.FileResponse> =>
-      client.get(`files/${fileId}`),
+    file: fileId => client.get(`files/${fileId}`),
 
-    /**
-     * If no error occurs, "images" will be populated with a map from
-     * node IDs to URLs of the rendered images, and "status" will be omitted.
-     * Important: the image map may contain values that are null.
-     * This indicates that rendering of that specific node has failed.
-     * This may be due to the node id not existing, or other reasons such
-     * has the node having no renderable components. It is guaranteed that
-     * any node that was requested for rendering will be represented in this
-     * map whether or not the render succeeded.
-     * @param {fileId} String File to export images from
-     * @param {params} FileImageParams
-     */
-    fileImages: (
-      fileId: id,
-      params: FileImageParams
-    ): AxiosPromise<Figma.FileImageResponse> =>
+    fileImages: (fileId, params) =>
       client.get(`images/${fileId}`, {
         params: {
           ...params,
@@ -77,38 +115,13 @@ export const Client = (opts: ClientOptions) => {
         }
       }),
 
-    /**
-     * A list of comments left on the file
-     * @param {fileId} String File to get comments from
-     */
-    comments: (fileId: id): AxiosPromise<Figma.CommentsResponse> =>
-      client.get(`files/${fileId}/comments`),
+    comments: fileId => client.get(`files/${fileId}/comments`),
 
-    /**
-     * Posts a new comment on the file.
-     * @param {fileId} String File to get comments from
-     * @param {params} PostCommentParams
-     */
-    postComment: (
-      fileId: id,
-      params: PostCommentParams
-    ): AxiosPromise<Figma.Comment> =>
+    postComment: (fileId, params) =>
       client.post(`files/${fileId}/comments`, params),
 
-    /**
-     * Lists the projects for a specified team. Note that this will only
-     * return projects visible to the authenticated user or owner of the
-     * developer token.
-     * @param {teamId} String Id of the team to list projects from
-     */
-    teamProjects: (teamId: id): AxiosPromise<Figma.TeamProjectsResponse> =>
-      client.get(`teams/${teamId}/projects`),
+    teamProjects: teamId => client.get(`teams/${teamId}/projects`),
 
-    /**
-     * List the files in a given project.
-     * @param {projectId} String Id of the project to list files from
-     */
-    projectFiles: (projectId: id): AxiosPromise<Figma.ProjectFilesResponse> =>
-      client.get(`projects/${projectId}/files`)
+    projectFiles: projectId => client.get(`projects/${projectId}/files`)
   };
 };
