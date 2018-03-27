@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>File | figma-js</title>
+	<title>ClientOptions | figma-js</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="file.html">File</a>
+					<a href="clientoptions.html">ClientOptions</a>
 				</li>
 			</ul>
-			<h1>Interface File</h1>
+			<h1>Interface ClientOptions</h1>
 		</div>
 	</div>
 </header>
@@ -70,7 +70,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">File</span>
+						<span class="target">ClientOptions</span>
 					</li>
 				</ul>
 			</section>
@@ -81,12 +81,9 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="file.html#components" class="tsd-kind-icon">components</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="file.html#document" class="tsd-kind-icon">document</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="file.html#lastmodified" class="tsd-kind-icon">last<wbr>Modified</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="file.html#name" class="tsd-kind-icon">name</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="file.html#schemaversion" class="tsd-kind-icon">schema<wbr>Version</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="file.html#thumbnailurl" class="tsd-kind-icon">thumbnail<wbr>Url</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="clientoptions.html#accesstoken" class="tsd-kind-icon">access<wbr>Token</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="clientoptions.html#apiroot" class="tsd-kind-icon">api<wbr>Root</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="clientoptions.html#personalaccesstoken" class="tsd-kind-icon">personal<wbr>Access<wbr>Token</a></li>
 							</ul>
 						</section>
 					</div>
@@ -95,72 +92,49 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="components" class="tsd-anchor"></a>
-					<h3>components</h3>
-					<div class="tsd-signature tsd-kind-icon">components<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<a name="accesstoken" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> access<wbr>Token</h3>
+					<div class="tsd-signature tsd-kind-icon">access<wbr>Token<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/746aa91/src/figmaTypes.ts#L582">figmaTypes.ts:582</a></li>
+							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/9d16842/src/index.ts#L25">index.ts:25</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-type-declaration">
-						<h4>Type declaration</h4>
-						<ul class="tsd-parameters">
-							<li class="tsd-parameter-index-signature">
-								<h5><span class="tsd-signature-symbol">[</span>key: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><a href="component.html" class="tsd-signature-type">Component</a></h5>
-							</li>
-						</ul>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>access token returned from OAuth authentication</p>
+						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="document" class="tsd-anchor"></a>
-					<h3>document</h3>
-					<div class="tsd-signature tsd-kind-icon">document<span class="tsd-signature-symbol">:</span> <a href="document.html" class="tsd-signature-type">Document</a></div>
+					<a name="apiroot" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> api<wbr>Root</h3>
+					<div class="tsd-signature tsd-kind-icon">api<wbr>Root<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/746aa91/src/figmaTypes.ts#L585">figmaTypes.ts:585</a></li>
+							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/9d16842/src/index.ts#L29">index.ts:29</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>custom API root</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="lastmodified" class="tsd-anchor"></a>
-					<h3>last<wbr>Modified</h3>
-					<div class="tsd-signature tsd-kind-icon">last<wbr>Modified<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="personalaccesstoken" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> personal<wbr>Access<wbr>Token</h3>
+					<div class="tsd-signature tsd-kind-icon">personal<wbr>Access<wbr>Token<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/746aa91/src/figmaTypes.ts#L586">figmaTypes.ts:586</a></li>
+							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/9d16842/src/index.ts#L27">index.ts:27</a></li>
 						</ul>
 					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="name" class="tsd-anchor"></a>
-					<h3>name</h3>
-					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/746aa91/src/figmaTypes.ts#L587">figmaTypes.ts:587</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="schemaversion" class="tsd-anchor"></a>
-					<h3>schema<wbr>Version</h3>
-					<div class="tsd-signature tsd-kind-icon">schema<wbr>Version<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/746aa91/src/figmaTypes.ts#L588">figmaTypes.ts:588</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="thumbnailurl" class="tsd-anchor"></a>
-					<h3>thumbnail<wbr>Url</h3>
-					<div class="tsd-signature tsd-kind-icon">thumbnail<wbr>Url<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/746aa91/src/figmaTypes.ts#L589">figmaTypes.ts:589</a></li>
-						</ul>
-					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>personal access token obtained from account settings</p>
+						</div>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -177,25 +151,16 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface">
-						<a href="file.html" class="tsd-kind-icon">File</a>
+						<a href="clientoptions.html" class="tsd-kind-icon">Client<wbr>Options</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="file.html#components" class="tsd-kind-icon">components</a>
+								<a href="clientoptions.html#accesstoken" class="tsd-kind-icon">access<wbr>Token</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="file.html#document" class="tsd-kind-icon">document</a>
+								<a href="clientoptions.html#apiroot" class="tsd-kind-icon">api<wbr>Root</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="file.html#lastmodified" class="tsd-kind-icon">last<wbr>Modified</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="file.html#name" class="tsd-kind-icon">name</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="file.html#schemaversion" class="tsd-kind-icon">schema<wbr>Version</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="file.html#thumbnailurl" class="tsd-kind-icon">thumbnail<wbr>Url</a>
+								<a href="clientoptions.html#personalaccesstoken" class="tsd-kind-icon">personal<wbr>Access<wbr>Token</a>
 							</li>
 						</ul>
 					</li>

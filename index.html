@@ -64,20 +64,64 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<h1 id="figma-js">figma-js</h1>
+				<h1 id="figma-js">Figma.js</h1>
 				<p>A simple wrapper for the Figma API</p>
+				<h2 id="usage">Usage</h2>
+				<p><a href="http://jongold.github.io/figma-js">Full documentation</a> is available on the web, and most everything is typed with Typescript.</p>
+				<h3 id="creating-a-client">Creating a client</h3>
+				<p>Quickest start is to grab a personal access token from your Figma account settings page</p>
+				<pre><code class="lang-typescript"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> Figma <span class="hljs-keyword">from</span> <span class="hljs-string">'figma-js'</span>;
+
+<span class="hljs-keyword">const</span> token = <span class="hljs-string">'12345'</span>;
+
+<span class="hljs-keyword">const</span> client = Figma.Client({
+  personalAccessToken: token
+});
+</code></pre>
+				<p>Alternatively, if you&#39;re building an app with OAuth authentication, after you get back the OAuth access token…</p>
+				<pre><code class="lang-typescript"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> Figma <span class="hljs-keyword">from</span> <span class="hljs-string">'figma-js'</span>;
+
+<span class="hljs-keyword">const</span> token = <span class="hljs-string">'12345'</span>;
+
+<span class="hljs-keyword">const</span> client = Figma.Client({
+  personalAccessToken: token
+});
+</code></pre>
+				<h3 id="doing-cool-things">Doing cool things</h3>
+				<p>Once you have instantiated a client, have fun!</p>
+				<pre><code class="lang-typescript">client.file(<span class="hljs-string">'file-id'</span>).then(<span class="hljs-function">(<span class="hljs-params">{ data }</span>) =&gt;</span> {
+  <span class="hljs-built_in">console</span>.log(data);
+});
+</code></pre>
+				<h3 id="just-reusing-types">Just reusing types</h3>
+				<p>All of the types in the Figma file format / API are exported.</p>
+				<pre><code class="lang-typescript"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> Figma <span class="hljs-keyword">from</span> <span class="hljs-string">'figma-js'</span>;
+
+<span class="hljs-keyword">const</span> textNode: Figma.Text = {
+  <span class="hljs-comment">// … this should autocomplete if your editor is set up for it!</span>
+};
+</code></pre>
 				<h2 id="contributing">Contributing</h2>
 				<p>We used the <a href="https://github.com/bitjson/typescript-starter"><code>typescript-starter</code></a> repo for this - refer to its README for more detailed instructions.</p>
 				<p>Helpful development commands:</p>
 				<pre><code><span class="hljs-selector-tag">yarn</span> <span class="hljs-selector-tag">watch</span>
 <span class="hljs-selector-tag">yarn</span> <span class="hljs-selector-tag">docs</span>
 <span class="hljs-selector-tag">yarn</span> <span class="hljs-selector-tag">docs</span><span class="hljs-selector-pseudo">:publish</span>
-</code></pre><h3 id="committing">Committing</h3>
+</code></pre><h3 id="contributions-welcomed">Contributions welcomed</h3>
+				<ul>
+					<li>[ ] <a href="https://github.com/jongold/figma-js/issues/1">generate types automatically</a></li>
+					<li>[ ] <a href="https://github.com/jongold/figma-js/issues/2">add tests</a></li>
+				</ul>
+				<h3 id="committing">Committing</h3>
 				<pre><code>yarn global <span class="hljs-keyword">add</span><span class="bash"> commitizen
 </span>
 <span class="hljs-comment"># instead of git commit</span>
+
 git cz
-</code></pre>
+</code></pre><h2 id="contributors">Contributors</h2>
+				<ul>
+					<li><a href="https://github.com/jongold/">@jongold</a> (Airbnb)</li>
+				</ul>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -101,6 +145,9 @@ git cz
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/canvas.html" class="tsd-kind-icon">Canvas</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/clientoptions.html" class="tsd-kind-icon">Client<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/color.html" class="tsd-kind-icon">Color</a>
@@ -131,9 +178,6 @@ git cz
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/exportsetting.html" class="tsd-kind-icon">Export<wbr>Setting</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/file.html" class="tsd-kind-icon">File</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/fileimageparams.html" class="tsd-kind-icon">File<wbr>Image<wbr>Params</a>
@@ -176,9 +220,6 @@ git cz
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/postcommentparams.html" class="tsd-kind-icon">Post<wbr>Comment<wbr>Params</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/postcommentresponse.html" class="tsd-kind-icon">Post<wbr>Comment<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/projectfilesresponse.html" class="tsd-kind-icon">Project<wbr>Files<wbr>Response</a>
