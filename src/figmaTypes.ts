@@ -578,7 +578,7 @@ export interface ProjectSummary {
   readonly name: string;
 }
 
-export interface File {
+export interface FileResponse {
   readonly components: {
     readonly [key: string]: Component;
   };
@@ -589,9 +589,28 @@ export interface File {
   readonly thumbnailUrl: string;
 }
 
+export interface FileImageResponse {
+  readonly err: string | null;
+  readonly images: {
+    readonly [key: string]: string;
+  };
+}
+
+export interface CommentsResponse {
+  readonly comments: ReadonlyArray<Comment>;
+}
+
 export interface FileSummary {
   readonly key: string;
   readonly name: string;
   readonly thumbnail_url: string;
   readonly last_modified: string;
+}
+
+export interface TeamProjectsResponse {
+  readonly projects: ReadonlyArray<ProjectSummary>;
+}
+
+export interface ProjectFilesResponse {
+  readonly files: ReadonlyArray<FileSummary>;
 }

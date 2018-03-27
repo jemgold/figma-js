@@ -4,10 +4,6 @@ export * from './figmaTypes';
 import axios, { AxiosPromise } from 'axios';
 type id = string;
 
-export interface FileResponse {
-  readonly data: Figma.File;
-}
-
 export interface FileImageParams {
   /** A list of node IDs to render */
   readonly ids?: ReadonlyArray<string>;
@@ -16,20 +12,6 @@ export interface FileImageParams {
   /** A string enum for the image output format, can be "jpg", "png", or "svg" */
   readonly format?: 'jpg' | 'png' | 'svg';
 }
-export interface FileImageResponse {
-  readonly data: {
-    readonly err: string | null;
-    readonly images: {
-      readonly [key: string]: string;
-    };
-  };
-}
-
-export interface CommentsResponse {
-  readonly data: {
-    readonly comments: ReadonlyArray<Figma.Comment>;
-  };
-}
 
 export interface PostCommentParams {
   /** The text contents of the comment to post */
@@ -37,22 +19,9 @@ export interface PostCommentParams {
   /** The absolute canvas position of where to place the comment */
   readonly client_meta: Figma.Vector;
 }
-export interface PostCommentResponse {
-  /** The Comment that was successfully posted */
-  readonly data: Figma.Comment;
+
 }
 
-export interface TeamProjectsResponse {
-  readonly data: {
-    readonly projects: ReadonlyArray<Figma.ProjectSummary>;
-  };
-}
-
-export interface ProjectFilesResponse {
-  readonly data: {
-    readonly files: ReadonlyArray<Figma.FileSummary>;
-  };
-}
 
 export const Client = (accessToken: string, apiRoot?: string) => {
   const client = axios.create({
@@ -70,7 +39,7 @@ export const Client = (accessToken: string, apiRoot?: string) => {
      * The "document" attribute contains a Node of type DOCUMENT.
      * @param {fileId} String File to export JSON from
      */
-    file: (fileId: id): AxiosPromise<FileResponse> =>
+    file: (fileId: id): AxiosPromise<Figma.FileResponse> =>
       client.get(`files/${fileId}`),
 
     /**
@@ -88,7 +57,7 @@ export const Client = (accessToken: string, apiRoot?: string) => {
     fileImages: (
       fileId: id,
       params: FileImageParams
-    ): AxiosPromise<FileImageResponse> =>
+    ): AxiosPromise<Figma.FileImageResponse> =>
       client.get(`images/${fileId}`, {
         params: {
           ...params,
@@ -100,7 +69,7 @@ export const Client = (accessToken: string, apiRoot?: string) => {
      * A list of comments left on the file
      * @param {fileId} String File to get comments from
      */
-    comments: (fileId: id): AxiosPromise<CommentsResponse> =>
+    comments: (fileId: id): AxiosPromise<Figma.CommentsResponse> =>
       client.get(`files/${fileId}/comments`),
 
     /**
@@ -111,7 +80,7 @@ export const Client = (accessToken: string, apiRoot?: string) => {
     postComment: (
       fileId: id,
       params: PostCommentParams
-    ): AxiosPromise<PostCommentResponse> =>
+    ): AxiosPromise<Figma.Comment> =>
       client.post(`files/${fileId}/comments`, params),
 
     /**
@@ -120,14 +89,14 @@ export const Client = (accessToken: string, apiRoot?: string) => {
      * developer token.
      * @param {teamId} String Id of the team to list projects from
      */
-    teamProjects: (teamId: id): AxiosPromise<TeamProjectsResponse> =>
+    teamProjects: (teamId: id): AxiosPromise<Figma.TeamProjectsResponse> =>
       client.get(`teams/${teamId}/projects`),
 
     /**
      * List the files in a given project.
      * @param {projectId} String Id of the project to list files from
      */
-    projectFiles: (projectId: id): AxiosPromise<ProjectFilesResponse> =>
+    projectFiles: (projectId: id): AxiosPromise<Figma.ProjectFilesResponse> =>
       client.get(`projects/${projectId}/files`)
   };
 };
