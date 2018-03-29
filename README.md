@@ -2,6 +2,9 @@
 
 A simple wrapper for the Figma API
 
+Cool projects using this:
+- [figma-graphql](https://github.com/braposo/figma-graphql)
+
 ## Usage
 
 [Full documentation](http://jongold.github.io/figma-js) is available on the web, and most everything is typed with Typescript.
