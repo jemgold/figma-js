@@ -297,7 +297,7 @@ export interface Color {
 /** Format and size to export an asset at */
 export interface ExportSetting {
   /** File suffix to append to all filenames */
-  readonly suffix: 'string';
+  readonly suffix: string;
   /** Image type, string enum */
   readonly format: 'JPG' | 'PNG' | 'SVG';
   /** Constraint that determines sizing of exported asset */
