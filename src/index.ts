@@ -93,7 +93,7 @@ export interface ClientInterface {
 export const Client = (opts: ClientOptions): ClientInterface => {
   const headers = opts.accessToken
     ? {
-        Authorization: `Bearer: ${opts.accessToken}`
+        Authorization: `Bearer ${opts.accessToken}`
       }
     : {
         'X-Figma-Token': opts.personalAccessToken
