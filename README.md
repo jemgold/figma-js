@@ -31,7 +31,7 @@ import * as Figma from 'figma-js';
 const token = '12345';
 
 const client = Figma.Client({
-  personalAccessToken: token
+  accessToken: token
 });
 ```
 
