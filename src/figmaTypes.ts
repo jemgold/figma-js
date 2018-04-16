@@ -97,7 +97,7 @@ export interface FrameBase extends Global {
    */
   readonly opacity: number;
   /** Bounding box of the node in absolute space coordinates */
-  readonly absoluteBoundingBox: Rectangle;
+  readonly absoluteBoundingBox: Rect;
   /** Does this node clip content outside of its bounds? */
   readonly clipsContent: boolean;
   /**
@@ -160,7 +160,7 @@ export interface VectorBase extends Global {
    */
   readonly opacity: number;
   /** Bounding box of the node in absolute space coordinates */
-  readonly absoluteBoundingBox: Rectangle;
+  readonly absoluteBoundingBox: Rect;
   /**
    * An array of effects attached to this node
    * (see effects sectionfor more details)
@@ -259,7 +259,7 @@ export interface Slice extends Global {
   /** An array of export settings representing images to export from this node */
   readonly exportSettings: ReadonlyArray<ExportSetting>;
   /** Bounding box of the node in absolute space coordinates */
-  readonly absoluteBoundingBox: Rectangle;
+  readonly absoluteBoundingBox: Rect;
 }
 
 /** A node that can have instances created of it that share the same properties */
@@ -318,7 +318,7 @@ export interface Constraint {
 }
 
 /** A rectangle that expresses a bounding box in absolute coordinates */
-export interface Rectangle {
+export interface Rect {
   /** X coordinate of top left corner of the rectangle */
   readonly x: number;
   /** Y coordinate of top left corner of the rectangle */
