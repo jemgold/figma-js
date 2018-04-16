@@ -9,23 +9,22 @@ export interface Global {
   readonly type: NodeType;
 }
 
-export enum NodeType {
-  DOCUMENT,
-  CANVAS,
-  FRAME,
-  GROUP,
-  VECTOR,
-  BOOLEAN,
-  STAR,
-  LINE,
-  ELLIPSE,
-  REGULAR_POLYGON,
-  RECTANGLE,
-  TEXT,
-  SLICE,
-  COMPONENT,
-  INSTANCE
-}
+export type NodeType =
+  | 'DOCUMENT'
+  | 'CANVAS'
+  | 'FRAME'
+  | 'GROUP'
+  | 'VECTOR'
+  | 'BOOLEAN'
+  | 'STAR'
+  | 'LINE'
+  | 'ELLIPSE'
+  | 'REGULAR_POLYGON'
+  | 'RECTANGLE'
+  | 'TEXT'
+  | 'SLICE'
+  | 'COMPONENT'
+  | 'INSTANCE';
 
 export type Node =
   | Document
@@ -48,14 +47,14 @@ export type Node =
 
 /** The root node */
 export interface Document extends Global {
-  readonly type: NodeType.DOCUMENT;
+  readonly type: 'DOCUMENT';
   /** An array of canvases attached to the document */
   readonly children: ReadonlyArray<Node>;
 }
 
 /** Represents a single page */
 export interface Canvas extends Global {
-  readonly type: NodeType.CANVAS;
+  readonly type: 'CANVAS';
   /** An array of top level layers on the canvas */
   readonly children: ReadonlyArray<Node>;
   /** Background color of the canvas */
@@ -121,12 +120,12 @@ export interface FrameBase extends Global {
 
 /** A node of fixed size containing other nodes */
 export interface Frame extends FrameBase {
-  readonly type: NodeType.FRAME;
+  readonly type: 'FRAME';
 }
 
 /** A logical grouping of nodes */
 export interface Group extends FrameBase {
-  readonly type: NodeType.GROUP;
+  readonly type: 'GROUP';
 }
 
 export interface VectorBase extends Global {
@@ -195,46 +194,46 @@ export interface VectorBase extends Global {
 
 /** A vector network, consisting of vertices and edges */
 export interface Vector extends VectorBase {
-  readonly type: NodeType.VECTOR;
+  readonly type: 'VECTOR';
 }
 
 /** A group that has a boolean operation applied to it */
 export interface BooleanGroup extends VectorBase {
-  readonly type: NodeType.BOOLEAN;
+  readonly type: 'BOOLEAN';
   /** An array of nodes that are being boolean operated on */
   readonly children: ReadonlyArray<Node>;
 }
 
 /** A regular star shape */
 export interface Star extends VectorBase {
-  readonly type: NodeType.STAR;
+  readonly type: 'STAR';
 }
 
 /** A straight line */
 export interface Line extends VectorBase {
-  readonly type: NodeType.LINE;
+  readonly type: 'LINE';
 }
 
 /** An ellipse */
 export interface Ellipse extends VectorBase {
-  readonly type: NodeType.ELLIPSE;
+  readonly type: 'ELLIPSE';
 }
 
 /** A regular n-sided polygon */
 export interface RegularPolygon extends VectorBase {
-  readonly type: NodeType.REGULAR_POLYGON;
+  readonly type: 'REGULAR_POLYGON';
 }
 
 /** A rectangle */
 export interface Rectangle extends VectorBase {
-  readonly type: NodeType.RECTANGLE;
+  readonly type: 'RECTANGLE';
   /** Radius of each corner of the rectangle */
   readonly cornerRadius: number;
 }
 
 /** A text box */
 export interface Text extends VectorBase {
-  readonly type: NodeType.TEXT;
+  readonly type: 'TEXT';
   /** Text contained within text box */
   readonly characters: string;
   /**
@@ -243,8 +242,7 @@ export interface Text extends VectorBase {
    */
   readonly style: TypeStyle;
   /**
-   * Array with same number of elements as characeters in text box,
-   * each element is a reference to the styleOverrideTable defined
+   * Array with same number of elements as characeters in text 'box' |    * each element is a reference to the styleOverrideTable defined
    * below and maps to the corresponding character in the characters
    * field. Elements with value 0 have the default type style
    */
@@ -255,7 +253,7 @@ export interface Text extends VectorBase {
 
 /** A rectangular region of the canvas that can be exported */
 export interface Slice extends Global {
-  readonly type: NodeType.SLICE;
+  readonly type: 'SLICE';
   /** An array of export settings representing images to export from this node */
   readonly exportSettings: ReadonlyArray<ExportSetting>;
   /** Bounding box of the node in absolute space coordinates */
@@ -264,7 +262,7 @@ export interface Slice extends Global {
 
 /** A node that can have instances created of it that share the same properties */
 export interface Component extends FrameBase {
-  readonly type: NodeType.COMPONENT;
+  readonly type: 'COMPONENT';
 }
 
 /**
@@ -272,7 +270,7 @@ export interface Component extends FrameBase {
  * changes applied to the instance
  */
 export interface Instance extends FrameBase {
-  readonly type: NodeType.INSTANCE;
+  readonly type: 'INSTANCE';
   /**
    * ID of component that this instance came from, refers to components
    * table (see endpoints section below)
