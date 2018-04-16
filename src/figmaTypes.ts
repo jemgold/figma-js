@@ -433,7 +433,7 @@ export interface Effect {
   // The following properties are for shadows only:
   readonly color?: Color;
   readonly blendMode?: BlendMode;
-  readonly offset?: Vector;
+  readonly offset?: Vector2;
 }
 
 /** A solid color, gradient, or image texture that can be applied as fills or strokes */
@@ -473,7 +473,7 @@ export interface Paint {
    * relevant for non-linear gradients).
    *
    */
-  readonly gradientHandlePositions?: ReadonlyArray<Vector>;
+  readonly gradientHandlePositions?: ReadonlyArray<Vector2>;
   /**
    * Positions of key points along the gradient axis with the colors
    * anchored there. Colors along the gradient are interpolated smoothly
@@ -486,7 +486,7 @@ export interface Paint {
 }
 
 /** A 2d vector */
-export interface Vector {
+export interface Vector2 {
   /** X coordinate of the vector */
   readonly x: number;
   /** Y coordinate of the vector */
@@ -559,7 +559,7 @@ export interface Comment {
    * The content of the comment
    */
   readonly message: string;
-  readonly client_meta: Vector;
+  readonly client_meta: Vector2;
   /**
    * Only set for top level comments. The number displayed with the
    * comment in the UI
