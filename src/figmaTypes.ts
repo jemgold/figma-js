@@ -97,6 +97,23 @@ export interface FrameBase extends Global {
   readonly opacity: number;
   /** Bounding box of the node in absolute space coordinates */
   readonly absoluteBoundingBox: Rect;
+
+  /**
+   * Width and height of element. This is different from the width and height
+   * of the bounding box in that the absolute bounding box represents the
+   * element after scaling and rotation. Only present if geometry=paths
+   * is passed
+   */
+  readonly size?: Vector2;
+
+  /**
+   * The top two rows of a matrix that represents the 2D transform of this
+   * node relative to its parent. The bottom row of the matrix is implicitly
+   * always (0, 0, 1). Use to transform coordinates in geometry.
+   * Only present if geometry=paths is passed
+   */
+  readonly relativeTransform?: Transform;
+
   /** Does this node clip content outside of its bounds? */
   readonly clipsContent: boolean;
   /**
@@ -160,6 +177,23 @@ export interface VectorBase extends Global {
   readonly opacity: number;
   /** Bounding box of the node in absolute space coordinates */
   readonly absoluteBoundingBox: Rect;
+
+  /**
+   * Width and height of element. This is different from the width and height
+   * of the bounding box in that the absolute bounding box represents the
+   * element after scaling and rotation. Only present if geometry=paths
+   * is passed
+   */
+  readonly size?: Vector2;
+
+  /**
+   * The top two rows of a matrix that represents the 2D transform of this
+   * node relative to its parent. The bottom row of the matrix is implicitly
+   * always (0, 0, 1). Use to transform coordinates in geometry.
+   * Only present if geometry=paths is passed
+   */
+  readonly relativeTransform?: Transform;
+
   /**
    * An array of effects attached to this node
    * (see effects sectionfor more details)
@@ -176,13 +210,28 @@ export interface VectorBase extends Global {
    * @default []
    */
   readonly fills: ReadonlyArray<Paint>;
+
+  /**
+   * Only specified if parameter geometry=paths is used. An array of paths
+   * representing the object fill
+   */
+  readonly fillGeometry?: ReadonlyArray<Path>;
+
   /**
    * An array of stroke paints applied to the node
    * @default []
    */
   readonly strokes: ReadonlyArray<Paint>;
+
   /** The weight of strokes on the node */
   readonly strokeWeight: number;
+
+  /**
+   * Only specified if parameter geometry=paths is used. An array of paths
+   * representing the object stroke
+   */
+  readonly strokeGeometry?: ReadonlyArray<Path>;
+
   /**
    * Where stroke is drawn relative to the vector outline as a string enum
    * "INSIDE": draw stroke inside the shape boundary
@@ -258,6 +307,21 @@ export interface Slice extends Global {
   readonly exportSettings: ReadonlyArray<ExportSetting>;
   /** Bounding box of the node in absolute space coordinates */
   readonly absoluteBoundingBox: Rect;
+  /**
+   * Width and height of element. This is different from the width and height
+   * of the bounding box in that the absolute bounding box represents the
+   * element after scaling and rotation. Only present if geometry=paths
+   * is passed
+   */
+  readonly size?: Vector2;
+
+  /**
+   * The top two rows of a matrix that represents the 2D transform of this
+   * node relative to its parent. The bottom row of the matrix is implicitly
+   * always (0, 0, 1). Use to transform coordinates in geometry.
+   * Only present if geometry=paths is passed
+   */
+  readonly relativeTransform?: Transform;
 }
 
 /** A node that can have instances created of it that share the same properties */
@@ -482,6 +546,15 @@ export interface Paint {
   /** Image scaling mode */
   readonly scaleMode?: string;
 }
+
+export interface Path {
+  /** A sequence of path commands in SVG notation */
+  readonly path: string;
+  /** Winding rule for the path */
+  readonly windingRule: 'EVENODD' | 'NONZERO';
+}
+
+export type Transform = ReadonlyArray<ReadonlyArray<number>>;
 
 /** A 2d vector */
 export interface Vector2 {
