@@ -3,6 +3,15 @@ import * as Figma from './figmaTypes';
 export * from './figmaTypes';
 import axios, { AxiosPromise } from 'axios';
 
+export interface FileParams {
+  // a string representing the id of the file
+  readonly fileId?: string;
+  // a string representing the specific version ID to retrieve
+  readonly version?: string;
+  // returned data includes path data or not
+  readonly geometry?: string;
+}
+
 export interface FileImageParams {
   /** A list of node IDs to render */
   readonly ids?: ReadonlyArray<string>;
@@ -36,7 +45,10 @@ export interface ClientInterface {
    * The "document" attribute contains a Node of type DOCUMENT.
    * @param {fileId} String File to export JSON from
    */
-  readonly file: (fileId: string) => AxiosPromise<Figma.FileResponse>;
+  readonly file: (
+    fileId: string,
+    params: FileParams
+  ) => AxiosPromise<Figma.FileResponse>;
 
   /**
    * If no error occurs, "images" will be populated with a map from
@@ -105,7 +117,8 @@ export const Client = (opts: ClientOptions): ClientInterface => {
   });
 
   return {
-    file: fileId => client.get(`files/${fileId}`),
+    file: (fileId, params) =>
+      client.get(`files/${fileId}`, { params } ),
 
     fileImages: (fileId, params) =>
       client.get(`images/${fileId}`, {
