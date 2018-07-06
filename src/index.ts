@@ -47,7 +47,7 @@ export interface ClientInterface {
    */
   readonly file: (
     fileId: string,
-    params: FileParams
+    params?: FileParams
   ) => AxiosPromise<Figma.FileResponse>;
 
   /**
@@ -117,8 +117,7 @@ export const Client = (opts: ClientOptions): ClientInterface => {
   });
 
   return {
-    file: (fileId, params) =>
-      client.get(`files/${fileId}`, { params } ),
+    file: (fileId, params = {}) => client.get(`files/${fileId}`, { params }),
 
     fileImages: (fileId, params) =>
       client.get(`images/${fileId}`, {
