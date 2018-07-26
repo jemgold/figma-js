@@ -14,11 +14,24 @@ export interface FileParams {
 
 export interface FileImageParams {
   /** A list of node IDs to render */
-  readonly ids?: ReadonlyArray<string>;
+  readonly ids: ReadonlyArray<string>;
   /** A number between 0.01 and 4, the image scaling factor */
-  readonly scale?: number;
+  readonly scale: number;
   /** A string enum for the image output format, can be "jpg", "png", or "svg" */
-  readonly format?: 'jpg' | 'png' | 'svg';
+  readonly format: 'jpg' | 'png' | 'svg';
+  /**
+   * Whether to include id attributes for all SVG elements.
+   * @default false
+   */
+  readonly svg_include_id?: boolean;
+  /**
+   * Whether to simplify inside/outside strokes and use stroke attribute if
+   * possible instead of <mask>. Default: true.
+   * @default false
+   */
+  readonly svg_simplify_stroke?: boolean;
+  /** A specific version ID to use. Omitting this will use the current version of the file */
+  readonly version?: string;
 }
 
 export interface PostCommentParams {
