@@ -91,6 +91,16 @@ export interface FrameBase extends Global {
    */
   readonly transitionNodeID: string | null;
   /**
+   * The duration of the prototyping transition on this node (in milliseconds)
+   * @default null
+   */
+  readonly transitionDuration: number | null;
+  /**
+   * The easing curve used in the prototyping transition on this node
+   * @default null
+   */
+  readonly transitionEasing: EasingType | null;
+  /**
    * Opacity of the node
    * @default 1
    */
@@ -170,6 +180,16 @@ export interface VectorBase extends Global {
    * @default null
    */
   readonly transitionNodeID: string | null;
+  /**
+   * The duration of the prototyping transition on this node (in milliseconds)
+   * @default null
+   */
+  readonly transitionDuration: number | null;
+  /**
+   * The easing curve used in the prototyping transition on this node
+   * @default null
+   */
+  readonly transitionEasing: EasingType | null;
   /**
    * Opacity of the node
    * @default 1
@@ -425,6 +445,12 @@ export enum BlendMode {
   'SATURATION',
   'COLOR',
   'LUMINOSITY'
+}
+
+export enum EasingType {
+  'EASE_IN' /** Ease in with an animation curve similar to CSS ease-in */,
+  'EASE_OUT' /** Ease out with an animation curve similar to CSS ease-out */,
+  'EASE_IN_AND_OUT' /** Ease in and then out with an animation curve similar to CSS ease-in-out */
 }
 
 /** Layout constraint relative to containing Frame */
