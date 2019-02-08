@@ -354,8 +354,6 @@ export interface Component extends FrameBase {
   readonly type: 'COMPONENT';
 }
 
-
-
 /**
  * An instance of a component, changes to the component result in the same
  * changes applied to the instance
