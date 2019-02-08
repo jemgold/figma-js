@@ -634,11 +634,25 @@ export interface TypeStyle {
  * instances are attached to
  */
 export interface Component {
+  /** The componens key */
+  readonly key: string
   /** The name of the component */
   readonly name: string;
   /** The description of the component as entered in the editor */
   readonly description: string;
 }
+
+/**
+ *  A description of styles used in a file.
+ */
+export interface Style {
+   /** The name of the stlye */
+   readonly name: string;
+   /** The unique identifier of the style */
+   readonly key: string;
+   /** The type of style */
+   readonly styleType: 'FILL' | 'TEXT' | 'EFFECT' | 'GRID'
+ }
 
 // General API Types
 
@@ -683,6 +697,9 @@ export interface ProjectSummary {
 export interface FileResponse {
   readonly components: {
     readonly [key: string]: Component;
+  };
+  readonly styles: {
+    readonly [key: string]: Style;
   };
   readonly document: Document;
   readonly lastModified: string;
