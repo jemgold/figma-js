@@ -643,10 +643,9 @@ export interface Component {
 }
 
 /**
- *  A description of syles used in a file.
+ *  A description of styles used in a file.
  */
-
- export interface Style {
+export interface Style {
    /** The name of the stlye */
    readonly name: string;
    /** The unique identifier of the style */
