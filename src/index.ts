@@ -130,6 +130,8 @@ export const Client = (opts: ClientOptions): ClientInterface => {
   });
 
   return {
+    client,
+    
     file: (fileId, params = {}) => client.get(`files/${fileId}`, { params }),
 
     fileImages: (fileId, params) =>
