@@ -1,7 +1,7 @@
 // export * from './lib/number';
 import * as Figma from './figmaTypes';
 export * from './figmaTypes';
-import axios, { AxiosPromise } from 'axios';
+import axios, { AxiosPromise, AxiosInstance } from 'axios';
 
 export interface FileParams {
   // a string representing the id of the file
@@ -51,6 +51,7 @@ export interface ClientOptions {
 }
 
 export interface ClientInterface {
+  readonly client: AxiosInstance;
   /**
    * Returns the document refered to by :key as a JSON object.
    * The file key can be parsed from any Figma file url:
