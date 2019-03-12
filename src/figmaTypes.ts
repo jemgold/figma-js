@@ -9,6 +9,11 @@ export interface Global {
   readonly type: NodeType;
 }
 
+export type StyleType = 
+  | 'fill'
+  | 'stroke'
+  | 'effect';
+
 export type NodeType =
   | 'DOCUMENT'
   | 'CANVAS'
@@ -259,6 +264,11 @@ export interface VectorBase extends Global {
    * "CENTER": draw stroke centered along the shape boundary
    */
   readonly strokeAlign: 'INSIDE' | 'OUTSIDE' | 'CENTER';
+  
+  /**
+   * Styles this node uses from the global `styles`
+   */
+  readonly styles: { [K in StyleType]?: string };
 }
 
 /** A vector network, consisting of vertices and edges */
