@@ -9,13 +9,17 @@ export interface Global {
   readonly type: NodeType;
 }
 
-export type StyleType = 
+export type StyleType = 'FILL' | 'TEXT' | 'EFFECT' | 'GRID';
+
+export type StyleKeyType =
   | 'fill'
   | 'stroke'
   | 'effect'
   | 'grid'
   | 'text'
   | 'background';
+
+export type StylesObject = { [K in StyleKeyType]?: string };
 
 export type NodeType =
   | 'DOCUMENT'
@@ -154,7 +158,7 @@ export interface FrameBase extends Global {
   /**
    * Styles this node uses from the global `styles`
    */
-  readonly styles: { [K in StyleType]?: string };
+  readonly styles: StylesObject;
 }
 
 /** A node of fixed size containing other nodes */
@@ -271,11 +275,11 @@ export interface VectorBase extends Global {
    * "CENTER": draw stroke centered along the shape boundary
    */
   readonly strokeAlign: 'INSIDE' | 'OUTSIDE' | 'CENTER';
-  
+
   /**
    * Styles this node uses from the global `styles`
    */
-  readonly styles: { [K in StyleType]?: string };
+  readonly styles: StylesObject;
 }
 
 /** A vector network, consisting of vertices and edges */
@@ -546,17 +550,19 @@ export interface Effect {
   readonly offset?: Vector2;
 }
 
+export type PaintType =
+  | 'SOLID'
+  | 'GRADIENT_LINEAR'
+  | 'GRADIENT_RADIAL'
+  | 'GRADIENT_ANGULAR'
+  | 'GRADIENT_DIAMOND'
+  | 'IMAGE'
+  | 'EMOJI';
+
 /** A solid color, gradient, or image texture that can be applied as fills or strokes */
 export interface Paint {
   /** Type of paint as a string enum */
-  readonly type:
-    | 'SOLID'
-    | 'GRADIENT_LINEAR'
-    | 'GRADIENT_RADIAL'
-    | 'GRADIENT_ANGULAR'
-    | 'GRADIENT_DIAMOND'
-    | 'IMAGE'
-    | 'EMOJI';
+  readonly type: PaintType;
   /**
    * Is the paint enabled?
    * @default true
@@ -673,7 +679,7 @@ export interface Style {
   /** The unique identifier of the style */
   readonly key: string;
   /** The type of style */
-  readonly styleType: 'FILL' | 'TEXT' | 'EFFECT' | 'GRID';
+  readonly styleType: StyleType;
 }
 
 // General API Types
