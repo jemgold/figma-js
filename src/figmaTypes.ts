@@ -72,8 +72,8 @@ export interface Canvas extends Global {
 export interface FrameBase extends Global {
   /** An array of nodes that are direct children of this node */
   readonly children: ReadonlyArray<Node>;
-  /** Background color of the node */
-  readonly backgroundColor: Color;
+  /** Backgrounds on the node */
+  readonly background: ReadonlyArray<Paint>;
   /**
    * An array of export settings representing images to export from node
    * @default []
@@ -149,6 +149,10 @@ export interface FrameBase extends Global {
    * @default false
    */
   readonly isMask: boolean;
+  /**
+   * Styles this node uses from the global `styles`
+   */
+  readonly styles: { [K in StyleType]?: string };
 }
 
 /** A node of fixed size containing other nodes */
