@@ -438,46 +438,43 @@ export interface Rect {
 }
 
 /**
- * Enum describing how layer blends with layers below
- * This type is a string enum with the following possible values
+ * how the layer blends with layers below
  */
-export enum BlendMode {
-  'PASS_THROUGH' /** (Only applicable to objects with children) */,
-  'NORMAL',
+export type BlendMode =
+  | 'PASS_THROUGH' /** (Only applicable to objects with children) */
+  | 'NORMAL'
 
   /** Darken: */
-  'DARKEN',
-  'MULTIPLY',
-  'LINEAR_BURN',
-  'COLOR_BURN',
+  | 'DARKEN'
+  | 'MULTIPLY'
+  | 'LINEAR_BURN'
+  | 'COLOR_BURN'
 
   /** Lighten: */
-  'LIGHTEN',
-  'SCREEN',
-  'LINEAR_DODGE',
-  'COLOR_DODGE',
+  | 'LIGHTEN'
+  | 'SCREEN'
+  | 'LINEAR_DODGE'
+  | 'COLOR_DODGE'
 
   /** Contrast: */
-  'OVERLAY',
-  'SOFT_LIGHT',
-  'HARD_LIGHT',
+  | 'OVERLAY'
+  | 'SOFT_LIGHT'
+  | 'HARD_LIGHT'
 
   /** Inversion: */
-  'DIFFERENCE',
-  'EXCLUSION',
+  | 'DIFFERENCE'
+  | 'EXCLUSION'
 
   /** Component: */
-  'HUE',
-  'SATURATION',
-  'COLOR',
-  'LUMINOSITY'
-}
+  | 'HUE'
+  | 'SATURATION'
+  | 'COLOR'
+  | 'LUMINOSITY';
 
-export enum EasingType {
-  'EASE_IN' /** Ease in with an animation curve similar to CSS ease-in */,
-  'EASE_OUT' /** Ease out with an animation curve similar to CSS ease-out */,
-  'EASE_IN_AND_OUT' /** Ease in and then out with an animation curve similar to CSS ease-in-out */
-}
+export type EasingType =
+  | 'EASE_IN' /** Ease in with an animation curve similar to CSS ease-in */
+  | 'EASE_OUT' /** Ease out with an animation curve similar to CSS ease-out */
+  | 'EASE_IN_AND_OUT'; /** Ease in and then out with an animation curve similar to CSS ease-in-out */
 
 /** Layout constraint relative to containing Frame */
 export interface LayoutConstraint {
