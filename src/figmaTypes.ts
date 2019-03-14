@@ -13,7 +13,8 @@ export type StyleType =
   | 'fill'
   | 'stroke'
   | 'effect'
-  | 'grid';
+  | 'grid'
+  | 'text;
 
 export type NodeType =
   | 'DOCUMENT'
