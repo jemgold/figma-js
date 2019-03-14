@@ -593,6 +593,11 @@ export interface Paint {
   // for image paints
   /** Image scaling mode */
   readonly scaleMode?: string;
+  /**
+   * How this node blends with nodes behind it in the scene
+   * (see blend mode section for more details)
+   */
+  readonly blendMode: BlendMode;
 }
 
 export interface Path {
