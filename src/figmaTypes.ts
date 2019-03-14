@@ -12,7 +12,8 @@ export interface Global {
 export type StyleType = 
   | 'fill'
   | 'stroke'
-  | 'effect';
+  | 'effect'
+  | 'grid';
 
 export type NodeType =
   | 'DOCUMENT'
