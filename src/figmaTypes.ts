@@ -9,8 +9,14 @@ export interface Global {
   readonly type: NodeType;
 }
 
+/**
+ * Styles can be one of the following types
+ */
 export type StyleType = 'FILL' | 'TEXT' | 'EFFECT' | 'GRID';
 
+/**
+ * the above styles can be used in the following ways
+ */
 export type StyleKeyType =
   | 'fill'
   | 'stroke'
@@ -20,6 +26,47 @@ export type StyleKeyType =
   | 'background';
 
 export type StylesObject = { [K in StyleKeyType]?: string };
+
+export type ScaleMode = 'FILL' | 'FIT' | 'TILE' | 'STRETCH';
+
+/**
+ * how the layer blends with layers below
+ */
+export type BlendMode =
+  | 'PASS_THROUGH' /** (Only applicable to objects with children) */
+  | 'NORMAL'
+
+  /** Darken: */
+  | 'DARKEN'
+  | 'MULTIPLY'
+  | 'LINEAR_BURN'
+  | 'COLOR_BURN'
+
+  /** Lighten: */
+  | 'LIGHTEN'
+  | 'SCREEN'
+  | 'LINEAR_DODGE'
+  | 'COLOR_DODGE'
+
+  /** Contrast: */
+  | 'OVERLAY'
+  | 'SOFT_LIGHT'
+  | 'HARD_LIGHT'
+
+  /** Inversion: */
+  | 'DIFFERENCE'
+  | 'EXCLUSION'
+
+  /** Component: */
+  | 'HUE'
+  | 'SATURATION'
+  | 'COLOR'
+  | 'LUMINOSITY';
+
+export type EasingType =
+  | 'EASE_IN' /** Ease in with an animation curve similar to CSS ease-in */
+  | 'EASE_OUT' /** Ease out with an animation curve similar to CSS ease-out */
+  | 'EASE_IN_AND_OUT'; /** Ease in and then out with an animation curve similar to CSS ease-in-out */
 
 export type NodeType =
   | 'DOCUMENT'
@@ -437,45 +484,6 @@ export interface Rect {
   readonly height: number;
 }
 
-/**
- * how the layer blends with layers below
- */
-export type BlendMode =
-  | 'PASS_THROUGH' /** (Only applicable to objects with children) */
-  | 'NORMAL'
-
-  /** Darken: */
-  | 'DARKEN'
-  | 'MULTIPLY'
-  | 'LINEAR_BURN'
-  | 'COLOR_BURN'
-
-  /** Lighten: */
-  | 'LIGHTEN'
-  | 'SCREEN'
-  | 'LINEAR_DODGE'
-  | 'COLOR_DODGE'
-
-  /** Contrast: */
-  | 'OVERLAY'
-  | 'SOFT_LIGHT'
-  | 'HARD_LIGHT'
-
-  /** Inversion: */
-  | 'DIFFERENCE'
-  | 'EXCLUSION'
-
-  /** Component: */
-  | 'HUE'
-  | 'SATURATION'
-  | 'COLOR'
-  | 'LUMINOSITY';
-
-export type EasingType =
-  | 'EASE_IN' /** Ease in with an animation curve similar to CSS ease-in */
-  | 'EASE_OUT' /** Ease out with an animation curve similar to CSS ease-out */
-  | 'EASE_IN_AND_OUT'; /** Ease in and then out with an animation curve similar to CSS ease-in-out */
-
 /** Layout constraint relative to containing Frame */
 export interface LayoutConstraint {
   /**
@@ -595,7 +603,7 @@ export interface Paint {
   readonly gradientStops?: ReadonlyArray<ColorStop>;
   // for image paints
   /** Image scaling mode */
-  readonly scaleMode?: string;
+  readonly scaleMode?: ScaleMode;
   /**
    * How this node blends with nodes behind it in the scene
    * (see blend mode section for more details)
