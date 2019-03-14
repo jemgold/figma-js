@@ -9,6 +9,14 @@ export interface Global {
   readonly type: NodeType;
 }
 
+export type StyleType = 
+  | 'fill'
+  | 'stroke'
+  | 'effect'
+  | 'grid'
+  | 'text'
+  | 'background';
+
 export type NodeType =
   | 'DOCUMENT'
   | 'CANVAS'
@@ -66,8 +74,8 @@ export interface Canvas extends Global {
 export interface FrameBase extends Global {
   /** An array of nodes that are direct children of this node */
   readonly children: ReadonlyArray<Node>;
-  /** Background color of the node */
-  readonly backgroundColor: Color;
+  /** Backgrounds on the node */
+  readonly background: ReadonlyArray<Paint>;
   /**
    * An array of export settings representing images to export from node
    * @default []
@@ -143,6 +151,10 @@ export interface FrameBase extends Global {
    * @default false
    */
   readonly isMask: boolean;
+  /**
+   * Styles this node uses from the global `styles`
+   */
+  readonly styles: { [K in StyleType]?: string };
 }
 
 /** A node of fixed size containing other nodes */
@@ -259,6 +271,11 @@ export interface VectorBase extends Global {
    * "CENTER": draw stroke centered along the shape boundary
    */
   readonly strokeAlign: 'INSIDE' | 'OUTSIDE' | 'CENTER';
+  
+  /**
+   * Styles this node uses from the global `styles`
+   */
+  readonly styles: { [K in StyleType]?: string };
 }
 
 /** A vector network, consisting of vertices and edges */
@@ -576,6 +593,11 @@ export interface Paint {
   // for image paints
   /** Image scaling mode */
   readonly scaleMode?: string;
+  /**
+   * How this node blends with nodes behind it in the scene
+   * (see blend mode section for more details)
+   */
+  readonly blendMode: BlendMode;
 }
 
 export interface Path {
