@@ -29,6 +29,18 @@ export type StylesObject = { [K in StyleKeyType]?: string };
 
 export type ScaleMode = 'FILL' | 'FIT' | 'TILE' | 'STRETCH';
 
+export type PaintTypeSolid = 'SOLID';
+
+export type PaintTypeGraident =
+  | 'GRADIENT_LINEAR'
+  | 'GRADIENT_RADIAL'
+  | 'GRADIENT_ANGULAR'
+  | 'GRADIENT_DIAMOND';
+
+export type PaintTypeImage = 'IMAGE' | 'EMOJI'; // I'm guessing that EMOJI is like an image, not sure where it is used
+
+export type PaintType = PaintTypeSolid | PaintTypeGraident | PaintTypeImage;
+
 /**
  * how the layer blends with layers below
  */
@@ -554,15 +566,6 @@ export interface Effect {
   readonly blendMode?: BlendMode;
   readonly offset?: Vector2;
 }
-
-export type PaintType =
-  | 'SOLID'
-  | 'GRADIENT_LINEAR'
-  | 'GRADIENT_RADIAL'
-  | 'GRADIENT_ANGULAR'
-  | 'GRADIENT_DIAMOND'
-  | 'IMAGE'
-  | 'EMOJI';
 
 /** A solid color, gradient, or image texture that can be applied as fills or strokes */
 export interface Paint {
