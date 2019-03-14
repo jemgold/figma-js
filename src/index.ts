@@ -1,7 +1,7 @@
 // export * from './lib/number';
 import * as Figma from './figmaTypes';
 export * from './figmaTypes';
-import axios, { AxiosPromise, AxiosInstance } from 'axios';
+import axios, { AxiosInstance, AxiosPromise } from 'axios';
 
 export interface FileParams {
   // a string representing the id of the file
@@ -132,7 +132,7 @@ export const Client = (opts: ClientOptions): ClientInterface => {
 
   return {
     client,
-    
+
     file: (fileId, params = {}) => client.get(`files/${fileId}`, { params }),
 
     fileImages: (fileId, params) =>
