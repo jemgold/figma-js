@@ -39,6 +39,8 @@ export type PaintTypeGraident =
 
 export type PaintTypeImage = 'IMAGE' | 'EMOJI'; // I'm guessing that EMOJI is like an image, not sure where it is used
 
+export type TextType = 'TEXT';
+
 export type PaintType = PaintTypeSolid | PaintTypeGraident | PaintTypeImage;
 
 /**
@@ -387,7 +389,7 @@ export interface Rectangle extends VectorBase {
 
 /** A text box */
 export interface Text extends VectorBase {
-  readonly type: 'TEXT';
+  readonly type: TextType;
   /** Text contained within text box */
   readonly characters: string;
   /**
