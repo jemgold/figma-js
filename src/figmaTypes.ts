@@ -14,7 +14,8 @@ export type StyleType =
   | 'stroke'
   | 'effect'
   | 'grid'
-  | 'text';
+  | 'text'
+  | 'background';
 
 export type NodeType =
   | 'DOCUMENT'
