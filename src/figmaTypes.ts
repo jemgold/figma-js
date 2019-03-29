@@ -648,7 +648,7 @@ export interface TypeStyle {
   /** PostScript font name */
   readonly fontPostScriptName: string;
   /** Is text italicized? */
-  readonly italic: boolean;
+  readonly italic?: boolean;
   /** Numeric font weight */
   readonly fontWeight: number;
   /** Font size in px */
@@ -660,7 +660,7 @@ export interface TypeStyle {
   /** Space between characters in px */
   readonly letterSpacing: number;
   /** Paints applied to characters */
-  readonly fills: ReadonlyArray<Paint>;
+  readonly fills?: ReadonlyArray<Paint>;
   /** Line height in px */
   readonly lineHeightPx: number;
   /** Line height as a percentage of normal line height */
