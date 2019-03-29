@@ -259,6 +259,15 @@ export interface VectorBase extends Global {
    * "CENTER": draw stroke centered along the shape boundary
    */
   readonly strokeAlign: 'INSIDE' | 'OUTSIDE' | 'CENTER';
+  
+  /**
+   * Map from ID to Style for looking up style
+   */
+  readonly style: {
+    readonly fill?: Style;
+    readonly stroke?: Style;
+    readonly effect?: Style;
+  };
 }
 
 /** A vector network, consisting of vertices and edges */
