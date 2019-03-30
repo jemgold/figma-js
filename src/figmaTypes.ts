@@ -650,7 +650,7 @@ export interface TypeStyle {
   /** Is text italicized? */
   readonly italic?: boolean;
   /** Numeric font weight */
-  readonly fontWeight: number;
+  readonly fontWeight: 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900;
   /** Font size in px */
   readonly fontSize: number;
   /** Horizontal text alignment as string enum */
