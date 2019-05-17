@@ -9,6 +9,79 @@ export interface Global {
   readonly type: NodeType;
 }
 
+/**
+ * Styles can be one of the following types
+ */
+export type StyleType = 'FILL' | 'TEXT' | 'EFFECT' | 'GRID';
+
+/**
+ * the above styles can be used in the following ways
+ */
+export type StyleKeyType =
+  | 'fill'
+  | 'stroke'
+  | 'effect'
+  | 'grid'
+  | 'text'
+  | 'background';
+
+export type StylesObject = { [K in StyleKeyType]?: string };
+
+export type ScaleMode = 'FILL' | 'FIT' | 'TILE' | 'STRETCH';
+
+export type PaintTypeSolid = 'SOLID';
+
+export type PaintTypeGraident =
+  | 'GRADIENT_LINEAR'
+  | 'GRADIENT_RADIAL'
+  | 'GRADIENT_ANGULAR'
+  | 'GRADIENT_DIAMOND';
+
+export type PaintTypeImage = 'IMAGE' | 'EMOJI'; // I'm guessing that EMOJI is like an image, not sure where it is used
+
+export type TextType = 'TEXT';
+
+export type PaintType = PaintTypeSolid | PaintTypeGraident | PaintTypeImage;
+
+/**
+ * how the layer blends with layers below
+ */
+export type BlendMode =
+  | 'PASS_THROUGH' /** (Only applicable to objects with children) */
+  | 'NORMAL'
+
+  /** Darken: */
+  | 'DARKEN'
+  | 'MULTIPLY'
+  | 'LINEAR_BURN'
+  | 'COLOR_BURN'
+
+  /** Lighten: */
+  | 'LIGHTEN'
+  | 'SCREEN'
+  | 'LINEAR_DODGE'
+  | 'COLOR_DODGE'
+
+  /** Contrast: */
+  | 'OVERLAY'
+  | 'SOFT_LIGHT'
+  | 'HARD_LIGHT'
+
+  /** Inversion: */
+  | 'DIFFERENCE'
+  | 'EXCLUSION'
+
+  /** Component: */
+  | 'HUE'
+  | 'SATURATION'
+  | 'COLOR'
+  | 'LUMINOSITY';
+
+export type EasingType =
+  | 'EASE_IN' /** Ease in with an animation curve similar to CSS ease-in */
+  | 'EASE_OUT' /** Ease out with an animation curve similar to CSS ease-out */
+  | 'EASE_IN_AND_OUT'; /** Ease in and then out with an animation curve similar to CSS ease-in-out */
+
 export type NodeType =
   | 'DOCUMENT'
   | 'CANVAS'
@@ -66,8 +139,8 @@ export interface Canvas extends Global {
 export interface FrameBase extends Global {
   /** An array of nodes that are direct children of this node */
   readonly children: ReadonlyArray<Node>;
-  /** Background color of the node */
-  readonly backgroundColor: Color;
+  /** Backgrounds on the node */
+  readonly background: ReadonlyArray<Paint>;
   /**
    * An array of export settings representing images to export from node
    * @default []
@@ -143,6 +216,10 @@ export interface FrameBase extends Global {
    * @default false
    */
   readonly isMask: boolean;
+  /**
+   * Styles this node uses from the global `styles`
+   */
+  readonly styles: StylesObject;
 }
 
 /** A node of fixed size containing other nodes */
@@ -259,6 +336,11 @@ export interface VectorBase extends Global {
    * "CENTER": draw stroke centered along the shape boundary
    */
   readonly strokeAlign: 'INSIDE' | 'OUTSIDE' | 'CENTER';
+
+  /**
+   * Styles this node uses from the global `styles`
+   */
+  readonly styles: StylesObject;
 }
 
 /** A vector network, consisting of vertices and edges */
@@ -307,7 +389,7 @@ export interface Rectangle extends VectorBase {
 
 /** A text box */
 export interface Text extends VectorBase {
-  readonly type: 'TEXT';
+  readonly type: TextType;
   /** Text contained within text box */
   readonly characters: string;
   /**
@@ -416,48 +498,6 @@ export interface Rect {
   readonly height: number;
 }
 
-/**
- * Enum describing how layer blends with layers below
- * This type is a string enum with the following possible values
- */
-export enum BlendMode {
-  'PASS_THROUGH' /** (Only applicable to objects with children) */,
-  'NORMAL',
-
-  /** Darken: */
-  'DARKEN',
-  'MULTIPLY',
-  'LINEAR_BURN',
-  'COLOR_BURN',
-
-  /** Lighten: */
-  'LIGHTEN',
-  'SCREEN',
-  'LINEAR_DODGE',
-  'COLOR_DODGE',
-
-  /** Contrast: */
-  'OVERLAY',
-  'SOFT_LIGHT',
-  'HARD_LIGHT',
-
-  /** Inversion: */
-  'DIFFERENCE',
-  'EXCLUSION',
-
-  /** Component: */
-  'HUE',
-  'SATURATION',
-  'COLOR',
-  'LUMINOSITY'
-}
-
-export enum EasingType {
-  'EASE_IN' /** Ease in with an animation curve similar to CSS ease-in */,
-  'EASE_OUT' /** Ease out with an animation curve similar to CSS ease-out */,
-  'EASE_IN_AND_OUT' /** Ease in and then out with an animation curve similar to CSS ease-in-out */
-}
-
 /** Layout constraint relative to containing Frame */
 export interface LayoutConstraint {
   /**
@@ -532,14 +572,7 @@ export interface Effect {
 /** A solid color, gradient, or image texture that can be applied as fills or strokes */
 export interface Paint {
   /** Type of paint as a string enum */
-  readonly type:
-    | 'SOLID'
-    | 'GRADIENT_LINEAR'
-    | 'GRADIENT_RADIAL'
-    | 'GRADIENT_ANGULAR'
-    | 'GRADIENT_DIAMOND'
-    | 'IMAGE'
-    | 'EMOJI';
+  readonly type: PaintType;
   /**
    * Is the paint enabled?
    * @default true
@@ -575,7 +608,12 @@ export interface Paint {
   readonly gradientStops?: ReadonlyArray<ColorStop>;
   // for image paints
   /** Image scaling mode */
-  readonly scaleMode?: string;
+  readonly scaleMode?: ScaleMode;
+  /**
+   * How this node blends with nodes behind it in the scene
+   * (see blend mode section for more details)
+   */
+  readonly blendMode: BlendMode;
 }
 
 export interface Path {
@@ -609,10 +647,14 @@ export interface TypeStyle {
   readonly fontFamily: string;
   /** PostScript font name */
   readonly fontPostScriptName: string;
+  /** Space between paragraphs in px, 0 if not present */
+  readonly paragraphSpacing?: number;
+  /** Paragraph indentation in px, 0 if not present */
+  readonly paragraphIndent?: number;
   /** Is text italicized? */
-  readonly italic: boolean;
+  readonly italic?: boolean;
   /** Numeric font weight */
-  readonly fontWeight: number;
+  readonly fontWeight: 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900;
   /** Font size in px */
   readonly fontSize: number;
   /** Horizontal text alignment as string enum */
@@ -622,11 +664,13 @@ export interface TypeStyle {
   /** Space between characters in px */
   readonly letterSpacing: number;
   /** Paints applied to characters */
-  readonly fills: ReadonlyArray<Paint>;
+  readonly fills?: ReadonlyArray<Paint>;
   /** Line height in px */
   readonly lineHeightPx: number;
   /** Line height as a percentage of normal line height */
   readonly lineHeightPercent: number;
+  /** The unit of the line height value specified by the user. */
+  readonly lineHeightUnit: 'PIXELS' | 'FONT_SIZE_%' | 'INTRINSIC_%';
 }
 
 /**
@@ -651,7 +695,7 @@ export interface Style {
   /** The unique identifier of the style */
   readonly key: string;
   /** The type of style */
-  readonly styleType: 'FILL' | 'TEXT' | 'EFFECT' | 'GRID';
+  readonly styleType: StyleType;
 }
 
 // General API Types
