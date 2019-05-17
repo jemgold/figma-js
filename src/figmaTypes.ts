@@ -647,6 +647,10 @@ export interface TypeStyle {
   readonly fontFamily: string;
   /** PostScript font name */
   readonly fontPostScriptName: string;
+  /** Space between paragraphs in px, 0 if not present */
+  readonly paragraphSpacing?: number;
+  /** Paragraph indentation in px, 0 if not present */
+  readonly paragraphIndent?: number;
   /** Is text italicized? */
   readonly italic?: boolean;
   /** Numeric font weight */
@@ -665,6 +669,8 @@ export interface TypeStyle {
   readonly lineHeightPx: number;
   /** Line height as a percentage of normal line height */
   readonly lineHeightPercent: number;
+  /** The unit of the line height value specified by the user. */
+  readonly lineHeightUnit: 'PIXELS' | 'FONT_SIZE_%' | 'INTRINSIC_%';
 }
 
 /**
