@@ -677,7 +677,7 @@ export interface TypeStyle {
  * A description of a master component. Helps you identify which component
  * instances are attached to
  */
-export interface Component {
+export interface ComponentMetadata {
   /** The componens key */
   readonly key: string;
   /** The name of the component */
@@ -740,7 +740,7 @@ export interface ProjectSummary {
 
 export interface FileResponse {
   readonly components: {
-    readonly [key: string]: Component;
+    readonly [key: string]: ComponentMetadata;
   };
   readonly styles: {
     readonly [key: string]: Style;
