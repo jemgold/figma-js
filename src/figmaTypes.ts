@@ -671,6 +671,12 @@ export interface TypeStyle {
   readonly lineHeightPercent: number;
   /** The unit of the line height value specified by the user. */
   readonly lineHeightUnit: 'PIXELS' | 'FONT_SIZE_%' | 'INTRINSIC_%';
+  /** Text casing applied to the node, default is the original casing */
+  readonly textCase? : 'UPPER' | 'LOWER' | 'TITLE';
+  /** Text decoration applied to the node, default is none */
+  readonly textDecoration? : 'STRIKETHROUGH' | 'UNDERLINE';
+  /** Line height as a percentage of the font size. Only returned when lineHeightPercent is not 100. */
+  readonly lineHeightPercentFontSize? : number;
 }
 
 /**
