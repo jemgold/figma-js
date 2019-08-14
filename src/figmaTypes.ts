@@ -4,7 +4,7 @@ export interface Global {
   /** the name given to the node by the user in the tool. */
   readonly name: string;
   /** whether or not the node is visible on the canvas */
-  readonly visible: boolean;
+  readonly visible?: boolean;
   /** the type of the node, refer to table below for details */
   readonly type: NodeType;
 }
@@ -132,8 +132,10 @@ export interface Canvas extends Global {
   readonly children: ReadonlyArray<Node>;
   /** Background color of the canvas */
   readonly backgroundColor: Color;
+  /** Node ID that corresponds to the start frame for prototypes */
+  readonly prototypeStartNodeID: string | null;
   /** An array of export settings representing images to export from the canvas */
-  readonly exportSettings: ReadonlyArray<ExportSetting>;
+  readonly exportSettings?: ReadonlyArray<ExportSetting>;
 }
 
 export interface FrameBase extends Global {
@@ -141,11 +143,13 @@ export interface FrameBase extends Global {
   readonly children: ReadonlyArray<Node>;
   /** Backgrounds on the node */
   readonly background: ReadonlyArray<Paint>;
+  /** Background color of the node. This is deprecated, as frames now support more than a solid color as a background. Please use the background field instead. */
+  readonly backgroundColor: Color;
   /**
    * An array of export settings representing images to export from node
    * @default []
    */
-  readonly exportSettings: ReadonlyArray<ExportSetting>;
+  readonly exportSettings?: ReadonlyArray<ExportSetting>;
   /**
    * How this node blends with nodes behind it in the scene
    * (see blend mode section for more details)
@@ -155,29 +159,29 @@ export interface FrameBase extends Global {
    * Keep height and width constrained to same ratio
    * @default false
    */
-  readonly preserveRatio: boolean;
+  readonly preserveRatio?: boolean;
   /** Horizontal and vertical layout constraints for node */
   readonly constraints: LayoutConstraint;
   /**
    * Node ID of node to transition to in prototyping
    * @default null
    */
-  readonly transitionNodeID: string | null;
+  readonly transitionNodeID?: string | null;
   /**
    * The duration of the prototyping transition on this node (in milliseconds)
    * @default null
    */
-  readonly transitionDuration: number | null;
+  readonly transitionDuration?: number | null;
   /**
    * The easing curve used in the prototyping transition on this node
    * @default null
    */
-  readonly transitionEasing: EasingType | null;
+  readonly transitionEasing?: EasingType | null;
   /**
    * Opacity of the node
    * @default 1
    */
-  readonly opacity: number;
+  readonly opacity?: number;
   /** Bounding box of the node in absolute space coordinates */
   readonly absoluteBoundingBox: Rect;
 
@@ -204,7 +208,7 @@ export interface FrameBase extends Global {
    * for more details). GROUP nodes do not have this attribute
    * @default []
    */
-  readonly layoutGrids: ReadonlyArray<LayoutGrid>;
+  readonly layoutGrids?: ReadonlyArray<LayoutGrid>;
   /**
    * An array of effects attached to this node
    * (see effects sectionfor more details)
@@ -215,11 +219,11 @@ export interface FrameBase extends Global {
    * Does this node mask sibling nodes in front of it?
    * @default false
    */
-  readonly isMask: boolean;
+  readonly isMask?: boolean;
   /**
    * Styles this node uses from the global `styles`
    */
-  readonly styles: StylesObject;
+  readonly styles?: StylesObject;
 }
 
 /** A node of fixed size containing other nodes */
@@ -237,7 +241,7 @@ export interface VectorBase extends Global {
    * An array of export settings representing images to export from node
    * @default []
    */
-  readonly exportSettings: ReadonlyArray<ExportSetting>;
+  readonly exportSettings?: ReadonlyArray<ExportSetting>;
   /**
    * How this node blends with nodes behind it in the scene
    * (see blend mode section for more details)
@@ -247,7 +251,7 @@ export interface VectorBase extends Global {
    * Keep height and width constrained to same ratio
    * @default false
    */
-  readonly preserveRatio: boolean;
+  readonly preserveRatio?: boolean;
   /**
    * Horizontal and vertical layout constraints for node
    */
@@ -256,22 +260,22 @@ export interface VectorBase extends Global {
    * Node ID of node to transition to in prototyping
    * @default null
    */
-  readonly transitionNodeID: string | null;
+  readonly transitionNodeID?: string | null;
   /**
    * The duration of the prototyping transition on this node (in milliseconds)
    * @default null
    */
-  readonly transitionDuration: number | null;
+  readonly transitionDuration?: number | null;
   /**
    * The easing curve used in the prototyping transition on this node
    * @default null
    */
-  readonly transitionEasing: EasingType | null;
+  readonly transitionEasing?: EasingType | null;
   /**
    * Opacity of the node
    * @default 1
    */
-  readonly opacity: number;
+  readonly opacity?: number;
   /** Bounding box of the node in absolute space coordinates */
   readonly absoluteBoundingBox: Rect;
 
@@ -301,7 +305,7 @@ export interface VectorBase extends Global {
    * Does this node mask sibling nodes in front of it?
    * @default false
    */
-  readonly isMask: boolean;
+  readonly isMask?: boolean;
   /**
    * An array of fill paints applied to the node
    * @default []
@@ -340,7 +344,7 @@ export interface VectorBase extends Global {
   /**
    * Styles this node uses from the global `styles`
    */
-  readonly styles: StylesObject;
+  readonly styles?: StylesObject;
 }
 
 /** A vector network, consisting of vertices and edges */
@@ -383,8 +387,10 @@ export interface RegularPolygon extends VectorBase {
 /** A rectangle */
 export interface Rectangle extends VectorBase {
   readonly type: 'RECTANGLE';
-  /** Radius of each corner of the rectangle */
-  readonly cornerRadius: number;
+  /** Radius of each corner of the rectangle if a single radius is set for all corners */
+  readonly cornerRadius?: number;
+  /** Array of length 4 of the radius of each corner of the rectangle, starting in the top left and proceeding clockwise */
+  readonly rectangleCornerRadii?: [number, number, number, number];
 }
 
 /** A text box */
@@ -577,13 +583,13 @@ export interface Paint {
    * Is the paint enabled?
    * @default true
    */
-  readonly visible: boolean;
+  readonly visible?: boolean;
   /**
    * Overall opacity of paint (colors within the paint can also have opacity
    * values which would blend with this)
    * @default 1
    */
-  readonly opacity: number;
+  readonly opacity?: number;
   // for solid paints
   /** Solid color of the paint */
   readonly color?: Color;
@@ -683,7 +689,7 @@ export interface TypeStyle {
  * A description of a master component. Helps you identify which component
  * instances are attached to
  */
-export interface Component {
+export interface ComponentMetadata {
   /** The componens key */
   readonly key: string;
   /** The name of the component */
@@ -746,7 +752,7 @@ export interface ProjectSummary {
 
 export interface FileResponse {
   readonly components: {
-    readonly [key: string]: Component;
+    readonly [key: string]: ComponentMetadata;
   };
   readonly styles: {
     readonly [key: string]: Style;
@@ -756,6 +762,7 @@ export interface FileResponse {
   readonly name: string;
   readonly schemaVersion: number;
   readonly thumbnailUrl: string;
+  readonly version: string;
 }
 
 export interface FileImageResponse {
