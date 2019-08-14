@@ -692,6 +692,8 @@ export interface Component {
 export interface Style {
   /** The name of the stlye */
   readonly name: string;
+  /** A description of the style */
+  readonly description: string;
   /** The unique identifier of the style */
   readonly key: string;
   /** The type of style */
