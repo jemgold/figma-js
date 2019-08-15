@@ -96,9 +96,15 @@
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="typestyle.html#italic" class="tsd-kind-icon">italic</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="typestyle.html#letterspacing" class="tsd-kind-icon">letter<wbr>Spacing</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="typestyle.html#lineheightpercent" class="tsd-kind-icon">line<wbr>Height<wbr>Percent</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="typestyle.html#lineheightpercentfontsize" class="tsd-kind-icon">line<wbr>Height<wbr>Percent<wbr>Font<wbr>Size</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="typestyle.html#lineheightpx" class="tsd-kind-icon">line<wbr>Height<wbr>Px</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="typestyle.html#lineheightunit" class="tsd-kind-icon">line<wbr>Height<wbr>Unit</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="typestyle.html#paragraphindent" class="tsd-kind-icon">paragraph<wbr>Indent</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="typestyle.html#paragraphspacing" class="tsd-kind-icon">paragraph<wbr>Spacing</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="typestyle.html#textalignhorizontal" class="tsd-kind-icon">text<wbr>Align<wbr>Horizontal</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="typestyle.html#textalignvertical" class="tsd-kind-icon">text<wbr>Align<wbr>Vertical</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="typestyle.html#textcase" class="tsd-kind-icon">text<wbr>Case</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="typestyle.html#textdecoration" class="tsd-kind-icon">text<wbr>Decoration</a></li>
 							</ul>
 						</section>
 					</div>
@@ -108,11 +114,11 @@
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="fills" class="tsd-anchor"></a>
-					<h3>fills</h3>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> fills</h3>
 					<div class="tsd-signature tsd-kind-icon">fills<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ReadonlyArray</span><span class="tsd-signature-symbol">&lt;</span><a href="paint.html" class="tsd-signature-type">Paint</a><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/0950214/src/figmaTypes.ts#L523">figmaTypes.ts:523</a></li>
+							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/6242117/src/figmaTypes.ts#L690">figmaTypes.ts:690</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -127,7 +133,7 @@
 					<div class="tsd-signature tsd-kind-icon">font<wbr>Family<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/0950214/src/figmaTypes.ts#L507">figmaTypes.ts:507</a></li>
+							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/6242117/src/figmaTypes.ts#L670">figmaTypes.ts:670</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -142,7 +148,7 @@
 					<div class="tsd-signature tsd-kind-icon">font<wbr>Post<wbr>Script<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/0950214/src/figmaTypes.ts#L509">figmaTypes.ts:509</a></li>
+							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/6242117/src/figmaTypes.ts#L672">figmaTypes.ts:672</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -157,7 +163,7 @@
 					<div class="tsd-signature tsd-kind-icon">font<wbr>Size<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/0950214/src/figmaTypes.ts#L515">figmaTypes.ts:515</a></li>
+							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/6242117/src/figmaTypes.ts#L682">figmaTypes.ts:682</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -169,10 +175,10 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="fontweight" class="tsd-anchor"></a>
 					<h3>font<wbr>Weight</h3>
-					<div class="tsd-signature tsd-kind-icon">font<wbr>Weight<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<div class="tsd-signature tsd-kind-icon">font<wbr>Weight<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">100</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">200</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">300</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">400</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">500</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">600</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">700</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">800</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">900</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/0950214/src/figmaTypes.ts#L513">figmaTypes.ts:513</a></li>
+							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/6242117/src/figmaTypes.ts#L680">figmaTypes.ts:680</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -183,11 +189,11 @@
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="italic" class="tsd-anchor"></a>
-					<h3>italic</h3>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> italic</h3>
 					<div class="tsd-signature tsd-kind-icon">italic<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/0950214/src/figmaTypes.ts#L511">figmaTypes.ts:511</a></li>
+							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/6242117/src/figmaTypes.ts#L678">figmaTypes.ts:678</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -202,7 +208,7 @@
 					<div class="tsd-signature tsd-kind-icon">letter<wbr>Spacing<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/0950214/src/figmaTypes.ts#L521">figmaTypes.ts:521</a></li>
+							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/6242117/src/figmaTypes.ts#L688">figmaTypes.ts:688</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -217,7 +223,7 @@
 					<div class="tsd-signature tsd-kind-icon">line<wbr>Height<wbr>Percent<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/0950214/src/figmaTypes.ts#L527">figmaTypes.ts:527</a></li>
+							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/6242117/src/figmaTypes.ts#L694">figmaTypes.ts:694</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -227,12 +233,27 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="lineheightpercentfontsize" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> line<wbr>Height<wbr>Percent<wbr>Font<wbr>Size</h3>
+					<div class="tsd-signature tsd-kind-icon">line<wbr>Height<wbr>Percent<wbr>Font<wbr>Size<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/6242117/src/figmaTypes.ts#L702">figmaTypes.ts:702</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Line height as a percentage of the font size. Only returned when lineHeightPercent is not 100.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="lineheightpx" class="tsd-anchor"></a>
 					<h3>line<wbr>Height<wbr>Px</h3>
 					<div class="tsd-signature tsd-kind-icon">line<wbr>Height<wbr>Px<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/0950214/src/figmaTypes.ts#L525">figmaTypes.ts:525</a></li>
+							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/6242117/src/figmaTypes.ts#L692">figmaTypes.ts:692</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -242,12 +263,57 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="lineheightunit" class="tsd-anchor"></a>
+					<h3>line<wbr>Height<wbr>Unit</h3>
+					<div class="tsd-signature tsd-kind-icon">line<wbr>Height<wbr>Unit<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"PIXELS"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"FONT_SIZE_%"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"INTRINSIC_%"</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/6242117/src/figmaTypes.ts#L696">figmaTypes.ts:696</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The unit of the line height value specified by the user.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="paragraphindent" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> paragraph<wbr>Indent</h3>
+					<div class="tsd-signature tsd-kind-icon">paragraph<wbr>Indent<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/6242117/src/figmaTypes.ts#L676">figmaTypes.ts:676</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Paragraph indentation in px, 0 if not present</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="paragraphspacing" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> paragraph<wbr>Spacing</h3>
+					<div class="tsd-signature tsd-kind-icon">paragraph<wbr>Spacing<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/6242117/src/figmaTypes.ts#L674">figmaTypes.ts:674</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Space between paragraphs in px, 0 if not present</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="textalignhorizontal" class="tsd-anchor"></a>
 					<h3>text<wbr>Align<wbr>Horizontal</h3>
 					<div class="tsd-signature tsd-kind-icon">text<wbr>Align<wbr>Horizontal<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"LEFT"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"RIGHT"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"CENTER"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"JUSTIFIED"</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/0950214/src/figmaTypes.ts#L517">figmaTypes.ts:517</a></li>
+							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/6242117/src/figmaTypes.ts#L684">figmaTypes.ts:684</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -262,12 +328,42 @@
 					<div class="tsd-signature tsd-kind-icon">text<wbr>Align<wbr>Vertical<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"TOP"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"CENTER"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"BOTTOM"</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/0950214/src/figmaTypes.ts#L519">figmaTypes.ts:519</a></li>
+							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/6242117/src/figmaTypes.ts#L686">figmaTypes.ts:686</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p>Vertical text alignment as string enum</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="textcase" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> text<wbr>Case</h3>
+					<div class="tsd-signature tsd-kind-icon">text<wbr>Case<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"UPPER"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"LOWER"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"TITLE"</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/6242117/src/figmaTypes.ts#L698">figmaTypes.ts:698</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Text casing applied to the node, default is the original casing</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="textdecoration" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> text<wbr>Decoration</h3>
+					<div class="tsd-signature tsd-kind-icon">text<wbr>Decoration<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"STRIKETHROUGH"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"UNDERLINE"</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/6242117/src/figmaTypes.ts#L700">figmaTypes.ts:700</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Text decoration applied to the node, default is none</p>
 						</div>
 					</div>
 				</section>
@@ -313,13 +409,31 @@
 								<a href="typestyle.html#lineheightpercent" class="tsd-kind-icon">line<wbr>Height<wbr>Percent</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="typestyle.html#lineheightpercentfontsize" class="tsd-kind-icon">line<wbr>Height<wbr>Percent<wbr>Font<wbr>Size</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="typestyle.html#lineheightpx" class="tsd-kind-icon">line<wbr>Height<wbr>Px</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="typestyle.html#lineheightunit" class="tsd-kind-icon">line<wbr>Height<wbr>Unit</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="typestyle.html#paragraphindent" class="tsd-kind-icon">paragraph<wbr>Indent</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="typestyle.html#paragraphspacing" class="tsd-kind-icon">paragraph<wbr>Spacing</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="typestyle.html#textalignhorizontal" class="tsd-kind-icon">text<wbr>Align<wbr>Horizontal</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="typestyle.html#textalignvertical" class="tsd-kind-icon">text<wbr>Align<wbr>Vertical</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="typestyle.html#textcase" class="tsd-kind-icon">text<wbr>Case</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="typestyle.html#textdecoration" class="tsd-kind-icon">text<wbr>Decoration</a>
 							</li>
 						</ul>
 					</li>

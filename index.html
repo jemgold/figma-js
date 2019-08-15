@@ -74,57 +74,52 @@
 				<p><a href="http://jongold.github.io/figma-js">Full documentation</a> is available on the web, and most everything is typed with Typescript.</p>
 				<h3 id="creating-a-client">Creating a client</h3>
 				<p>Quickest start is to grab a personal access token from your Figma account settings page</p>
-				<pre><code class="lang-typescript"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> Figma <span class="hljs-keyword">from</span> <span class="hljs-string">'figma-js'</span>;
+				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> Figma <span class="hljs-keyword">from</span> <span class="hljs-string">'figma-js'</span>;
 
 <span class="hljs-keyword">const</span> token = <span class="hljs-string">'12345'</span>;
 
 <span class="hljs-keyword">const</span> client = Figma.Client({
   personalAccessToken: token
-});
-</code></pre>
+});</code></pre>
 				<p>Alternatively, if you&#39;re building an app with OAuth authentication, after you get back the OAuth access token…</p>
-				<pre><code class="lang-typescript"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> Figma <span class="hljs-keyword">from</span> <span class="hljs-string">'figma-js'</span>;
+				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> Figma <span class="hljs-keyword">from</span> <span class="hljs-string">'figma-js'</span>;
 
 <span class="hljs-keyword">const</span> token = <span class="hljs-string">'12345'</span>;
 
 <span class="hljs-keyword">const</span> client = Figma.Client({
   accessToken: token
-});
-</code></pre>
+});</code></pre>
 				<h3 id="doing-cool-things">Doing cool things</h3>
 				<p>Once you have instantiated a client, have fun!</p>
-				<pre><code class="lang-typescript">client.file(<span class="hljs-string">'file-id'</span>).then(<span class="hljs-function">(<span class="hljs-params">{ data }</span>) =&gt;</span> {
+				<pre><code class="language-typescript">client.file(<span class="hljs-string">'file-id'</span>).then(<span class="hljs-function">(<span class="hljs-params">{ data }</span>) =&gt;</span> {
   <span class="hljs-built_in">console</span>.log(data);
-});
-</code></pre>
+});</code></pre>
 				<h3 id="just-reusing-types">Just reusing types</h3>
 				<p>All of the types in the Figma file format / API are exported.</p>
-				<pre><code class="lang-typescript"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> Figma <span class="hljs-keyword">from</span> <span class="hljs-string">'figma-js'</span>;
+				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> Figma <span class="hljs-keyword">from</span> <span class="hljs-string">'figma-js'</span>;
 
 <span class="hljs-keyword">const</span> textNode: Figma.Text = {
   <span class="hljs-comment">// … this should autocomplete if your editor is set up for it!</span>
-};
-</code></pre>
+};</code></pre>
 				<h2 id="contributing">Contributing</h2>
 				<p>We used the <a href="https://github.com/bitjson/typescript-starter"><code>typescript-starter</code></a> repo for this - refer to its README for more detailed instructions.</p>
 				<p>Helpful development commands:</p>
-				<pre><code><span class="hljs-selector-tag">yarn</span> <span class="hljs-selector-tag">watch</span>
-<span class="hljs-selector-tag">yarn</span> <span class="hljs-selector-tag">docs</span>
-<span class="hljs-selector-tag">yarn</span> <span class="hljs-selector-tag">docs</span><span class="hljs-selector-pseudo">:publish</span>
-</code></pre><h3 id="contributions-welcomed">Contributions welcomed</h3>
+				<pre><code><span class="hljs-attr">yarn</span> <span class="hljs-string">watch</span>
+<span class="hljs-attr">yarn</span> <span class="hljs-string">docs</span>
+<span class="hljs-attr">yarn</span> <span class="hljs-string">docs:publish</span></code></pre><h3 id="contributions-welcomed">Contributions welcomed</h3>
 				<ul>
-					<li>[ ] <a href="https://github.com/jongold/figma-js/issues/1">generate types automatically</a></li>
-					<li>[ ] <a href="https://github.com/jongold/figma-js/issues/2">add tests</a></li>
+					<li><input disabled="" type="checkbox"> <a href="https://github.com/jongold/figma-js/issues/1">generate types automatically</a></li>
+					<li><input disabled="" type="checkbox"> <a href="https://github.com/jongold/figma-js/issues/2">add tests</a></li>
 				</ul>
 				<h3 id="committing">Committing</h3>
-				<pre><code>yarn global <span class="hljs-keyword">add</span><span class="bash"> commitizen
-</span>
-<span class="hljs-comment"># instead of git commit</span>
+				<pre><code>yarn <span class="hljs-keyword">global</span> <span class="hljs-keyword">add</span> commitizen
 
-git cz
-</code></pre><h2 id="contributors">Contributors</h2>
+# <span class="hljs-keyword">instead</span> <span class="hljs-keyword">of</span> git <span class="hljs-keyword">commit</span>
+
+git cz</code></pre><h2 id="contributors">Contributors</h2>
 				<ul>
 					<li><a href="https://github.com/jongold/">@jongold</a> (Airbnb)</li>
+					<li><a href="https://github.com/chrisdrackett/">@chrisdrackett</a></li>
 				</ul>
 			</div>
 		</div>
@@ -138,12 +133,6 @@ git cz
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-enum">
-						<a href="enums/blendmode.html" class="tsd-kind-icon">Blend<wbr>Mode</a>
-					</li>
-					<li class=" tsd-kind-enum">
-						<a href="enums/nodetype.html" class="tsd-kind-icon">Node<wbr>Type</a>
-					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/booleangroup.html" class="tsd-kind-icon">Boolean<wbr>Group</a>
 					</li>
@@ -172,6 +161,9 @@ git cz
 						<a href="interfaces/component.html" class="tsd-kind-icon">Component</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/componentmetadata.html" class="tsd-kind-icon">Component<wbr>Metadata</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/constraint.html" class="tsd-kind-icon">Constraint</a>
 					</li>
 					<li class=" tsd-kind-interface">
@@ -187,10 +179,16 @@ git cz
 						<a href="interfaces/exportsetting.html" class="tsd-kind-icon">Export<wbr>Setting</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/fileimagefillsresponse.html" class="tsd-kind-icon">File<wbr>Image<wbr>Fills<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/fileimageparams.html" class="tsd-kind-icon">File<wbr>Image<wbr>Params</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/fileimageresponse.html" class="tsd-kind-icon">File<wbr>Image<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/fileparams.html" class="tsd-kind-icon">File<wbr>Params</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/fileresponse.html" class="tsd-kind-icon">File<wbr>Response</a>
@@ -226,6 +224,9 @@ git cz
 						<a href="interfaces/paint.html" class="tsd-kind-icon">Paint</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/path.html" class="tsd-kind-icon">Path</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/postcommentparams.html" class="tsd-kind-icon">Post<wbr>Comment<wbr>Params</a>
 					</li>
 					<li class=" tsd-kind-interface">
@@ -233,6 +234,9 @@ git cz
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/projectsummary.html" class="tsd-kind-icon">Project<wbr>Summary</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/rect.html" class="tsd-kind-icon">Rect</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/rectangle.html" class="tsd-kind-icon">Rectangle</a>
@@ -245,6 +249,9 @@ git cz
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/star.html" class="tsd-kind-icon">Star</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/style.html" class="tsd-kind-icon">Style</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/teamprojectsresponse.html" class="tsd-kind-icon">Team<wbr>Projects<wbr>Response</a>
@@ -262,10 +269,52 @@ git cz
 						<a href="interfaces/vector.html" class="tsd-kind-icon">Vector</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/vector2.html" class="tsd-kind-icon">Vector2</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/vectorbase.html" class="tsd-kind-icon">Vector<wbr>Base</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#blendmode" class="tsd-kind-icon">Blend<wbr>Mode</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#easingtype" class="tsd-kind-icon">Easing<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
 						<a href="globals.html#node" class="tsd-kind-icon">Node</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#nodetype" class="tsd-kind-icon">Node<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#painttype" class="tsd-kind-icon">Paint<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#painttypegraident" class="tsd-kind-icon">Paint<wbr>Type<wbr>Graident</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#painttypeimage" class="tsd-kind-icon">Paint<wbr>Type<wbr>Image</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#painttypesolid" class="tsd-kind-icon">Paint<wbr>Type<wbr>Solid</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#scalemode" class="tsd-kind-icon">Scale<wbr>Mode</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#stylekeytype" class="tsd-kind-icon">Style<wbr>Key<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#styletype" class="tsd-kind-icon">Style<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#stylesobject" class="tsd-kind-icon">Styles<wbr>Object</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#texttype" class="tsd-kind-icon">Text<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#transform" class="tsd-kind-icon">Transform</a>
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#client" class="tsd-kind-icon">Client</a>

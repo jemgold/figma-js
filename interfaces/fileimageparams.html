@@ -84,6 +84,9 @@
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="fileimageparams.html#format" class="tsd-kind-icon">format</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="fileimageparams.html#ids" class="tsd-kind-icon">ids</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="fileimageparams.html#scale" class="tsd-kind-icon">scale</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="fileimageparams.html#svg_include_id" class="tsd-kind-icon">svg_<wbr>include_<wbr>id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="fileimageparams.html#svg_simplify_stroke" class="tsd-kind-icon">svg_<wbr>simplify_<wbr>stroke</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="fileimageparams.html#version" class="tsd-kind-icon">version</a></li>
 							</ul>
 						</section>
 					</div>
@@ -93,11 +96,11 @@
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="format" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> format</h3>
+					<h3>format</h3>
 					<div class="tsd-signature tsd-kind-icon">format<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"jpg"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"png"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"svg"</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/0950214/src/index.ts#L12">index.ts:12</a></li>
+							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/6242117/src/index.ts#L21">index.ts:21</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -108,11 +111,11 @@
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="ids" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> ids</h3>
+					<h3>ids</h3>
 					<div class="tsd-signature tsd-kind-icon">ids<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ReadonlyArray</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/0950214/src/index.ts#L8">index.ts:8</a></li>
+							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/6242117/src/index.ts#L17">index.ts:17</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -123,16 +126,72 @@
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="scale" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> scale</h3>
+					<h3>scale</h3>
 					<div class="tsd-signature tsd-kind-icon">scale<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/0950214/src/index.ts#L10">index.ts:10</a></li>
+							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/6242117/src/index.ts#L19">index.ts:19</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p>A number between 0.01 and 4, the image scaling factor</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="svg_include_id" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> svg_<wbr>include_<wbr>id</h3>
+					<div class="tsd-signature tsd-kind-icon">svg_<wbr>include_<wbr>id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/6242117/src/index.ts#L26">index.ts:26</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Whether to include id attributes for all SVG elements.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>default</dt>
+							<dd><p>false</p>
+							</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="svg_simplify_stroke" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> svg_<wbr>simplify_<wbr>stroke</h3>
+					<div class="tsd-signature tsd-kind-icon">svg_<wbr>simplify_<wbr>stroke<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/6242117/src/index.ts#L32">index.ts:32</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Whether to simplify inside/outside strokes and use stroke attribute if
+							possible instead of <mask>. Default: true.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>default</dt>
+							<dd><p>false</p>
+							</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="version" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> version</h3>
+					<div class="tsd-signature tsd-kind-icon">version<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/6242117/src/index.ts#L34">index.ts:34</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>A specific version ID to use. Omitting this will use the current version of the file</p>
 						</div>
 					</div>
 				</section>
@@ -161,6 +220,15 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="fileimageparams.html#scale" class="tsd-kind-icon">scale</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="fileimageparams.html#svg_include_id" class="tsd-kind-icon">svg_<wbr>include_<wbr>id</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="fileimageparams.html#svg_simplify_stroke" class="tsd-kind-icon">svg_<wbr>simplify_<wbr>stroke</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="fileimageparams.html#version" class="tsd-kind-icon">version</a>
 							</li>
 						</ul>
 					</li>
