@@ -82,6 +82,23 @@ export interface ClientInterface {
   ) => AxiosPromise<Figma.FileImageResponse>;
 
   /**
+   * Returns download links for all images present in image fills in a document.
+   * Image fills are how Figma represents any user supplied images.
+   * When you drag an image into Figma, we create a rectangle with a single
+   * fill that represents the image, and the user is able to transform the
+   * rectangle (and properties on the fill) as they wish.
+   *
+   * This endpoint returns a mapping from image references to the URLs at which
+   * the images may be download. Image URLs will expire after no more than 14 days.
+   * Image references are located in the output of the GET files endpoint under the
+   * imageRef attribute in a Paint.
+   * @param {fileId} String File to export images from
+   */
+  readonly fileImageFills: (
+    fileId: string
+  ) => AxiosPromise<Figma.FileImageFillsResponse>;
+
+  /**
    * A list of comments left on the file
    * @param {fileId} String File to get comments from
    */
@@ -142,6 +159,8 @@ export const Client = (opts: ClientOptions): ClientInterface => {
           ids: params.ids.join(',')
         }
       }),
+
+    fileImageFills: fileId => client.get(`files/${fileId}/images`),
 
     comments: fileId => client.get(`files/${fileId}/comments`),
 

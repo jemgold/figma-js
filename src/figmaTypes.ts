@@ -25,7 +25,9 @@ export type StyleKeyType =
   | 'text'
   | 'background';
 
-export type StylesObject = { [K in StyleKeyType]?: string };
+export type StylesObject = {
+  [key in StyleKeyType]: Record<key, string>
+}[StyleKeyType];
 
 export type ScaleMode = 'FILL' | 'FIT' | 'TILE' | 'STRETCH';
 
@@ -593,6 +595,11 @@ export interface Paint {
   // for solid paints
   /** Solid color of the paint */
   readonly color?: Color;
+  /**
+   * How this node blends with nodes behind it in the scene
+   * (see blend mode section for more details)
+   */
+  readonly blendMode: BlendMode;
   // for gradient paints
   /**
    * This field contains three vectors, each of which are a position in
@@ -612,14 +619,24 @@ export interface Paint {
    * between neighboring gradient stops.
    */
   readonly gradientStops?: ReadonlyArray<ColorStop>;
+
   // for image paints
+
   /** Image scaling mode */
   readonly scaleMode?: ScaleMode;
   /**
-   * How this node blends with nodes behind it in the scene
-   * (see blend mode section for more details)
+   * Affine transform applied to the image, only present if scaleMode is `STRETCH`
    */
-  readonly blendMode: BlendMode;
+  readonly imageTransform?: Transform;
+  /**
+   * Amount image is scaled by in tiling, only present if scaleMode is `TILE`
+   */
+  readonly scalingFactor?: number;
+  /**
+   * A reference to an image embedded in the file. To download the image using this reference,
+   * use the GET file images endpoint to retrieve the mapping from image references to image URLs
+   */
+  readonly imageRef?: string;
 }
 
 export interface Path {
@@ -704,6 +721,8 @@ export interface ComponentMetadata {
 export interface Style {
   /** The name of the stlye */
   readonly name: string;
+  /** A description of the style */
+  readonly description: string;
   /** The unique identifier of the style */
   readonly key: string;
   /** The type of style */
@@ -769,6 +788,16 @@ export interface FileImageResponse {
   readonly err: string | null;
   readonly images: {
     readonly [key: string]: string;
+  };
+}
+
+export interface FileImageFillsResponse {
+  readonly error: boolean;
+  readonly status: number;
+  readonly meta: {
+    images: {
+      readonly [key: string]: string;
+    };
   };
 }
 
