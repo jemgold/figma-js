@@ -25,7 +25,13 @@ export type StyleKeyType =
   | 'text'
   | 'background';
 
-export type StylesObject = { [K in StyleKeyType]?: string };
+export type StylesObject =
+  | { fill: string }
+  | { stroke: string }
+  | { effect: string }
+  | { grid: string }
+  | { text: string }
+  | { background: string };
 
 export type ScaleMode = 'FILL' | 'FIT' | 'TILE' | 'STRETCH';
 
