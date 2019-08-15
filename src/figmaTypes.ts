@@ -763,6 +763,16 @@ export interface FileImageResponse {
   };
 }
 
+export interface FileImageFillsResponse {
+  readonly error: boolean;
+  readonly status: number;
+  readonly meta: {
+    images: {
+      readonly [key: string]: string;
+    };
+  };
+}
+
 export interface CommentsResponse {
   readonly comments: ReadonlyArray<Comment>;
 }
