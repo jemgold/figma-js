@@ -589,6 +589,11 @@ export interface Paint {
   // for solid paints
   /** Solid color of the paint */
   readonly color?: Color;
+  /**
+   * How this node blends with nodes behind it in the scene
+   * (see blend mode section for more details)
+   */
+  readonly blendMode: BlendMode;
   // for gradient paints
   /**
    * This field contains three vectors, each of which are a position in
@@ -608,14 +613,24 @@ export interface Paint {
    * between neighboring gradient stops.
    */
   readonly gradientStops?: ReadonlyArray<ColorStop>;
+
   // for image paints
+
   /** Image scaling mode */
   readonly scaleMode?: ScaleMode;
   /**
-   * How this node blends with nodes behind it in the scene
-   * (see blend mode section for more details)
+   * Affine transform applied to the image, only present if scaleMode is `STRETCH`
    */
-  readonly blendMode: BlendMode;
+  readonly imageTransform?: Transform;
+  /**
+   * Amount image is scaled by in tiling, only present if scaleMode is `TILE`
+   */
+  readonly scalingFactor?: number;
+  /**
+   * A reference to an image embedded in the file. To download the image using this reference,
+   * use the GET file images endpoint to retrieve the mapping from image references to image URLs
+   */
+  readonly imageRef?: string;
 }
 
 export interface Path {
