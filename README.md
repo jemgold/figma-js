@@ -4,6 +4,7 @@ A simple wrapper for the Figma API
 
 Cool projects using this:
 - [figma-graphql](https://github.com/braposo/figma-graphql)
+- [figmint](https://github.com/tiltshift/figmint)
 
 ## Usage
 
