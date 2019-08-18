@@ -33,7 +33,8 @@
     "zzzreset": "git clean -dfx && git reset --hard && npm i",
     "clean": "trash build test",
     "all": "run-s doc:html",
-    "zzzprepare-release": "run-s all version doc:publish",
+    "prepare-release": "yarn build && yarn doc && yarn doc:publish",
+    "release": "yarn prepare-release && yarn publish && git push && git push --tag",
     "zzzpreinstall": "node -e \"if(process.env.npm_execpath.indexOf('yarn') === -1) throw new Error('figma-js must be installed with Yarn: https://yarnpkg.com/')\""
   },
   "scripts-info": {
