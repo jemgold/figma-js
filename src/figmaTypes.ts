@@ -476,7 +476,7 @@ export interface ExportSetting {
   /** File suffix to append to all filenames */
   readonly suffix: string;
   /** Image type, string enum */
-  readonly format: 'JPG' | 'PNG' | 'SVG';
+  readonly format: 'JPG' | 'PNG' | 'SVG' | 'PDF';
   /** Constraint that determines sizing of exported asset */
   readonly constraint: Constraint;
 }
@@ -695,11 +695,11 @@ export interface TypeStyle {
   /** The unit of the line height value specified by the user. */
   readonly lineHeightUnit: 'PIXELS' | 'FONT_SIZE_%' | 'INTRINSIC_%';
   /** Text casing applied to the node, default is the original casing */
-  readonly textCase? : 'UPPER' | 'LOWER' | 'TITLE';
+  readonly textCase?: 'UPPER' | 'LOWER' | 'TITLE';
   /** Text decoration applied to the node, default is none */
-  readonly textDecoration? : 'STRIKETHROUGH' | 'UNDERLINE';
+  readonly textDecoration?: 'STRIKETHROUGH' | 'UNDERLINE';
   /** Line height as a percentage of the font size. Only returned when lineHeightPercent is not 100. */
-  readonly lineHeightPercentFontSize? : number;
+  readonly lineHeightPercentFontSize?: number;
 }
 
 /**
