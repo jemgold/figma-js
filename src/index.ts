@@ -16,9 +16,9 @@ export interface FileImageParams {
   /** A list of node IDs to render */
   readonly ids: ReadonlyArray<string>;
   /** A number between 0.01 and 4, the image scaling factor */
-  readonly scale: number;
-  /** A string enum for the image output format, can be "jpg", "png", or "svg" */
-  readonly format: 'jpg' | 'png' | 'svg';
+  readonly scale?: number;
+  /** A string enum for the image output format, can be "jpg", "png", "svg", or "pdf" */
+  readonly format?: 'jpg' | 'png' | 'svg' | 'pdf';
   /**
    * Whether to include id attributes for all SVG elements.
    * @default false
