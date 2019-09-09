@@ -4,11 +4,26 @@ export * from './figmaTypes';
 import axios, { AxiosInstance, AxiosPromise } from 'axios';
 
 export interface FileParams {
-  // a string representing the id of the file
-  readonly fileId?: string;
-  // a string representing the specific version ID to retrieve
+  /**
+   * Comma separated list of nodes that you care about in the document.
+   * If specified, only a subset of the document will be returned corresponding to the nodes listed, their children, and everything between the root node and the listed nodes
+   */
+  readonly ids?: string;
+
+  /**
+   * Positive integer representing how deep into the document tree to traverse.
+   * For example, setting this to 1 returns only Pages, setting it to 2 returns Pages and all top level objects on each page.
+   * Not setting this parameter returns all nodes
+   */
+  readonly depth?: number;
+
+  /**
+   * A specific version ID to get. Omitting this will get the current version of the file
+   */
   readonly version?: string;
-  // returned data includes path data or not
+  /**
+   * Set to "paths" to export vector data
+   */
   readonly geometry?: string;
 }
 
