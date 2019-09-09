@@ -21,6 +21,22 @@ export interface FileParams {
    * A specific version ID to get. Omitting this will get the current version of the file
    */
   readonly version?: string;
+
+  /**
+   * Set to "paths" to export vector data
+   */
+  readonly geometry?: string;
+}
+
+export interface FileNodesParams {
+  /** A list of node IDs to retrieve and convert */
+  readonly ids: ReadonlyArray<string>;
+
+  /**
+   * A specific version ID to get. Omitting this will get the current version of the file
+   */
+  readonly version?: string;
+
   /**
    * Set to "paths" to export vector data
    */
@@ -81,6 +97,20 @@ export interface ClientInterface {
     fileId: string,
     params?: FileParams
   ) => AxiosPromise<Figma.FileResponse>;
+
+  /**
+   * Returns the nodes referenced to by :ids as a JSON object.
+   * The nodes are retrieved from the Figma file referenced to by :key.
+   * The node Id and file key can be parsed from any Figma node url:
+   * https://www.figma.com/file/:key/:title?node-id=:id.
+   * @param {fileId} String File to export JSON from
+   * @param {params} FileNodesParams
+   * @see https://www.figma.com/developers/api#get-file-nodes-endpoint
+   */
+  readonly fileNodes: (
+    fileId: string,
+    params: FileNodesParams
+  ) => AxiosPromise<Figma.FileNodesResponse>;
 
   /**
    * If no error occurs, "images" will be populated with a map from
@@ -175,6 +205,14 @@ export const Client = (opts: ClientOptions): ClientInterface => {
     client,
 
     file: (fileId, params = {}) => client.get(`files/${fileId}`, { params }),
+
+    fileNodes: (fileId, params) =>
+      client.get(`files/${fileId}/nodes`, {
+        params: {
+          ...params,
+          ids: params.ids.join(',')
+        }
+      }),
 
     fileImages: (fileId, params) =>
       client.get(`images/${fileId}`, {

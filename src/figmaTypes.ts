@@ -784,6 +784,25 @@ export interface FileResponse {
   readonly version: string;
 }
 
+export interface FileNodesResponse {
+  readonly nodes: {
+    readonly [key: string]: null | {
+      readonly document: Node;
+      readonly components: {
+        readonly [key: string]: ComponentMetadata;
+      };
+      readonly styles: {
+        readonly [key: string]: Style;
+      };
+      readonly schemaVersion: number;
+    };
+  };
+  readonly lastModified: string;
+  readonly name: string;
+  readonly thumbnailUrl: string;
+  readonly version: string;
+}
+
 export interface FileImageResponse {
   readonly err: string | null;
   readonly images: {
