@@ -180,6 +180,12 @@ export interface ClientInterface {
   ) => AxiosPromise<Figma.Comment>;
 
   /**
+   * Get user information for the authenticated user.
+   * @see https://www.figma.com/developers/api#get-me-endpoint
+   */
+  readonly me: () => AxiosPromise<Figma.User & { readonly email: string }>;
+
+  /**
    * Lists the projects for a specified team. Note that this will only
    * return projects visible to the authenticated user or owner of the
    * developer token.
@@ -243,6 +249,8 @@ export const Client = (opts: ClientOptions): ClientInterface => {
 
     postComment: (fileId, params) =>
       client.post(`files/${fileId}/comments`, params),
+
+    me: () => client.get(`me`),
 
     teamProjects: teamId => client.get(`teams/${teamId}/projects`),
 
