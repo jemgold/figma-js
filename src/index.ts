@@ -74,6 +74,19 @@ export interface PostCommentParams {
   readonly client_meta: Figma.Vector2;
 }
 
+export interface PaginationParams {
+  /**
+   * Number of items in a paged list of results.
+   * @default 30
+   */
+  readonly page_size?: number;
+  /**
+   * A map that indicates the starting/ending point from which objects are returned.
+   * The cursor value is an internally tracked integer that doesn't correspond to any Ids
+   */
+  readonly cursor?: { readonly before?: number; readonly after?: number };
+}
+
 export interface ClientOptions {
   /** access token returned from OAuth authentication */
   readonly accessToken?: string;
@@ -204,6 +217,42 @@ export interface ClientInterface {
   readonly projectFiles: (
     projectId: string
   ) => AxiosPromise<Figma.ProjectFilesResponse>;
+
+  /**
+   * Get a paginated list of published components within a team library
+   * @param {teamId} String Id of the team to list components from
+   * @see https://www.figma.com/developers/api#get-team-components-endpoint
+   */
+  readonly teamComponents: (
+    teamId: string,
+    params?: PaginationParams
+  ) => AxiosPromise<Figma.TeamComponentsResponse>;
+
+  /**
+   * Get metadata on a component by key.
+   * @param {key} The unique identifier of the component.
+   * @see https://www.figma.com/developers/api#get-component-endpoint
+   */
+  readonly component: (
+    key: string
+  ) => AxiosPromise<Figma.FullComponentMetadata>;
+
+  /**
+   * Get a paginated list of published styles within a team library
+   * @param {teamId} String Id of the team to list components from
+   * @see https://www.figma.com/developers/api#get-team-styles-endpoint
+   */
+  readonly teamStyles: (
+    teamId: string,
+    params?: PaginationParams
+  ) => AxiosPromise<Figma.TeamStylesResponse>;
+
+  /**
+   * Get metadata on a style by key.
+   * @param {key} The unique identifier of the style.
+   * @see https://www.figma.com/developers/api#get-style-endpoint
+   */
+  readonly style: (key: string) => AxiosPromise<Figma.FullStyleMetadata>;
 }
 
 export const Client = (opts: ClientOptions): ClientInterface => {
@@ -254,6 +303,16 @@ export const Client = (opts: ClientOptions): ClientInterface => {
 
     teamProjects: teamId => client.get(`teams/${teamId}/projects`),
 
-    projectFiles: projectId => client.get(`projects/${projectId}/files`)
+    projectFiles: projectId => client.get(`projects/${projectId}/files`),
+
+    teamComponents: (teamId, params = {}) =>
+      client.get(`teams/${teamId}/components`, { params }),
+
+    component: key => client.get(`components/${key}`),
+
+    teamStyles: (teamId, params = {}) =>
+      client.get(`teams/${teamId}/styles`, { params }),
+
+    style: key => client.get(`styles/${key}`)
   };
 };
