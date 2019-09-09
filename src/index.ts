@@ -99,6 +99,19 @@ export interface ClientInterface {
   ) => AxiosPromise<Figma.FileResponse>;
 
   /**
+   * Returns a list of the versions of a file.
+   * The file key can be parsed from any Figma node url:
+   * https://www.figma.com/file/:key/:title.
+   * @param {fileId} String File to get version history from
+   * @see https://www.figma.com/developers/api#get-file-versions-endpoint
+   */
+  readonly fileVersions: (
+    fileId: string,
+    ids: ReadonlyArray<string>,
+    params?: FileNodesParams
+  ) => AxiosPromise<Figma.FileVersionsResponse>;
+
+  /**
    * Returns the nodes referenced to by :ids as a JSON object.
    * The nodes are retrieved from the Figma file referenced to by :key.
    * The node Id and file key can be parsed from any Figma node url:
@@ -205,6 +218,8 @@ export const Client = (opts: ClientOptions): ClientInterface => {
     client,
 
     file: (fileId, params = {}) => client.get(`files/${fileId}`, { params }),
+
+    fileVersions: fileId => client.get(`files/${fileId}/versions`),
 
     fileNodes: (fileId, params) =>
       client.get(`files/${fileId}/nodes`, {

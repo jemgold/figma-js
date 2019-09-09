@@ -760,7 +760,11 @@ export interface Comment {
 
 /** A description of a user */
 export interface User {
+  /** Unique stable id of the user */
+  readonly id: string;
+  /** Name of the user */
   readonly handle: string;
+  /** URL link to the user's profile image */
   readonly img_url: string;
 }
 
@@ -801,6 +805,23 @@ export interface FileNodesResponse {
   readonly name: string;
   readonly thumbnailUrl: string;
   readonly version: string;
+}
+
+export interface VersionMetadata {
+  /** Unique identifier for version */
+  readonly id: string;
+  /** The UTC ISO 8601 time at which the version was created */
+  readonly created_at: string;
+  /** The label given to the version in the editor */
+  readonly label: string;
+  /** The description of the version as entered in the editor */
+  readonly description: string;
+  /** The user that created the version */
+  readonly user: User;
+}
+
+export interface FileVersionsResponse {
+  readonly versions: ReadonlyArray<VersionMetadata>;
 }
 
 export interface FileImageResponse {
