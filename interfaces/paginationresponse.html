@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>FileParams | figma-js</title>
+	<title>PaginationResponse | figma-js</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="fileparams.html">FileParams</a>
+					<a href="paginationresponse.html">PaginationResponse</a>
 				</li>
 			</ul>
-			<h1>Interface FileParams</h1>
+			<h1>Interface PaginationResponse</h1>
 		</div>
 	</div>
 </header>
@@ -70,7 +70,15 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">FileParams</span>
+						<span class="target">PaginationResponse</span>
+						<ul class="tsd-hierarchy">
+							<li>
+								<a href="teamcomponentsresponse.html" class="tsd-signature-type">TeamComponentsResponse</a>
+							</li>
+							<li>
+								<a href="teamstylesresponse.html" class="tsd-signature-type">TeamStylesResponse</a>
+							</li>
+						</ul>
 					</li>
 				</ul>
 			</section>
@@ -78,81 +86,36 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section ">
+						<section class="tsd-index-section tsd-is-not-exported">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="fileparams.html#depth" class="tsd-kind-icon">depth</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="fileparams.html#geometry" class="tsd-kind-icon">geometry</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="fileparams.html#ids" class="tsd-kind-icon">ids</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="fileparams.html#version" class="tsd-kind-icon">version</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="paginationresponse.html#cursor" class="tsd-kind-icon">cursor</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group ">
+			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="depth" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> depth</h3>
-					<div class="tsd-signature tsd-kind-icon">depth<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+					<a name="cursor" class="tsd-anchor"></a>
+					<h3>cursor</h3>
+					<div class="tsd-signature tsd-kind-icon">cursor<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/0be6070/src/index.ts#L18">index.ts:18</a></li>
+							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/0be6070/src/figmaTypes.ts#L907">figmaTypes.ts:907</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Positive integer representing how deep into the document tree to traverse.
-								For example, setting this to 1 returns only Pages, setting it to 2 returns Pages and all top level objects on each page.
-							Not setting this parameter returns all nodes</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="geometry" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> geometry</h3>
-					<div class="tsd-signature tsd-kind-icon">geometry<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/0be6070/src/index.ts#L28">index.ts:28</a></li>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>after<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>before<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+							</li>
 						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Set to &quot;paths&quot; to export vector data</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="ids" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> ids</h3>
-					<div class="tsd-signature tsd-kind-icon">ids<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/0be6070/src/index.ts#L11">index.ts:11</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Comma separated list of nodes that you care about in the document.
-							If specified, only a subset of the document will be returned corresponding to the nodes listed, their children, and everything between the root node and the listed nodes</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="version" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> version</h3>
-					<div class="tsd-signature tsd-kind-icon">version<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/0be6070/src/index.ts#L23">index.ts:23</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>A specific version ID to get. Omitting this will get the current version of the file</p>
-						</div>
 					</div>
 				</section>
 			</section>
@@ -169,20 +132,11 @@
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface">
-						<a href="fileparams.html" class="tsd-kind-icon">File<wbr>Params</a>
+					<li class="current tsd-kind-interface tsd-is-not-exported">
+						<a href="paginationresponse.html" class="tsd-kind-icon">Pagination<wbr>Response</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="fileparams.html#depth" class="tsd-kind-icon">depth</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="fileparams.html#geometry" class="tsd-kind-icon">geometry</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="fileparams.html#ids" class="tsd-kind-icon">ids</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="fileparams.html#version" class="tsd-kind-icon">version</a>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+								<a href="paginationresponse.html#cursor" class="tsd-kind-icon">cursor</a>
 							</li>
 						</ul>
 					</li>

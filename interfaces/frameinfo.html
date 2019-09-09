@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>FileParams | figma-js</title>
+	<title>FrameInfo | figma-js</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="fileparams.html">FileParams</a>
+					<a href="frameinfo.html">FrameInfo</a>
 				</li>
 			</ul>
-			<h1>Interface FileParams</h1>
+			<h1>Interface FrameInfo</h1>
 		</div>
 	</div>
 </header>
@@ -70,7 +70,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">FileParams</span>
+						<span class="target">FrameInfo</span>
 					</li>
 				</ul>
 			</section>
@@ -81,10 +81,11 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="fileparams.html#depth" class="tsd-kind-icon">depth</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="fileparams.html#geometry" class="tsd-kind-icon">geometry</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="fileparams.html#ids" class="tsd-kind-icon">ids</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="fileparams.html#version" class="tsd-kind-icon">version</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="frameinfo.html#background_color" class="tsd-kind-icon">background_<wbr>color</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="frameinfo.html#name" class="tsd-kind-icon">name</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="frameinfo.html#node_id" class="tsd-kind-icon">node_<wbr>id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="frameinfo.html#page_id" class="tsd-kind-icon">page_<wbr>id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="frameinfo.html#page_name" class="tsd-kind-icon">page_<wbr>name</a></li>
 							</ul>
 						</section>
 					</div>
@@ -93,65 +94,77 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="depth" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> depth</h3>
-					<div class="tsd-signature tsd-kind-icon">depth<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="background_color" class="tsd-anchor"></a>
+					<h3>background_<wbr>color</h3>
+					<div class="tsd-signature tsd-kind-icon">background_<wbr>color<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/0be6070/src/index.ts#L18">index.ts:18</a></li>
+							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/0be6070/src/figmaTypes.ts#L724">figmaTypes.ts:724</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Positive integer representing how deep into the document tree to traverse.
-								For example, setting this to 1 returns only Pages, setting it to 2 returns Pages and all top level objects on each page.
-							Not setting this parameter returns all nodes</p>
+							<p>Background color of the frame</p>
 						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="geometry" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> geometry</h3>
-					<div class="tsd-signature tsd-kind-icon">geometry<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="name" class="tsd-anchor"></a>
+					<h3>name</h3>
+					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/0be6070/src/index.ts#L28">index.ts:28</a></li>
+							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/0be6070/src/figmaTypes.ts#L722">figmaTypes.ts:722</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Set to &quot;paths&quot; to export vector data</p>
+							<p>The name of the frame</p>
 						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="ids" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> ids</h3>
-					<div class="tsd-signature tsd-kind-icon">ids<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="node_id" class="tsd-anchor"></a>
+					<h3>node_<wbr>id</h3>
+					<div class="tsd-signature tsd-kind-icon">node_<wbr>id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/0be6070/src/index.ts#L11">index.ts:11</a></li>
+							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/0be6070/src/figmaTypes.ts#L720">figmaTypes.ts:720</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Comma separated list of nodes that you care about in the document.
-							If specified, only a subset of the document will be returned corresponding to the nodes listed, their children, and everything between the root node and the listed nodes</p>
+							<p>Id of the frame node within the figma file</p>
 						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="version" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> version</h3>
-					<div class="tsd-signature tsd-kind-icon">version<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="page_id" class="tsd-anchor"></a>
+					<h3>page_<wbr>id</h3>
+					<div class="tsd-signature tsd-kind-icon">page_<wbr>id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/0be6070/src/index.ts#L23">index.ts:23</a></li>
+							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/0be6070/src/figmaTypes.ts#L726">figmaTypes.ts:726</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>A specific version ID to get. Omitting this will get the current version of the file</p>
+							<p>Id of the frame&#39;s residing page</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="page_name" class="tsd-anchor"></a>
+					<h3>page_<wbr>name</h3>
+					<div class="tsd-signature tsd-kind-icon">page_<wbr>name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/0be6070/src/figmaTypes.ts#L728">figmaTypes.ts:728</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Name of the frame&#39;s residing page</p>
 						</div>
 					</div>
 				</section>
@@ -170,19 +183,22 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface">
-						<a href="fileparams.html" class="tsd-kind-icon">File<wbr>Params</a>
+						<a href="frameinfo.html" class="tsd-kind-icon">Frame<wbr>Info</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="fileparams.html#depth" class="tsd-kind-icon">depth</a>
+								<a href="frameinfo.html#background_color" class="tsd-kind-icon">background_<wbr>color</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="fileparams.html#geometry" class="tsd-kind-icon">geometry</a>
+								<a href="frameinfo.html#name" class="tsd-kind-icon">name</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="fileparams.html#ids" class="tsd-kind-icon">ids</a>
+								<a href="frameinfo.html#node_id" class="tsd-kind-icon">node_<wbr>id</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="fileparams.html#version" class="tsd-kind-icon">version</a>
+								<a href="frameinfo.html#page_id" class="tsd-kind-icon">page_<wbr>id</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="frameinfo.html#page_name" class="tsd-kind-icon">page_<wbr>name</a>
 							</li>
 						</ul>
 					</li>
