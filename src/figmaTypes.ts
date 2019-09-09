@@ -26,7 +26,7 @@ export type StyleKeyType =
   | 'background';
 
 export type StylesObject = {
-  [key in StyleKeyType]: Record<key, string>
+  [key in StyleKeyType]: Record<key, string>;
 }[StyleKeyType];
 
 export type ScaleMode = 'FILL' | 'FIT' | 'TILE' | 'STRETCH';
@@ -795,7 +795,7 @@ export interface FileImageFillsResponse {
   readonly error: boolean;
   readonly status: number;
   readonly meta: {
-    images: {
+    readonly images: {
       readonly [key: string]: string;
     };
   };

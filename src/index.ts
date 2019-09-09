@@ -28,8 +28,8 @@ export interface FileImageParams {
   readonly svg_include_id?: boolean;
   /**
    * Whether to simplify inside/outside strokes and use stroke attribute if
-   * possible instead of <mask>. Default: true.
-   * @default false
+   * possible instead of <mask>.
+   * @default true
    */
   readonly svg_simplify_stroke?: boolean;
   /** A specific version ID to use. Omitting this will use the current version of the file */
