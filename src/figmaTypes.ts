@@ -26,7 +26,7 @@ export type StyleKeyType =
   | 'background';
 
 export type StylesObject = {
-  [key in StyleKeyType]: Record<key, string>
+  [key in StyleKeyType]: Record<key, string>;
 }[StyleKeyType];
 
 export type ScaleMode = 'FILL' | 'FIT' | 'TILE' | 'STRETCH';
@@ -707,12 +707,55 @@ export interface TypeStyle {
  * instances are attached to
  */
 export interface ComponentMetadata {
-  /** The componens key */
+  /** The unique identifier of the element */
   readonly key: string;
-  /** The name of the component */
+  /** The name of the element */
   readonly name: string;
-  /** The description of the component as entered in the editor */
+  /** The description of the element as entered in the editor */
   readonly description: string;
+}
+
+export interface FrameInfo {
+  /** Id of the frame node within the figma file */
+  readonly node_id: string;
+  /** The name of the frame */
+  readonly name: string;
+  /** Background color of the frame */
+  readonly background_color: string;
+  /** Id of the frame's residing page */
+  readonly page_id: string;
+  /** Name of the frame's residing page */
+  readonly page_name: string;
+}
+
+interface SharedElement extends ComponentMetadata {
+  /** The unique identifier of the figma file which contains the element */
+  readonly file_key: string;
+  /** URL link to the element's thumbnail image */
+  readonly thumbnail_urlString: string;
+  /** The UTC ISO 8601 time at which the element was created */
+  readonly created_at: string;
+  /** The UTC ISO 8601 time at which the element was updated */
+  readonly updated_at: string;
+  /** The user who last updated the element */
+  readonly user: User;
+}
+
+/**
+ * An arrangement of published UI elements that can be instantiated across figma files
+ */
+export interface FullComponentMetadata extends SharedElement {
+  /** Data on component's containing frame, if component resides within a frame */
+  readonly containing_frame: FrameInfo;
+  /** Data on component's containing page, if component resides in a multi-page file */
+  readonly containing_page: any; // broken link in the doc
+}
+
+export interface FullStyleMetadata extends SharedElement {
+  /** The type of style */
+  readonly style_type: StyleType;
+  /** A user specified order number by which the style can be sorted */
+  readonly sort_position: string;
 }
 
 /**
@@ -760,7 +803,11 @@ export interface Comment {
 
 /** A description of a user */
 export interface User {
+  /** Unique stable id of the user */
+  readonly id: string;
+  /** Name of the user */
   readonly handle: string;
+  /** URL link to the user's profile image */
   readonly img_url: string;
 }
 
@@ -784,6 +831,42 @@ export interface FileResponse {
   readonly version: string;
 }
 
+export interface FileNodesResponse {
+  readonly nodes: {
+    readonly [key: string]: null | {
+      readonly document: Node;
+      readonly components: {
+        readonly [key: string]: ComponentMetadata;
+      };
+      readonly styles: {
+        readonly [key: string]: Style;
+      };
+      readonly schemaVersion: number;
+    };
+  };
+  readonly lastModified: string;
+  readonly name: string;
+  readonly thumbnailUrl: string;
+  readonly version: string;
+}
+
+export interface VersionMetadata {
+  /** Unique identifier for version */
+  readonly id: string;
+  /** The UTC ISO 8601 time at which the version was created */
+  readonly created_at: string;
+  /** The label given to the version in the editor */
+  readonly label: string;
+  /** The description of the version as entered in the editor */
+  readonly description: string;
+  /** The user that created the version */
+  readonly user: User;
+}
+
+export interface FileVersionsResponse {
+  readonly versions: ReadonlyArray<VersionMetadata>;
+}
+
 export interface FileImageResponse {
   readonly err: string | null;
   readonly images: {
@@ -795,7 +878,7 @@ export interface FileImageFillsResponse {
   readonly error: boolean;
   readonly status: number;
   readonly meta: {
-    images: {
+    readonly images: {
       readonly [key: string]: string;
     };
   };
@@ -818,4 +901,19 @@ export interface TeamProjectsResponse {
 
 export interface ProjectFilesResponse {
   readonly files: ReadonlyArray<FileSummary>;
+}
+
+interface PaginationResponse {
+  readonly cursor: {
+    readonly before: number;
+    readonly after: number;
+  };
+}
+
+export interface TeamComponentsResponse extends PaginationResponse {
+  readonly components: ReadonlyArray<FullComponentMetadata>;
+}
+
+export interface TeamStylesResponse extends PaginationResponse {
+  readonly styles: ReadonlyArray<FullStyleMetadata>;
 }
