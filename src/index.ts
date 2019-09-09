@@ -75,6 +75,7 @@ export interface ClientInterface {
    * https://www.figma.com/file/:key/:title.
    * The "document" attribute contains a Node of type DOCUMENT.
    * @param {fileId} String File to export JSON from
+   * @see https://www.figma.com/developers/api#get-files-endpoint
    */
   readonly file: (
     fileId: string,
@@ -92,6 +93,7 @@ export interface ClientInterface {
    * map whether or not the render succeeded.
    * @param {fileId} String File to export images from
    * @param {params} FileImageParams
+   * @see https://www.figma.com/developers/api#get-images-endpoint
    */
   readonly fileImages: (
     fileId: string,
@@ -110,6 +112,7 @@ export interface ClientInterface {
    * Image references are located in the output of the GET files endpoint under the
    * imageRef attribute in a Paint.
    * @param {fileId} String File to export images from
+   * @see https://www.figma.com/developers/api#get-image-fills-endpoint
    */
   readonly fileImageFills: (
     fileId: string
@@ -118,6 +121,7 @@ export interface ClientInterface {
   /**
    * A list of comments left on the file
    * @param {fileId} String File to get comments from
+   * @see https://www.figma.com/developers/api#get-comments-endpoint
    */
   readonly comments: (fileId: string) => AxiosPromise<Figma.CommentsResponse>;
 
@@ -125,6 +129,7 @@ export interface ClientInterface {
    * Posts a new comment on the file.
    * @param {fileId} String File to get comments from
    * @param {params} PostCommentParams
+   * @see https://www.figma.com/developers/api#post-comments-endpoint
    */
   readonly postComment: (
     fileId: string,
@@ -136,6 +141,7 @@ export interface ClientInterface {
    * return projects visible to the authenticated user or owner of the
    * developer token.
    * @param {teamId} String Id of the team to list projects from
+   * @see https://www.figma.com/developers/api#get-team-projects-endpoint
    */
   readonly teamProjects: (
     teamId: string
@@ -144,6 +150,7 @@ export interface ClientInterface {
   /**
    * List the files in a given project.
    * @param {projectId} String Id of the project to list files from
+   * @see https://www.figma.com/developers/api#get-project-files-endpoint
    */
   readonly projectFiles: (
     projectId: string
