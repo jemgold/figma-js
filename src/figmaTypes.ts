@@ -637,6 +637,12 @@ export interface Paint {
    * use the GET file images endpoint to retrieve the mapping from image references to image URLs
    */
   readonly imageRef?: string;
+  /**
+   * A reference to the GIF embedded in this node, if the image is a GIF. 
+   * To download the image using this reference, 
+   * use the GET file images endpoint to retrieve the mapping from image references to image URLs
+   */
+  readonly gifRef?: string;
 }
 
 export interface Path {
