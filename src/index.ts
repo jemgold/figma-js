@@ -71,7 +71,7 @@ export interface PostCommentParams {
   /** The text contents of the comment to post */
   readonly message: string;
   /** The absolute canvas position of where to place the comment */
-  readonly client_meta: Figma.Vector2;
+  readonly client_meta: Figma.Vector2 | Figma.FrameOffset;
 }
 
 export interface PaginationParams {

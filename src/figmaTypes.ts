@@ -734,6 +734,14 @@ export interface FrameInfo {
   readonly page_name: string;
 }
 
+/** A relative offset within a frame */
+export interface FrameOffset {
+  /** Unique id specifying the frame */
+  readonly node_id: string
+  /** 2d vector offset within the frame */
+  readonly node_offset: Vector2
+}
+
 interface SharedElement extends ComponentMetadata {
   /** The unique identifier of the figma file which contains the element */
   readonly file_key: string;
@@ -799,7 +807,7 @@ export interface Comment {
    * The content of the comment
    */
   readonly message: string;
-  readonly client_meta: Vector2;
+  readonly client_meta: Vector2 | FrameOffset;
   /**
    * Only set for top level comments. The number displayed with the
    * comment in the UI
