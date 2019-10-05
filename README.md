@@ -1,3 +1,4 @@
+![Figma Api Demo Logo](./logo.svg)
 # Figma.js
 
 A simple wrapper for the Figma API
