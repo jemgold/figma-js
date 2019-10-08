@@ -1,6 +1,6 @@
 {
   "name": "figma-js",
-  "version": "1.8.4",
+  "version": "1.8.5",
   "description": "A simple wrapper for the Figma API",
   "main": "build/main/index.js",
   "types": "build/main/index.d.ts",
