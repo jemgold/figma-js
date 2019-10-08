@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>CommentsResponse | figma-js</title>
+	<title>FrameOffset | figma-js</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,21 +56,28 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="commentsresponse.html">CommentsResponse</a>
+					<a href="frameoffset.html">FrameOffset</a>
 				</li>
 			</ul>
-			<h1>Interface CommentsResponse</h1>
+			<h1>Interface FrameOffset</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>A relative offset within a frame</p>
+					</div>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">CommentsResponse</span>
+						<span class="target">FrameOffset</span>
 					</li>
 				</ul>
 			</section>
@@ -81,7 +88,8 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="commentsresponse.html#comments" class="tsd-kind-icon">comments</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="frameoffset.html#node_id" class="tsd-kind-icon">node_<wbr>id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="frameoffset.html#node_offset" class="tsd-kind-icon">node_<wbr>offset</a></li>
 							</ul>
 						</section>
 					</div>
@@ -90,14 +98,34 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="comments" class="tsd-anchor"></a>
-					<h3>comments</h3>
-					<div class="tsd-signature tsd-kind-icon">comments<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ReadonlyArray</span><span class="tsd-signature-symbol">&lt;</span><a href="comment.html" class="tsd-signature-type">Comment</a><span class="tsd-signature-symbol">&gt;</span></div>
+					<a name="node_id" class="tsd-anchor"></a>
+					<h3>node_<wbr>id</h3>
+					<div class="tsd-signature tsd-kind-icon">node_<wbr>id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/c0c0f4c/src/figmaTypes.ts#L902">figmaTypes.ts:902</a></li>
+							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/c0c0f4c/src/figmaTypes.ts#L740">figmaTypes.ts:740</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Unique id specifying the frame</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="node_offset" class="tsd-anchor"></a>
+					<h3>node_<wbr>offset</h3>
+					<div class="tsd-signature tsd-kind-icon">node_<wbr>offset<span class="tsd-signature-symbol">:</span> <a href="vector2.html" class="tsd-signature-type">Vector2</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/c0c0f4c/src/figmaTypes.ts#L742">figmaTypes.ts:742</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>2d vector offset within the frame</p>
+						</div>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -114,10 +142,13 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface">
-						<a href="commentsresponse.html" class="tsd-kind-icon">Comments<wbr>Response</a>
+						<a href="frameoffset.html" class="tsd-kind-icon">Frame<wbr>Offset</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="commentsresponse.html#comments" class="tsd-kind-icon">comments</a>
+								<a href="frameoffset.html#node_id" class="tsd-kind-icon">node_<wbr>id</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="frameoffset.html#node_offset" class="tsd-kind-icon">node_<wbr>offset</a>
 							</li>
 						</ul>
 					</li>
