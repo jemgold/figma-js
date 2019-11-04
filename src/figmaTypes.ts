@@ -736,17 +736,11 @@ export interface FrameInfo {
   readonly page_name: string;
 }
 
-/** A relative offset within a frame */
-export interface FrameOffset {
-  /** Unique id specifying the frame */
-  readonly node_id: string;
-  /** 2d vector offset within the frame */
-  readonly node_offset: Vector2;
-}
-
 interface SharedElement extends ComponentMetadata {
   /** The unique identifier of the figma file which contains the element */
   readonly file_key: string;
+  /** Id of the component node within the figma file */
+  readonly node_id: string;
   /** URL link to the element's thumbnail image */
   readonly thumbnail_urlString: string;
   /** The UTC ISO 8601 time at which the element was created */
@@ -825,6 +819,14 @@ export interface User {
   readonly handle: string;
   /** URL link to the user's profile image */
   readonly img_url: string;
+}
+
+/** A relative offset within a frame */
+export interface FrameOffset {
+  /** Unique id specifying the frame */
+  readonly node_id: string;
+  /** 2d vector offset within the frame */
+  readonly node_offset: Vector2;
 }
 
 export interface ProjectSummary {
