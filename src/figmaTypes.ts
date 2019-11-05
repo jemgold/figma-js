@@ -84,6 +84,8 @@ export type EasingType =
   | 'EASE_OUT' /** Ease out with an animation curve similar to CSS ease-out */
   | 'EASE_IN_AND_OUT'; /** Ease in and then out with an animation curve similar to CSS ease-in-out */
 
+export type RoleType = 'viewer' | 'editor' | 'owner';
+
 export type NodeType =
   | 'DOCUMENT'
   | 'CANVAS'
@@ -392,7 +394,7 @@ export interface Rectangle extends VectorBase {
   /** Radius of each corner of the rectangle if a single radius is set for all corners */
   readonly cornerRadius?: number;
   /** Array of length 4 of the radius of each corner of the rectangle, starting in the top left and proceeding clockwise */
-  readonly rectangleCornerRadii?: [number, number, number, number];
+  readonly rectangleCornerRadii?: readonly [number, number, number, number];
 }
 
 /** A text box */
@@ -638,8 +640,8 @@ export interface Paint {
    */
   readonly imageRef?: string;
   /**
-   * A reference to the GIF embedded in this node, if the image is a GIF. 
-   * To download the image using this reference, 
+   * A reference to the GIF embedded in this node, if the image is a GIF.
+   * To download the image using this reference,
    * use the GET file images endpoint to retrieve the mapping from image references to image URLs
    */
   readonly gifRef?: string;
@@ -734,17 +736,11 @@ export interface FrameInfo {
   readonly page_name: string;
 }
 
-/** A relative offset within a frame */
-export interface FrameOffset {
-  /** Unique id specifying the frame */
-  readonly node_id: string
-  /** 2d vector offset within the frame */
-  readonly node_offset: Vector2
-}
-
 interface SharedElement extends ComponentMetadata {
   /** The unique identifier of the figma file which contains the element */
   readonly file_key: string;
+  /** Id of the component node within the figma file */
+  readonly node_id: string;
   /** URL link to the element's thumbnail image */
   readonly thumbnail_urlString: string;
   /** The UTC ISO 8601 time at which the element was created */
@@ -825,6 +821,14 @@ export interface User {
   readonly img_url: string;
 }
 
+/** A relative offset within a frame */
+export interface FrameOffset {
+  /** Unique id specifying the frame */
+  readonly node_id: string;
+  /** 2d vector offset within the frame */
+  readonly node_offset: Vector2;
+}
+
 export interface ProjectSummary {
   readonly id: string;
   readonly name: string;
@@ -840,6 +844,7 @@ export interface FileResponse {
   readonly document: Document;
   readonly lastModified: string;
   readonly name: string;
+  readonly role: RoleType;
   readonly schemaVersion: number;
   readonly thumbnailUrl: string;
   readonly version: string;
@@ -860,6 +865,7 @@ export interface FileNodesResponse {
   };
   readonly lastModified: string;
   readonly name: string;
+  readonly role: RoleType;
   readonly thumbnailUrl: string;
   readonly version: string;
 }
