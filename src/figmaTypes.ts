@@ -931,10 +931,12 @@ export interface FileSummary {
 }
 
 export interface TeamProjectsResponse {
+  readonly name: string;
   readonly projects: ReadonlyArray<ProjectSummary>;
 }
 
 export interface ProjectFilesResponse {
+  readonly name: string;
   readonly files: ReadonlyArray<FileSummary>;
 }
 
