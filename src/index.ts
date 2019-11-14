@@ -71,7 +71,7 @@ export interface PostCommentParams {
   /** The text contents of the comment to post */
   readonly message: string;
   /** The absolute canvas position of where to place the comment */
-  readonly client_meta: Figma.Vector2 | Figma.FrameOffset;
+  readonly client_meta?: Figma.Vector2 | Figma.FrameOffset;
   /** The comment to reply to, if any. This must be a root comment, that is, you cannot reply to a comment that is a reply itself (a reply has a parent_id). */
   readonly comment_id?: string;
 }
