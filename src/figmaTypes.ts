@@ -908,6 +908,21 @@ export interface CommentsResponse {
   readonly comments: ReadonlyArray<Comment>;
 }
 
+export interface ComponentResponse {
+  readonly err: string | null;
+  readonly status: number;
+  readonly meta: {
+    readonly [key: string]: FullComponentMetadata;
+  };
+}
+
+export interface StyleResponse {
+  readonly err: string | null;
+  readonly meta: {
+    readonly [key: string]: FullStyleMetadata;
+  };
+}
+
 export interface FileSummary {
   readonly key: string;
   readonly name: string;

@@ -235,9 +235,8 @@ export interface ClientInterface {
    * @param {key} The unique identifier of the component.
    * @see https://www.figma.com/developers/api#get-component-endpoint
    */
-  readonly component: (
-    key: string
-  ) => AxiosPromise<Figma.FullComponentMetadata>;
+
+  readonly component: (key: string) => AxiosPromise<Figma.ComponentResponse>;
 
   /**
    * Get a paginated list of published styles within a team library
@@ -254,7 +253,7 @@ export interface ClientInterface {
    * @param {key} The unique identifier of the style.
    * @see https://www.figma.com/developers/api#get-style-endpoint
    */
-  readonly style: (key: string) => AxiosPromise<Figma.FullStyleMetadata>;
+  readonly style: (key: string) => AxiosPromise<Figma.StyleResponse>;
 }
 
 export const Client = (opts: ClientOptions): ClientInterface => {
