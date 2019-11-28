@@ -185,13 +185,24 @@ export interface ClientInterface {
 
   /**
    * Posts a new comment on the file.
-   * @param {fileId} String File to get comments from
+   * @param {fileId} String File to post comment to
    * @param {params} PostCommentParams
    * @see https://www.figma.com/developers/api#post-comments-endpoint
    */
   readonly postComment: (
     fileId: string,
     params: PostCommentParams
+  ) => AxiosPromise<Figma.Comment>;
+
+  /**
+   * Delete a comment from the file
+   * @param {fileId} String File to delete comment from
+   * @param {commentId} String id of the comment to be deleted
+   * @see https://www.figma.com/developers/api#delete-comments-endpoint
+   */
+  readonly deleteComment: (
+    fileId: string,
+    commentId: string
   ) => AxiosPromise<Figma.Comment>;
 
   /**
@@ -299,6 +310,9 @@ export const Client = (opts: ClientOptions): ClientInterface => {
 
     postComment: (fileId, params) =>
       client.post(`files/${fileId}/comments`, params),
+
+    deleteComment: (fileId, commentId) =>
+      client.delete(`files/${fileId}/comments/${commentId}`),
 
     me: () => client.get(`me`),
 
