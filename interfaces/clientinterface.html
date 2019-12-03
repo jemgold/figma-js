@@ -84,10 +84,13 @@
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="clientinterface.html#client" class="tsd-kind-icon">client</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="clientinterface.html#comments" class="tsd-kind-icon">comments</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="clientinterface.html#component" class="tsd-kind-icon">component</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="clientinterface.html#deletecomment" class="tsd-kind-icon">delete<wbr>Comment</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="clientinterface.html#file" class="tsd-kind-icon">file</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="clientinterface.html#filecomponents" class="tsd-kind-icon">file<wbr>Components</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="clientinterface.html#fileimagefills" class="tsd-kind-icon">file<wbr>Image<wbr>Fills</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="clientinterface.html#fileimages" class="tsd-kind-icon">file<wbr>Images</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="clientinterface.html#filenodes" class="tsd-kind-icon">file<wbr>Nodes</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="clientinterface.html#filestyles" class="tsd-kind-icon">file<wbr>Styles</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="clientinterface.html#fileversions" class="tsd-kind-icon">file<wbr>Versions</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="clientinterface.html#me" class="tsd-kind-icon">me</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="clientinterface.html#postcomment" class="tsd-kind-icon">post<wbr>Comment</a></li>
@@ -109,7 +112,7 @@
 					<div class="tsd-signature tsd-kind-icon">client<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">AxiosInstance</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/c0c0f4c/src/index.ts#L100">index.ts:100</a></li>
+							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/684108b/src/index.ts#L102">index.ts:102</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -119,7 +122,7 @@
 					<div class="tsd-signature tsd-kind-icon">comments<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/c0c0f4c/src/index.ts#L182">index.ts:182</a></li>
+							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/684108b/src/index.ts#L184">index.ts:184</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -163,7 +166,7 @@
 					<div class="tsd-signature tsd-kind-icon">component<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/c0c0f4c/src/index.ts#L236">index.ts:236</a></li>
+							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/684108b/src/index.ts#L260">index.ts:260</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -184,7 +187,7 @@
 						<ul class="tsd-parameters">
 							<li class="tsd-parameter-siganture">
 								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property tsd-is-not-exported">
-									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AxiosPromise</span><span class="tsd-signature-symbol">&lt;</span><a href="fullcomponentmetadata.html" class="tsd-signature-type">FullComponentMetadata</a><span class="tsd-signature-symbol">&gt;</span></li>
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AxiosPromise</span><span class="tsd-signature-symbol">&lt;</span><a href="componentresponse.html" class="tsd-signature-type">ComponentResponse</a><span class="tsd-signature-symbol">&gt;</span></li>
 								</ul>
 								<ul class="tsd-descriptions">
 									<li class="tsd-description">
@@ -194,7 +197,57 @@
 												<h5>key: <span class="tsd-signature-type">string</span></h5>
 											</li>
 										</ul>
-										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">AxiosPromise</span><span class="tsd-signature-symbol">&lt;</span><a href="fullcomponentmetadata.html" class="tsd-signature-type">FullComponentMetadata</a><span class="tsd-signature-symbol">&gt;</span></h4>
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">AxiosPromise</span><span class="tsd-signature-symbol">&lt;</span><a href="componentresponse.html" class="tsd-signature-type">ComponentResponse</a><span class="tsd-signature-symbol">&gt;</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="deletecomment" class="tsd-anchor"></a>
+					<h3>delete<wbr>Comment</h3>
+					<div class="tsd-signature tsd-kind-icon">delete<wbr>Comment<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/684108b/src/index.ts#L203">index.ts:203</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Delete a comment from the file</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>param</dt>
+							<dd><p>File to delete comment from</p>
+							</dd>
+							<dt>param</dt>
+							<dd><p>id of the comment to be deleted</p>
+							</dd>
+							<dt>see</dt>
+							<dd><p><a href="https://www.figma.com/developers/api#delete-comments-endpoint">https://www.figma.com/developers/api#delete-comments-endpoint</a></p>
+							</dd>
+						</dl>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-siganture">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property tsd-is-not-exported">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>fileId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, commentId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AxiosPromise</span><span class="tsd-signature-symbol">&lt;</span><a href="comment.html" class="tsd-signature-type">Comment</a><span class="tsd-signature-symbol">&gt;</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5>fileId: <span class="tsd-signature-type">string</span></h5>
+											</li>
+											<li>
+												<h5>commentId: <span class="tsd-signature-type">string</span></h5>
+											</li>
+										</ul>
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">AxiosPromise</span><span class="tsd-signature-symbol">&lt;</span><a href="comment.html" class="tsd-signature-type">Comment</a><span class="tsd-signature-symbol">&gt;</span></h4>
 									</li>
 								</ul>
 							</li>
@@ -207,7 +260,7 @@
 					<div class="tsd-signature tsd-kind-icon">file<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/c0c0f4c/src/index.ts#L109">index.ts:109</a></li>
+							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/684108b/src/index.ts#L111">index.ts:111</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -252,12 +305,59 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="filecomponents" class="tsd-anchor"></a>
+					<h3>file<wbr>Components</h3>
+					<div class="tsd-signature tsd-kind-icon">file<wbr>Components<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/684108b/src/index.ts#L249">index.ts:249</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Get a paginated list of published components within a file</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>param</dt>
+							<dd><p>Id of the file to list components from</p>
+							</dd>
+							<dt>see</dt>
+							<dd><p><a href="https://www.figma.com/developers/api#get-file-components-endpoint">https://www.figma.com/developers/api#get-file-components-endpoint</a></p>
+							</dd>
+						</dl>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-siganture">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property tsd-is-not-exported">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>fileId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, params<span class="tsd-signature-symbol">?: </span><a href="paginationparams.html" class="tsd-signature-type">PaginationParams</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AxiosPromise</span><span class="tsd-signature-symbol">&lt;</span><a href="filecomponentsresponse.html" class="tsd-signature-type">FileComponentsResponse</a><span class="tsd-signature-symbol">&gt;</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5>fileId: <span class="tsd-signature-type">string</span></h5>
+											</li>
+											<li>
+												<h5><span class="tsd-flag ts-flagOptional">Optional</span> params: <a href="paginationparams.html" class="tsd-signature-type">PaginationParams</a></h5>
+											</li>
+										</ul>
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">AxiosPromise</span><span class="tsd-signature-symbol">&lt;</span><a href="filecomponentsresponse.html" class="tsd-signature-type">FileComponentsResponse</a><span class="tsd-signature-symbol">&gt;</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="fileimagefills" class="tsd-anchor"></a>
 					<h3>file<wbr>Image<wbr>Fills</h3>
 					<div class="tsd-signature tsd-kind-icon">file<wbr>Image<wbr>Fills<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/c0c0f4c/src/index.ts#L173">index.ts:173</a></li>
+							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/684108b/src/index.ts#L175">index.ts:175</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -309,7 +409,7 @@
 					<div class="tsd-signature tsd-kind-icon">file<wbr>Images<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/c0c0f4c/src/index.ts#L154">index.ts:154</a></li>
+							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/684108b/src/index.ts#L156">index.ts:156</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -365,7 +465,7 @@
 					<div class="tsd-signature tsd-kind-icon">file<wbr>Nodes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/c0c0f4c/src/index.ts#L136">index.ts:136</a></li>
+							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/684108b/src/index.ts#L138">index.ts:138</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -412,12 +512,59 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="filestyles" class="tsd-anchor"></a>
+					<h3>file<wbr>Styles</h3>
+					<div class="tsd-signature tsd-kind-icon">file<wbr>Styles<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/684108b/src/index.ts#L277">index.ts:277</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Get a paginated list of published styles within a file</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>param</dt>
+							<dd><p>Id of the file to list styles from</p>
+							</dd>
+							<dt>see</dt>
+							<dd><p><a href="https://www.figma.com/developers/api#get-file-styles-endpoint">https://www.figma.com/developers/api#get-file-styles-endpoint</a></p>
+							</dd>
+						</dl>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-siganture">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property tsd-is-not-exported">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>fileId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, params<span class="tsd-signature-symbol">?: </span><a href="paginationparams.html" class="tsd-signature-type">PaginationParams</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AxiosPromise</span><span class="tsd-signature-symbol">&lt;</span><a href="filestylesresponse.html" class="tsd-signature-type">FileStylesResponse</a><span class="tsd-signature-symbol">&gt;</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5>fileId: <span class="tsd-signature-type">string</span></h5>
+											</li>
+											<li>
+												<h5><span class="tsd-flag ts-flagOptional">Optional</span> params: <a href="paginationparams.html" class="tsd-signature-type">PaginationParams</a></h5>
+											</li>
+										</ul>
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">AxiosPromise</span><span class="tsd-signature-symbol">&lt;</span><a href="filestylesresponse.html" class="tsd-signature-type">FileStylesResponse</a><span class="tsd-signature-symbol">&gt;</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="fileversions" class="tsd-anchor"></a>
 					<h3>file<wbr>Versions</h3>
 					<div class="tsd-signature tsd-kind-icon">file<wbr>Versions<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/c0c0f4c/src/index.ts#L121">index.ts:121</a></li>
+							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/684108b/src/index.ts#L123">index.ts:123</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -469,7 +616,7 @@
 					<div class="tsd-signature tsd-kind-icon">me<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/c0c0f4c/src/index.ts#L199">index.ts:199</a></li>
+							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/684108b/src/index.ts#L212">index.ts:212</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -504,7 +651,7 @@
 					<div class="tsd-signature tsd-kind-icon">post<wbr>Comment<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/c0c0f4c/src/index.ts#L190">index.ts:190</a></li>
+							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/684108b/src/index.ts#L192">index.ts:192</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -513,7 +660,7 @@
 						</div>
 						<dl class="tsd-comment-tags">
 							<dt>param</dt>
-							<dd><p>File to get comments from</p>
+							<dd><p>File to post comment to</p>
 							</dd>
 							<dt>param</dt>
 							<dd></dd>
@@ -553,7 +700,7 @@
 					<div class="tsd-signature tsd-kind-icon">project<wbr>Files<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/c0c0f4c/src/index.ts#L217">index.ts:217</a></li>
+							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/684108b/src/index.ts#L230">index.ts:230</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -597,7 +744,7 @@
 					<div class="tsd-signature tsd-kind-icon">style<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/c0c0f4c/src/index.ts#L255">index.ts:255</a></li>
+							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/684108b/src/index.ts#L287">index.ts:287</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -618,7 +765,7 @@
 						<ul class="tsd-parameters">
 							<li class="tsd-parameter-siganture">
 								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property tsd-is-not-exported">
-									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AxiosPromise</span><span class="tsd-signature-symbol">&lt;</span><a href="fullstylemetadata.html" class="tsd-signature-type">FullStyleMetadata</a><span class="tsd-signature-symbol">&gt;</span></li>
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AxiosPromise</span><span class="tsd-signature-symbol">&lt;</span><a href="styleresponse.html" class="tsd-signature-type">StyleResponse</a><span class="tsd-signature-symbol">&gt;</span></li>
 								</ul>
 								<ul class="tsd-descriptions">
 									<li class="tsd-description">
@@ -628,7 +775,7 @@
 												<h5>key: <span class="tsd-signature-type">string</span></h5>
 											</li>
 										</ul>
-										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">AxiosPromise</span><span class="tsd-signature-symbol">&lt;</span><a href="fullstylemetadata.html" class="tsd-signature-type">FullStyleMetadata</a><span class="tsd-signature-symbol">&gt;</span></h4>
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">AxiosPromise</span><span class="tsd-signature-symbol">&lt;</span><a href="styleresponse.html" class="tsd-signature-type">StyleResponse</a><span class="tsd-signature-symbol">&gt;</span></h4>
 									</li>
 								</ul>
 							</li>
@@ -641,7 +788,7 @@
 					<div class="tsd-signature tsd-kind-icon">team<wbr>Components<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/c0c0f4c/src/index.ts#L226">index.ts:226</a></li>
+							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/684108b/src/index.ts#L239">index.ts:239</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -688,7 +835,7 @@
 					<div class="tsd-signature tsd-kind-icon">team<wbr>Projects<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/c0c0f4c/src/index.ts#L208">index.ts:208</a></li>
+							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/684108b/src/index.ts#L221">index.ts:221</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -734,7 +881,7 @@
 					<div class="tsd-signature tsd-kind-icon">team<wbr>Styles<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/c0c0f4c/src/index.ts#L245">index.ts:245</a></li>
+							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/684108b/src/index.ts#L267">index.ts:267</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -743,7 +890,7 @@
 						</div>
 						<dl class="tsd-comment-tags">
 							<dt>param</dt>
-							<dd><p>Id of the team to list components from</p>
+							<dd><p>Id of the team to list styles from</p>
 							</dd>
 							<dt>see</dt>
 							<dd><p><a href="https://www.figma.com/developers/api#get-team-styles-endpoint">https://www.figma.com/developers/api#get-team-styles-endpoint</a></p>
@@ -802,7 +949,13 @@
 								<a href="clientinterface.html#component" class="tsd-kind-icon">component</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="clientinterface.html#deletecomment" class="tsd-kind-icon">delete<wbr>Comment</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="clientinterface.html#file" class="tsd-kind-icon">file</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="clientinterface.html#filecomponents" class="tsd-kind-icon">file<wbr>Components</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="clientinterface.html#fileimagefills" class="tsd-kind-icon">file<wbr>Image<wbr>Fills</a>
@@ -812,6 +965,9 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="clientinterface.html#filenodes" class="tsd-kind-icon">file<wbr>Nodes</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="clientinterface.html#filestyles" class="tsd-kind-icon">file<wbr>Styles</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="clientinterface.html#fileversions" class="tsd-kind-icon">file<wbr>Versions</a>

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>User | figma-js</title>
+	<title>ComponentResponse | figma-js</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,28 +56,21 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="user.html">User</a>
+					<a href="componentresponse.html">ComponentResponse</a>
 				</li>
 			</ul>
-			<h1>Interface User</h1>
+			<h1>Interface ComponentResponse</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<section class="tsd-panel tsd-comment">
-				<div class="tsd-comment tsd-typography">
-					<div class="lead">
-						<p>A description of a user</p>
-					</div>
-				</div>
-			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">User</span>
+						<span class="target">ComponentResponse</span>
 					</li>
 				</ul>
 			</section>
@@ -88,9 +81,9 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="user.html#handle" class="tsd-kind-icon">handle</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="user.html#id" class="tsd-kind-icon">id</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="user.html#img_url" class="tsd-kind-icon">img_<wbr>url</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="componentresponse.html#err" class="tsd-kind-icon">err</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="componentresponse.html#meta" class="tsd-kind-icon">meta</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="componentresponse.html#status" class="tsd-kind-icon">status</a></li>
 							</ul>
 						</section>
 					</div>
@@ -99,49 +92,42 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="handle" class="tsd-anchor"></a>
-					<h3>handle</h3>
-					<div class="tsd-signature tsd-kind-icon">handle<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="err" class="tsd-anchor"></a>
+					<h3>err</h3>
+					<div class="tsd-signature tsd-kind-icon">err<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/684108b/src/figmaTypes.ts#L819">figmaTypes.ts:819</a></li>
+							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/684108b/src/figmaTypes.ts#L912">figmaTypes.ts:912</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Name of the user</p>
-						</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="meta" class="tsd-anchor"></a>
+					<h3>meta</h3>
+					<div class="tsd-signature tsd-kind-icon">meta<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/684108b/src/figmaTypes.ts#L914">figmaTypes.ts:914</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-index-signature">
+								<h5><span class="tsd-signature-symbol">[</span>key: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><a href="fullcomponentmetadata.html" class="tsd-signature-type">FullComponentMetadata</a></h5>
+							</li>
+						</ul>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="id" class="tsd-anchor"></a>
-					<h3>id</h3>
-					<div class="tsd-signature tsd-kind-icon">id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="status" class="tsd-anchor"></a>
+					<h3>status</h3>
+					<div class="tsd-signature tsd-kind-icon">status<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/684108b/src/figmaTypes.ts#L817">figmaTypes.ts:817</a></li>
+							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/684108b/src/figmaTypes.ts#L913">figmaTypes.ts:913</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Unique stable id of the user</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="img_url" class="tsd-anchor"></a>
-					<h3>img_<wbr>url</h3>
-					<div class="tsd-signature tsd-kind-icon">img_<wbr>url<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/684108b/src/figmaTypes.ts#L821">figmaTypes.ts:821</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>URL link to the user&#39;s profile image</p>
-						</div>
-					</div>
 				</section>
 			</section>
 		</div>
@@ -158,16 +144,16 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface">
-						<a href="user.html" class="tsd-kind-icon">User</a>
+						<a href="componentresponse.html" class="tsd-kind-icon">Component<wbr>Response</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="user.html#handle" class="tsd-kind-icon">handle</a>
+								<a href="componentresponse.html#err" class="tsd-kind-icon">err</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="user.html#id" class="tsd-kind-icon">id</a>
+								<a href="componentresponse.html#meta" class="tsd-kind-icon">meta</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="user.html#img_url" class="tsd-kind-icon">img_<wbr>url</a>
+								<a href="componentresponse.html#status" class="tsd-kind-icon">status</a>
 							</li>
 						</ul>
 					</li>

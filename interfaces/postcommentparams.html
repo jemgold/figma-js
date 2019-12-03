@@ -82,6 +82,7 @@
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="postcommentparams.html#client_meta" class="tsd-kind-icon">client_<wbr>meta</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="postcommentparams.html#comment_id" class="tsd-kind-icon">comment_<wbr>id</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="postcommentparams.html#message" class="tsd-kind-icon">message</a></li>
 							</ul>
 						</section>
@@ -92,11 +93,11 @@
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="client_meta" class="tsd-anchor"></a>
-					<h3>client_<wbr>meta</h3>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> client_<wbr>meta</h3>
 					<div class="tsd-signature tsd-kind-icon">client_<wbr>meta<span class="tsd-signature-symbol">:</span> <a href="vector2.html" class="tsd-signature-type">Vector2</a><span class="tsd-signature-symbol"> | </span><a href="frameoffset.html" class="tsd-signature-type">FrameOffset</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/c0c0f4c/src/index.ts#L74">index.ts:74</a></li>
+							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/684108b/src/index.ts#L74">index.ts:74</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -106,12 +107,27 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="comment_id" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> comment_<wbr>id</h3>
+					<div class="tsd-signature tsd-kind-icon">comment_<wbr>id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/684108b/src/index.ts#L76">index.ts:76</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The comment to reply to, if any. This must be a root comment, that is, you cannot reply to a comment that is a reply itself (a reply has a parent_id).</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="message" class="tsd-anchor"></a>
 					<h3>message</h3>
 					<div class="tsd-signature tsd-kind-icon">message<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/c0c0f4c/src/index.ts#L72">index.ts:72</a></li>
+							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/684108b/src/index.ts#L72">index.ts:72</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -139,6 +155,9 @@
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="postcommentparams.html#client_meta" class="tsd-kind-icon">client_<wbr>meta</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="postcommentparams.html#comment_id" class="tsd-kind-icon">comment_<wbr>id</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="postcommentparams.html#message" class="tsd-kind-icon">message</a>
