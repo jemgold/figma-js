@@ -26,7 +26,7 @@ export type StyleKeyType =
   | 'background';
 
 export type StylesObject = {
-  [key in StyleKeyType]: Record<key, string>
+  [key in StyleKeyType]: Record<key, string>;
 }[StyleKeyType];
 
 export type ScaleMode = 'FILL' | 'FIT' | 'TILE' | 'STRETCH';
@@ -145,10 +145,39 @@ export interface Canvas extends Global {
 export interface FrameBase extends Global {
   /** An array of nodes that are direct children of this node */
   readonly children: ReadonlyArray<Node>;
-  /** Backgrounds on the node */
+  /** Background of the node. This is deprecated, as backgrounds for frames are now in the fills field. */
   readonly background: ReadonlyArray<Paint>;
-  /** Background color of the node. This is deprecated, as frames now support more than a solid color as a background. Please use the background field instead. */
+  /** Background color of the node. This is deprecated, as frames now support more than a solid color as a fills. Please use the fills field instead. */
   readonly backgroundColor: Color;
+  /**
+   * An array of fill paints applied to the node
+   * @default []
+   */
+  readonly fills: ReadonlyArray<Paint>;
+  /**
+   * An array of stroke paints applied to the node
+   * @default []
+   */
+  readonly strokes: ReadonlyArray<Paint>;
+  /** The weight of strokes on the node */
+  readonly strokeWeight: number;
+  /**
+   * Position of stroke relative to vector outline, as a string enum
+   * "INSIDE": stroke drawn inside the shape boundary
+   * "OUTSIDE": stroke drawn outside the shape boundary
+   * "CENTER": stroke drawn centered along the shape boundary
+   */
+  readonly strokeAlign: 'INSIDE' | 'OUTSIDE' | 'CENTER';
+  /**
+   * Radius of each corner of the frame if a single radius is set for all
+   * corners
+   */
+  readonly cornerRadius?: number;
+  /**
+   * Array of length 4 of the radius of each corner of the frame, starting
+   * in the top left and proceeding clockwise
+   */
+  readonly rectangleCornerRadii?: [number, number, number, number];
   /**
    * An array of export settings representing images to export from node
    * @default []
@@ -166,6 +195,18 @@ export interface FrameBase extends Global {
   readonly preserveRatio?: boolean;
   /** Horizontal and vertical layout constraints for node */
   readonly constraints: LayoutConstraint;
+  /**
+   * How the layer is aligned inside an auto-layout frame. This property
+   * is only provided for direct children of auto-layout frames.
+   * MIN
+   * CENTER
+   * MAX
+   * STRETCH
+   * In horizontal auto-layout frames, "MIN" and "MAX" correspond to
+   * "TOP" and "BOTTOM". * In vertical auto-layout frames, "MIN" and
+   * "MAX" correspond to "LEFT" and "RIGHT".
+   */
+  readonly layoutAlign?: String;
   /**
    * Node ID of node to transition to in prototyping
    * @default null
@@ -208,11 +249,53 @@ export interface FrameBase extends Global {
   /** Does this node clip content outside of its bounds? */
   readonly clipsContent: boolean;
   /**
+   * Whether this layer uses auto-layout to position its children.
+   * @default NONE
+   */
+  readonly layoutMode?: 'NONE' | 'HORIZONTAL' | 'VERTICAL';
+  /**
+   * Whether the counter axis has a fixed length (determined by the user)
+   * or an automatic length (determined by the layout engine).
+   * This property is only applicable for auto-layout frames
+   * @default AUTO
+   */
+  readonly counterAxisSizingMode?: 'FIXED' | 'AUTO';
+  /**
+   * The horizontal padding between the borders of the frame and its
+   * children. This property is only applicable for auto-layout frames.
+   * @default 0
+   */
+  readonly horizontalPadding?: number;
+  /**
+   * The vertical padding between the borders of the frame and its
+   * children. This property is only applicable for auto-layout frames.
+   * @default 0
+   */
+  readonly verticalPadding?: number;
+  /**
+   * The distance between children of the frame. This property is only
+   * applicable for auto-layout frames.
+   * @default 0
+   */
+  readonly itemSpacing?: number;
+  /**
    * An array of layout grids attached to this node (see layout grids section
    * for more details). GROUP nodes do not have this attribute
    * @default []
    */
   readonly layoutGrids?: ReadonlyArray<LayoutGrid>;
+  /**
+   * Defines the scrolling behavior of the frame, if there exist contents
+   * outside of the frame boundaries. The frame can either scroll
+   * vertically, horizontally, or in both directions to the extents of the
+   * content contained within it. This behavior can be observed in a
+   * prototype.
+   * HORIZONTAL_SCROLLING
+   * VERTICAL_SCROLLING
+   * HORIZONTAL_AND_VERTICAL_SCROLLING
+   * @default NONE
+   */
+  readonly overflowDirection?: string;
   /**
    * An array of effects attached to this node
    * (see effects sectionfor more details)
@@ -224,10 +307,6 @@ export interface FrameBase extends Global {
    * @default false
    */
   readonly isMask?: boolean;
-  /**
-   * Styles this node uses from the global `styles`
-   */
-  readonly styles?: StylesObject;
 }
 
 /** A node of fixed size containing other nodes */
