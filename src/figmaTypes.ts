@@ -997,6 +997,7 @@ export interface ComponentResponse {
 
 export interface StyleResponse {
   readonly err: string | null;
+  readonly status: number;
   readonly meta: {
     readonly [key: string]: FullStyleMetadata;
   };
@@ -1030,7 +1031,7 @@ export interface TeamComponentsResponse extends PaginationResponse {
   readonly components: ReadonlyArray<FullComponentMetadata>;
 }
 
-export interface FileComponentsResponse extends PaginationResponse {
+export interface FileComponentsResponse extends ComponentResponse {
   readonly components: ReadonlyArray<FullComponentMetadata>;
 }
 
@@ -1038,6 +1039,6 @@ export interface TeamStylesResponse extends PaginationResponse {
   readonly styles: ReadonlyArray<FullStyleMetadata>;
 }
 
-export interface FileStylesResponse extends PaginationResponse {
+export interface FileStylesResponse extends StyleResponse {
   readonly styles: ReadonlyArray<FullStyleMetadata>;
 }
