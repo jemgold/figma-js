@@ -1,6 +1,6 @@
 # Figma.js
 
-A simple wrapper for the Figma API
+A simple wrapper for the Figma API.
 
 Cool projects using this:
 - [figma-graphql](https://github.com/braposo/figma-graphql)
@@ -8,7 +8,7 @@ Cool projects using this:
 
 ## Usage
 
-[Full documentation](http://jongold.github.io/figma-js) is available on the web, and most everything is typed with Typescript.
+[Full documentation](http://jongold.github.io/figma-js) is available on the web and most everything is typed with TypeScript.
 
 ### Creating a client
 
@@ -24,7 +24,7 @@ const client = Figma.Client({
 });
 ```
 
-Alternatively, if you're building an app with OAuth authentication, after you get back the OAuth access token…
+Or if you're building an app with OAuth authentication, after you get back the OAuth access token...
 
 ```typescript
 import * as Figma from 'figma-js';
@@ -64,7 +64,7 @@ We used the [`typescript-starter`](https://github.com/bitjson/typescript-starter
 
 Helpful development commands:
 
-```
+```sh
 yarn watch
 yarn docs
 yarn docs:publish
@@ -77,7 +77,7 @@ yarn docs:publish
 
 ### Committing
 
-```
+```sh
 yarn global add commitizen
 
 # instead of git commit
