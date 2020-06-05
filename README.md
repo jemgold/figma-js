@@ -24,7 +24,7 @@ const client = Figma.Client({
 });
 ```
 
-Or if you're building an app with OAuth authentication, after you get back the OAuth access token...
+Or if you're building an app with OAuth authentication, after you get back the OAuth access token…
 
 ```typescript
 import * as Figma from 'figma-js';
