@@ -988,19 +988,15 @@ export interface CommentsResponse {
 }
 
 export interface ComponentResponse {
-  readonly err: string | null;
+  readonly error: boolean;
   readonly status: number;
-  readonly meta: {
-    readonly [key: string]: FullComponentMetadata;
-  };
+  readonly meta: FullComponentMetadata;
 }
 
 export interface StyleResponse {
-  readonly err: string | null;
+  readonly error: boolean;
   readonly status: number;
-  readonly meta: {
-    readonly [key: string]: FullStyleMetadata;
-  };
+  readonly meta: FullStyleMetadata;
 }
 
 export interface FileSummary {
@@ -1020,25 +1016,43 @@ export interface ProjectFilesResponse {
   readonly files: ReadonlyArray<FileSummary>;
 }
 
-interface PaginationResponse {
+interface PaginationMeta {
   readonly cursor: {
     readonly before: number;
     readonly after: number;
   };
 }
 
-export interface TeamComponentsResponse extends PaginationResponse {
-  readonly components: ReadonlyArray<FullComponentMetadata>;
+export interface TeamComponentsResponse {
+  readonly error: boolean;
+  readonly status: number;
+  readonly meta: {
+    readonly components: ReadonlyArray<FullComponentMetadata>;
+    readonly cursor: PaginationMeta;
+  };
 }
 
-export interface FileComponentsResponse extends ComponentResponse {
-  readonly components: ReadonlyArray<FullComponentMetadata>;
+export interface FileComponentsResponse {
+  readonly error: boolean;
+  readonly status: number;
+  readonly meta: {
+    readonly components: ReadonlyArray<FullComponentMetadata>;
+  };
 }
 
-export interface TeamStylesResponse extends PaginationResponse {
-  readonly styles: ReadonlyArray<FullStyleMetadata>;
+export interface TeamStylesResponse {
+  readonly error: boolean;
+  readonly status: number;
+  readonly meta: {
+    readonly styles: ReadonlyArray<FullStyleMetadata>;
+    readonly cursor: PaginationMeta;
+  };
 }
 
-export interface FileStylesResponse extends StyleResponse {
-  readonly styles: ReadonlyArray<FullStyleMetadata>;
+export interface FileStylesResponse {
+  readonly error: boolean;
+  readonly status: number;
+  readonly meta: {
+    readonly styles: ReadonlyArray<FullStyleMetadata>;
+  };
 }

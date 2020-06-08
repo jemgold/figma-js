@@ -242,13 +242,12 @@ export interface ClientInterface {
   ) => AxiosPromise<Figma.TeamComponentsResponse>;
 
   /**
-   * Get a paginated list of published components within a file
+   * Get a list of published components within a file
    * @param {fileId} String Id of the file to list components from
    * @see https://www.figma.com/developers/api#get-file-components-endpoint
    */
   readonly fileComponents: (
-    fileId: string,
-    params?: PaginationParams
+    fileId: string
   ) => AxiosPromise<Figma.FileComponentsResponse>;
 
   /**
@@ -270,13 +269,12 @@ export interface ClientInterface {
   ) => AxiosPromise<Figma.TeamStylesResponse>;
 
   /**
-   * Get a paginated list of published styles within a file
+   * Get a list of published styles within a file
    * @param {fileId} String Id of the file to list styles from
    * @see https://www.figma.com/developers/api#get-file-styles-endpoint
    */
   readonly fileStyles: (
-    fileId: string,
-    params?: PaginationParams
+    fileId: string
   ) => AxiosPromise<Figma.FileStylesResponse>;
 
   /**
@@ -343,16 +341,14 @@ export const Client = (opts: ClientOptions): ClientInterface => {
     teamComponents: (teamId, params = {}) =>
       client.get(`teams/${teamId}/components`, { params }),
 
-    fileComponents: (fileId, params = {}) =>
-      client.get(`files/${fileId}/components`, { params }),
+    fileComponents: fileId => client.get(`files/${fileId}/components`),
 
     component: key => client.get(`components/${key}`),
 
     teamStyles: (teamId, params = {}) =>
       client.get(`teams/${teamId}/styles`, { params }),
 
-    fileStyles: (fileId, params = {}) =>
-      client.get(`files/${fileId}/styles`, { params }),
+    fileStyles: fileId => client.get(`files/${fileId}/styles`),
 
     style: key => client.get(`styles/${key}`)
   };
