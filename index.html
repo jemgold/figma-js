@@ -65,14 +65,14 @@
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
 				<h1 id="figma-js">Figma.js</h1>
-				<p>A simple wrapper for the Figma API</p>
+				<p>A simple wrapper for the Figma API.</p>
 				<p>Cool projects using this:</p>
 				<ul>
 					<li><a href="https://github.com/braposo/figma-graphql">figma-graphql</a></li>
 					<li><a href="https://github.com/tiltshift/figmint">figmint</a></li>
 				</ul>
 				<h2 id="usage">Usage</h2>
-				<p><a href="http://jongold.github.io/figma-js">Full documentation</a> is available on the web, and most everything is typed with Typescript.</p>
+				<p><a href="http://jongold.github.io/figma-js">Full documentation</a> is available on the web and most everything is typed with TypeScript.</p>
 				<h3 id="creating-a-client">Creating a client</h3>
 				<p>Quickest start is to grab a personal access token from your Figma account settings page</p>
 				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> Figma <span class="hljs-keyword">from</span> <span class="hljs-string">'figma-js'</span>;
@@ -82,7 +82,7 @@
 <span class="hljs-keyword">const</span> client = Figma.Client({
   personalAccessToken: token
 });</code></pre>
-				<p>Alternatively, if you&#39;re building an app with OAuth authentication, after you get back the OAuth access token…</p>
+				<p>Or if you&#39;re building an app with OAuth authentication, after you get back the OAuth access token…</p>
 				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> Figma <span class="hljs-keyword">from</span> <span class="hljs-string">'figma-js'</span>;
 
 <span class="hljs-keyword">const</span> token = <span class="hljs-string">'12345'</span>;
@@ -105,19 +105,21 @@
 				<h2 id="contributing">Contributing</h2>
 				<p>We used the <a href="https://github.com/bitjson/typescript-starter"><code>typescript-starter</code></a> repo for this - refer to its README for more detailed instructions.</p>
 				<p>Helpful development commands:</p>
-				<pre><code><span class="hljs-attr">yarn</span> <span class="hljs-string">watch</span>
-<span class="hljs-attr">yarn</span> <span class="hljs-string">docs</span>
-<span class="hljs-attr">yarn</span> <span class="hljs-string">docs:publish</span></code></pre><h3 id="contributions-welcomed">Contributions welcomed</h3>
+				<pre><code class="language-sh">yarn watch
+yarn docs
+yarn docs:publish</code></pre>
+				<h3 id="contributions-welcomed">Contributions welcomed</h3>
 				<ul>
 					<li><input disabled="" type="checkbox"> <a href="https://github.com/jongold/figma-js/issues/1">generate types automatically</a></li>
 					<li><input disabled="" type="checkbox"> <a href="https://github.com/jongold/figma-js/issues/2">add tests</a></li>
 				</ul>
 				<h3 id="committing">Committing</h3>
-				<pre><code>yarn <span class="hljs-keyword">global</span> <span class="hljs-keyword">add</span> commitizen
+				<pre><code class="language-sh">yarn global add commitizen
 
-# <span class="hljs-keyword">instead</span> <span class="hljs-keyword">of</span> git <span class="hljs-keyword">commit</span>
+<span class="hljs-comment"># instead of git commit</span>
 
-git cz</code></pre><h2 id="contributors">Contributors</h2>
+git cz</code></pre>
+				<h2 id="contributors">Contributors</h2>
 				<ul>
 					<li><a href="https://github.com/jongold/">@jongold</a> (Airbnb)</li>
 					<li><a href="https://github.com/chrisdrackett/">@chrisdrackett</a></li>
@@ -251,11 +253,11 @@ git cz</code></pre><h2 id="contributors">Contributors</h2>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/line.html" class="tsd-kind-icon">Line</a>
 					</li>
+					<li class=" tsd-kind-interface tsd-is-not-exported">
+						<a href="interfaces/paginationmeta.html" class="tsd-kind-icon">Pagination<wbr>Meta</a>
+					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/paginationparams.html" class="tsd-kind-icon">Pagination<wbr>Params</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-is-not-exported">
-						<a href="interfaces/paginationresponse.html" class="tsd-kind-icon">Pagination<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/paint.html" class="tsd-kind-icon">Paint</a>

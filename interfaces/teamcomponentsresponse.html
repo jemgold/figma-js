@@ -70,12 +70,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<a href="paginationresponse.html" class="tsd-signature-type">PaginationResponse</a>
-						<ul class="tsd-hierarchy">
-							<li>
-								<span class="target">TeamComponentsResponse</span>
-							</li>
-						</ul>
+						<span class="target">TeamComponentsResponse</span>
 					</li>
 				</ul>
 			</section>
@@ -86,8 +81,9 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="teamcomponentsresponse.html#components" class="tsd-kind-icon">components</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="teamcomponentsresponse.html#cursor" class="tsd-kind-icon">cursor</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="teamcomponentsresponse.html#error" class="tsd-kind-icon">error</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="teamcomponentsresponse.html#meta" class="tsd-kind-icon">meta</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="teamcomponentsresponse.html#status" class="tsd-kind-icon">status</a></li>
 							</ul>
 						</section>
 					</div>
@@ -96,36 +92,45 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="components" class="tsd-anchor"></a>
-					<h3>components</h3>
-					<div class="tsd-signature tsd-kind-icon">components<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ReadonlyArray</span><span class="tsd-signature-symbol">&lt;</span><a href="fullcomponentmetadata.html" class="tsd-signature-type">FullComponentMetadata</a><span class="tsd-signature-symbol">&gt;</span></div>
+					<a name="error" class="tsd-anchor"></a>
+					<h3>error</h3>
+					<div class="tsd-signature tsd-kind-icon">error<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/10ede80/src/figmaTypes.ts#L1031">figmaTypes.ts:1031</a></li>
+							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/80fff49/src/figmaTypes.ts#L1027">figmaTypes.ts:1027</a></li>
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-					<a name="cursor" class="tsd-anchor"></a>
-					<h3>cursor</h3>
-					<div class="tsd-signature tsd-kind-icon">cursor<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="meta" class="tsd-anchor"></a>
+					<h3>meta</h3>
+					<div class="tsd-signature tsd-kind-icon">meta<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="paginationresponse.html">PaginationResponse</a>.<a href="paginationresponse.html#cursor">cursor</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/10ede80/src/figmaTypes.ts#L1024">figmaTypes.ts:1024</a></li>
+							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/80fff49/src/figmaTypes.ts#L1029">figmaTypes.ts:1029</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
 						<h4>Type declaration</h4>
 						<ul class="tsd-parameters">
 							<li class="tsd-parameter">
-								<h5>after<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+								<h5>components<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ReadonlyArray</span><span class="tsd-signature-symbol">&lt;</span><a href="fullcomponentmetadata.html" class="tsd-signature-type">FullComponentMetadata</a><span class="tsd-signature-symbol">&gt;</span></h5>
 							</li>
 							<li class="tsd-parameter">
-								<h5>before<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+								<h5>cursor<span class="tsd-signature-symbol">: </span><a href="paginationmeta.html" class="tsd-signature-type">PaginationMeta</a></h5>
 							</li>
 						</ul>
 					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="status" class="tsd-anchor"></a>
+					<h3>status</h3>
+					<div class="tsd-signature tsd-kind-icon">status<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/80fff49/src/figmaTypes.ts#L1028">figmaTypes.ts:1028</a></li>
+						</ul>
+					</aside>
 				</section>
 			</section>
 		</div>
@@ -145,10 +150,13 @@
 						<a href="teamcomponentsresponse.html" class="tsd-kind-icon">Team<wbr>Components<wbr>Response</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="teamcomponentsresponse.html#components" class="tsd-kind-icon">components</a>
+								<a href="teamcomponentsresponse.html#error" class="tsd-kind-icon">error</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-								<a href="teamcomponentsresponse.html#cursor" class="tsd-kind-icon">cursor</a>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="teamcomponentsresponse.html#meta" class="tsd-kind-icon">meta</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="teamcomponentsresponse.html#status" class="tsd-kind-icon">status</a>
 							</li>
 						</ul>
 					</li>

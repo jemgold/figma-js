@@ -70,12 +70,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<a href="componentresponse.html" class="tsd-signature-type">ComponentResponse</a>
-						<ul class="tsd-hierarchy">
-							<li>
-								<span class="target">FileComponentsResponse</span>
-							</li>
-						</ul>
+						<span class="target">FileComponentsResponse</span>
 					</li>
 				</ul>
 			</section>
@@ -86,10 +81,9 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="filecomponentsresponse.html#components" class="tsd-kind-icon">components</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="filecomponentsresponse.html#err" class="tsd-kind-icon">err</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="filecomponentsresponse.html#meta" class="tsd-kind-icon">meta</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="filecomponentsresponse.html#status" class="tsd-kind-icon">status</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="filecomponentsresponse.html#error" class="tsd-kind-icon">error</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="filecomponentsresponse.html#meta" class="tsd-kind-icon">meta</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="filecomponentsresponse.html#status" class="tsd-kind-icon">status</a></li>
 							</ul>
 						</section>
 					</div>
@@ -98,53 +92,40 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="components" class="tsd-anchor"></a>
-					<h3>components</h3>
-					<div class="tsd-signature tsd-kind-icon">components<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ReadonlyArray</span><span class="tsd-signature-symbol">&lt;</span><a href="fullcomponentmetadata.html" class="tsd-signature-type">FullComponentMetadata</a><span class="tsd-signature-symbol">&gt;</span></div>
+					<a name="error" class="tsd-anchor"></a>
+					<h3>error</h3>
+					<div class="tsd-signature tsd-kind-icon">error<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/10ede80/src/figmaTypes.ts#L1035">figmaTypes.ts:1035</a></li>
+							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/80fff49/src/figmaTypes.ts#L1036">figmaTypes.ts:1036</a></li>
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-					<a name="err" class="tsd-anchor"></a>
-					<h3>err</h3>
-					<div class="tsd-signature tsd-kind-icon">err<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></div>
-					<aside class="tsd-sources">
-						<p>Inherited from <a href="componentresponse.html">ComponentResponse</a>.<a href="componentresponse.html#err">err</a></p>
-						<ul>
-							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/10ede80/src/figmaTypes.ts#L991">figmaTypes.ts:991</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="meta" class="tsd-anchor"></a>
 					<h3>meta</h3>
 					<div class="tsd-signature tsd-kind-icon">meta<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="componentresponse.html">ComponentResponse</a>.<a href="componentresponse.html#meta">meta</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/10ede80/src/figmaTypes.ts#L993">figmaTypes.ts:993</a></li>
+							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/80fff49/src/figmaTypes.ts#L1038">figmaTypes.ts:1038</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
 						<h4>Type declaration</h4>
 						<ul class="tsd-parameters">
-							<li class="tsd-parameter-index-signature">
-								<h5><span class="tsd-signature-symbol">[</span>key: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><a href="fullcomponentmetadata.html" class="tsd-signature-type">FullComponentMetadata</a></h5>
+							<li class="tsd-parameter">
+								<h5>components<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ReadonlyArray</span><span class="tsd-signature-symbol">&lt;</span><a href="fullcomponentmetadata.html" class="tsd-signature-type">FullComponentMetadata</a><span class="tsd-signature-symbol">&gt;</span></h5>
 							</li>
 						</ul>
 					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="status" class="tsd-anchor"></a>
 					<h3>status</h3>
 					<div class="tsd-signature tsd-kind-icon">status<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="componentresponse.html">ComponentResponse</a>.<a href="componentresponse.html#status">status</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/10ede80/src/figmaTypes.ts#L992">figmaTypes.ts:992</a></li>
+							<li>Defined in <a href="https://github.com/jongold/figma-js/blob/80fff49/src/figmaTypes.ts#L1037">figmaTypes.ts:1037</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -166,15 +147,12 @@
 						<a href="filecomponentsresponse.html" class="tsd-kind-icon">File<wbr>Components<wbr>Response</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="filecomponentsresponse.html#components" class="tsd-kind-icon">components</a>
+								<a href="filecomponentsresponse.html#error" class="tsd-kind-icon">error</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-								<a href="filecomponentsresponse.html#err" class="tsd-kind-icon">err</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="filecomponentsresponse.html#meta" class="tsd-kind-icon">meta</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="filecomponentsresponse.html#status" class="tsd-kind-icon">status</a>
 							</li>
 						</ul>
