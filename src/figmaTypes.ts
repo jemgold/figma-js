@@ -177,7 +177,7 @@ export interface FrameBase extends Global {
    * Array of length 4 of the radius of each corner of the frame, starting
    * in the top left and proceeding clockwise
    */
-  readonly rectangleCornerRadii?: [number, number, number, number];
+  readonly rectangleCornerRadii?: readonly [number, number, number, number];
   /**
    * An array of export settings representing images to export from node
    * @default []
@@ -206,7 +206,7 @@ export interface FrameBase extends Global {
    * "TOP" and "BOTTOM". * In vertical auto-layout frames, "MIN" and
    * "MAX" correspond to "LEFT" and "RIGHT".
    */
-  readonly layoutAlign?: String;
+  readonly layoutAlign?: string;
   /**
    * Node ID of node to transition to in prototyping
    * @default null
@@ -473,7 +473,7 @@ export interface Rectangle extends VectorBase {
   /** Radius of each corner of the rectangle if a single radius is set for all corners */
   readonly cornerRadius?: number;
   /** Array of length 4 of the radius of each corner of the rectangle, starting in the top left and proceeding clockwise */
-  readonly rectangleCornerRadii?: [number, number, number, number];
+  readonly rectangleCornerRadii?: readonly [number, number, number, number];
 }
 
 /** A text box */

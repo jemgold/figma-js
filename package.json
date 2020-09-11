@@ -54,34 +54,31 @@
     "node": ">=8.9"
   },
   "dependencies": {
-    "axios": "^0.18.0"
+    "axios": "^0.19.0"
   },
   "devDependencies": {
-    "ava": "^1.0.0-beta.3",
-    "codecov": "^3.0.0",
-    "cz-conventional-changelog": "^2.1.0",
-    "gh-pages": "^1.0.0",
-    "npm-run-all": "^4.1.2",
-    "npm-scripts-info": "^0.3.6",
+    "ava": "^3.12.1",
+    "codecov": "^3.7.2",
+    "cz-conventional-changelog": "^3.3.0",
+    "gh-pages": "^3.1.0",
+    "npm-run-all": "^4.1.5",
+    "npm-scripts-info": "^0.3.9",
     "nsp": "^3.2.1",
     "nyc": "^11.5.0",
     "opn-cli": "^3.1.0",
-    "prettier": "^1.16.4",
-    "standard-version": "^8.0.1",
-    "trash-cli": "^1.4.0",
-    "tslint": "^5.14.0",
+    "prettier": "^2.1.1",
+    "standard-version": "^9.0.0",
+    "trash-cli": "^3.1.0",
+    "tslint": "^6.1.3",
     "tslint-config-prettier": "^1.18.0",
-    "tslint-immutable": "^5.4.0",
-    "typedoc": "^0.14.2",
-    "typescript": "^3.3.3333"
+    "tslint-immutable": "^6.0.1",
+    "typedoc": "^0.19.1",
+    "typescript": "^4.0.2"
   },
   "ava": {
     "failFast": true,
     "files": [
       "build/main/**/*.spec.js"
-    ],
-    "sources": [
-      "build/main/**/*.js"
     ]
   },
   "config": {

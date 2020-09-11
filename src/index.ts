@@ -64,7 +64,7 @@ export interface FileImageParams {
    */
   readonly svg_simplify_stroke?: boolean;
   /**
-   * Use the full dimensions of the node regardless of whether or not it is cropped or the space around it is empty. 
+   * Use the full dimensions of the node regardless of whether or not it is cropped or the space around it is empty.
    * Use this to export text nodes without cropping.
    * @default false
    */
@@ -294,15 +294,15 @@ export interface ClientInterface {
 export const Client = (opts: ClientOptions): ClientInterface => {
   const headers = opts.accessToken
     ? {
-        Authorization: `Bearer ${opts.accessToken}`
+        Authorization: `Bearer ${opts.accessToken}`,
       }
     : {
-        'X-Figma-Token': opts.personalAccessToken
+        'X-Figma-Token': opts.personalAccessToken,
       };
 
   const client = axios.create({
     baseURL: `https://${opts.apiRoot || 'api.figma.com'}/v1/`,
-    headers
+    headers,
   });
 
   return {
@@ -312,31 +312,31 @@ export const Client = (opts: ClientOptions): ClientInterface => {
       client.get(`files/${fileId}`, {
         params: {
           ...params,
-          ids: params.ids.join(',')
-        }
+          ids: params.ids.join(','),
+        },
       }),
 
-    fileVersions: fileId => client.get(`files/${fileId}/versions`),
+    fileVersions: (fileId) => client.get(`files/${fileId}/versions`),
 
     fileNodes: (fileId, params) =>
       client.get(`files/${fileId}/nodes`, {
         params: {
           ...params,
-          ids: params.ids.join(',')
-        }
+          ids: params.ids.join(','),
+        },
       }),
 
     fileImages: (fileId, params) =>
       client.get(`images/${fileId}`, {
         params: {
           ...params,
-          ids: params.ids.join(',')
-        }
+          ids: params.ids.join(','),
+        },
       }),
 
-    fileImageFills: fileId => client.get(`files/${fileId}/images`),
+    fileImageFills: (fileId) => client.get(`files/${fileId}/images`),
 
-    comments: fileId => client.get(`files/${fileId}/comments`),
+    comments: (fileId) => client.get(`files/${fileId}/comments`),
 
     postComment: (fileId, params) =>
       client.post(`files/${fileId}/comments`, params),
@@ -346,22 +346,22 @@ export const Client = (opts: ClientOptions): ClientInterface => {
 
     me: () => client.get(`me`),
 
-    teamProjects: teamId => client.get(`teams/${teamId}/projects`),
+    teamProjects: (teamId) => client.get(`teams/${teamId}/projects`),
 
-    projectFiles: projectId => client.get(`projects/${projectId}/files`),
+    projectFiles: (projectId) => client.get(`projects/${projectId}/files`),
 
     teamComponents: (teamId, params = {}) =>
       client.get(`teams/${teamId}/components`, { params }),
 
-    fileComponents: fileId => client.get(`files/${fileId}/components`),
+    fileComponents: (fileId) => client.get(`files/${fileId}/components`),
 
-    component: key => client.get(`components/${key}`),
+    component: (key) => client.get(`components/${key}`),
 
     teamStyles: (teamId, params = {}) =>
       client.get(`teams/${teamId}/styles`, { params }),
 
-    fileStyles: fileId => client.get(`files/${fileId}/styles`),
+    fileStyles: (fileId) => client.get(`files/${fileId}/styles`),
 
-    style: key => client.get(`styles/${key}`)
+    style: (key) => client.get(`styles/${key}`),
   };
 };
