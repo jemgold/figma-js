@@ -63,6 +63,12 @@ export interface FileImageParams {
    * @default true
    */
   readonly svg_simplify_stroke?: boolean;
+  /**
+   * Use the full dimensions of the node regardless of whether or not it is cropped or the space around it is empty. 
+   * Use this to export text nodes without cropping.
+   * @default false
+   */
+  readonly use_absolute_bounds?: boolean;
   /** A specific version ID to use. Omitting this will use the current version of the file */
   readonly version?: string;
 }
