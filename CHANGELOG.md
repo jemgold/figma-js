@@ -2,7 +2,7 @@
 
 # 1.13.0
 
-- Fix issue with optional ids param [#41](https://github.com/jongold/figma-js/pull/41) [dmiller9911](https://github.com/dmiller9911)
+- Fix issue with optional ids param [#41](https://github.com/jongold/figma-js/pull/41) by [dmiller9911](https://github.com/dmiller9911)
 
 # 1.12.0
 
