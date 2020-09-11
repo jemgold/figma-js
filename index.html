@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>figma-js</title>
-	<meta name="description" content="">
+	<meta name="description" content="Documentation for figma-js">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/main.css">
 </head>
@@ -13,7 +13,7 @@
 	<div class="tsd-page-toolbar">
 		<div class="container">
 			<div class="table-wrap">
-				<div class="table-cell" id="tsd-search" data-index="assets/js/search.js" data-base=".">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
 					<div class="field">
 						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
 						<input id="tsd-search-field" type="text" />
@@ -56,7 +56,7 @@
 					<a href="globals.html">Globals</a>
 				</li>
 			</ul>
-			<h1> figma-js</h1>
+			<h1>figma-js</h1>
 		</div>
 	</div>
 </header>
@@ -64,62 +64,80 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<h1 id="figma-js">Figma.js</h1>
+				<a href="#figmajs" id="figmajs" style="color: inherit; text-decoration: none;">
+					<h1>Figma.js</h1>
+				</a>
 				<p>A simple wrapper for the Figma API.</p>
 				<p>Cool projects using this:</p>
 				<ul>
 					<li><a href="https://github.com/braposo/figma-graphql">figma-graphql</a></li>
 					<li><a href="https://github.com/tiltshift/figmint">figmint</a></li>
 				</ul>
-				<h2 id="usage">Usage</h2>
+				<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
+					<h2>Usage</h2>
+				</a>
 				<p><a href="http://jongold.github.io/figma-js">Full documentation</a> is available on the web and most everything is typed with TypeScript.</p>
-				<h3 id="creating-a-client">Creating a client</h3>
+				<a href="#creating-a-client" id="creating-a-client" style="color: inherit; text-decoration: none;">
+					<h3>Creating a client</h3>
+				</a>
 				<p>Quickest start is to grab a personal access token from your Figma account settings page</p>
-				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> Figma <span class="hljs-keyword">from</span> <span class="hljs-string">'figma-js'</span>;
+				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> Figma <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;figma-js&#x27;</span>;
 
-<span class="hljs-keyword">const</span> token = <span class="hljs-string">'12345'</span>;
+<span class="hljs-keyword">const</span> token = <span class="hljs-string">&#x27;12345&#x27;</span>;
 
 <span class="hljs-keyword">const</span> client = Figma.Client({
   personalAccessToken: token
 });</code></pre>
 				<p>Or if you&#39;re building an app with OAuth authentication, after you get back the OAuth access token…</p>
-				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> Figma <span class="hljs-keyword">from</span> <span class="hljs-string">'figma-js'</span>;
+				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> Figma <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;figma-js&#x27;</span>;
 
-<span class="hljs-keyword">const</span> token = <span class="hljs-string">'12345'</span>;
+<span class="hljs-keyword">const</span> token = <span class="hljs-string">&#x27;12345&#x27;</span>;
 
 <span class="hljs-keyword">const</span> client = Figma.Client({
   accessToken: token
 });</code></pre>
-				<h3 id="doing-cool-things">Doing cool things</h3>
+				<a href="#doing-cool-things" id="doing-cool-things" style="color: inherit; text-decoration: none;">
+					<h3>Doing cool things</h3>
+				</a>
 				<p>Once you have instantiated a client, have fun!</p>
-				<pre><code class="language-typescript">client.file(<span class="hljs-string">'file-id'</span>).then(<span class="hljs-function">(<span class="hljs-params">{ data }</span>) =&gt;</span> {
+				<pre><code class="language-typescript">client.file(<span class="hljs-string">&#x27;file-id&#x27;</span>).then(<span class="hljs-function">(<span class="hljs-params">{ data }</span>) =&gt;</span> {
   <span class="hljs-built_in">console</span>.log(data);
 });</code></pre>
-				<h3 id="just-reusing-types">Just reusing types</h3>
+				<a href="#just-reusing-types" id="just-reusing-types" style="color: inherit; text-decoration: none;">
+					<h3>Just reusing types</h3>
+				</a>
 				<p>All of the types in the Figma file format / API are exported.</p>
-				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> Figma <span class="hljs-keyword">from</span> <span class="hljs-string">'figma-js'</span>;
+				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> Figma <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;figma-js&#x27;</span>;
 
 <span class="hljs-keyword">const</span> textNode: Figma.Text = {
   <span class="hljs-comment">// … this should autocomplete if your editor is set up for it!</span>
 };</code></pre>
-				<h2 id="contributing">Contributing</h2>
+				<a href="#contributing" id="contributing" style="color: inherit; text-decoration: none;">
+					<h2>Contributing</h2>
+				</a>
 				<p>We used the <a href="https://github.com/bitjson/typescript-starter"><code>typescript-starter</code></a> repo for this - refer to its README for more detailed instructions.</p>
 				<p>Helpful development commands:</p>
 				<pre><code class="language-sh">yarn watch
 yarn docs
 yarn docs:publish</code></pre>
-				<h3 id="contributions-welcomed">Contributions welcomed</h3>
+				<a href="#contributions-welcomed" id="contributions-welcomed" style="color: inherit; text-decoration: none;">
+					<h3>Contributions welcomed</h3>
+				</a>
 				<ul>
 					<li><input disabled="" type="checkbox"> <a href="https://github.com/jongold/figma-js/issues/1">generate types automatically</a></li>
 					<li><input disabled="" type="checkbox"> <a href="https://github.com/jongold/figma-js/issues/2">add tests</a></li>
 				</ul>
-				<h3 id="committing">Committing</h3>
+				<a href="#committing" id="committing" style="color: inherit; text-decoration: none;">
+					<h3>Committing</h3>
+				</a>
 				<pre><code class="language-sh">yarn global add commitizen
 
 <span class="hljs-comment"># instead of git commit</span>
 
 git cz</code></pre>
-				<h2 id="contributors">Contributors</h2>
+				<a href="#contributors" id="contributors" style="color: inherit; text-decoration: none;">
+					<h2>Contributors</h2>
+				</a>
 				<ul>
 					<li><a href="https://github.com/jongold/">@jongold</a> (Airbnb)</li>
 					<li><a href="https://github.com/chrisdrackett/">@chrisdrackett</a></li>
@@ -253,7 +271,7 @@ git cz</code></pre>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/line.html" class="tsd-kind-icon">Line</a>
 					</li>
-					<li class=" tsd-kind-interface tsd-is-not-exported">
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/paginationmeta.html" class="tsd-kind-icon">Pagination<wbr>Meta</a>
 					</li>
 					<li class=" tsd-kind-interface">
@@ -283,7 +301,7 @@ git cz</code></pre>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/regularpolygon.html" class="tsd-kind-icon">Regular<wbr>Polygon</a>
 					</li>
-					<li class=" tsd-kind-interface tsd-is-not-exported">
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/sharedelement.html" class="tsd-kind-icon">Shared<wbr>Element</a>
 					</li>
 					<li class=" tsd-kind-interface">
@@ -389,65 +407,15 @@ git cz</code></pre>
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
 			<ul class="tsd-legend">
-				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
-				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
-				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
-				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
-				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
-				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
-				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
-				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
-				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
-				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
 				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
-				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
-				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
-				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
-				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
-				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
 			</ul>
 		</div>
 	</div>
 </footer>
 <div class="container tsd-generator">
-	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
 </div>
 <div class="overlay"></div>
 <script src="assets/js/main.js"></script>
-<script>if (location.protocol == 'file:') document.write('<script src="assets/js/search.js"><' + '/script>');</script>
 </body>
 </html>
