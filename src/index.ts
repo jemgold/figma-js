@@ -5,10 +5,10 @@ import axios, { AxiosInstance, AxiosPromise } from 'axios';
 
 export interface FileParams {
   /**
-   * Comma separated list of nodes that you care about in the document.
+   * A list of nodes that you care about in the document.
    * If specified, only a subset of the document will be returned corresponding to the nodes listed, their children, and everything between the root node and the listed nodes
    */
-  readonly ids?: string;
+  readonly ids?: ReadonlyArray<string>;
 
   /**
    * Positive integer representing how deep into the document tree to traverse.
@@ -308,7 +308,13 @@ export const Client = (opts: ClientOptions): ClientInterface => {
   return {
     client,
 
-    file: (fileId, params = {}) => client.get(`files/${fileId}`, { params }),
+    file: (fileId, params = {}) =>
+      client.get(`files/${fileId}`, {
+        params: {
+          ...params,
+          ids: params.ids.join(',')
+        }
+      }),
 
     fileVersions: fileId => client.get(`files/${fileId}/versions`),
 
