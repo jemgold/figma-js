@@ -312,7 +312,7 @@ export const Client = (opts: ClientOptions): ClientInterface => {
       client.get(`files/${fileId}`, {
         params: {
           ...params,
-          ids: params.ids.join(','),
+          ids: params.ids ? params.ids.join(',') : '',
         },
       }),
 
