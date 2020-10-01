@@ -127,9 +127,7 @@ export interface ClientInterface {
    * @see https://www.figma.com/developers/api#get-file-versions-endpoint
    */
   readonly fileVersions: (
-    fileId: string,
-    ids: ReadonlyArray<string>,
-    params?: FileNodesParams
+    fileId: string
   ) => AxiosPromise<Figma.FileVersionsResponse>;
 
   /**
