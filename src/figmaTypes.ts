@@ -259,6 +259,18 @@ export interface FrameBase extends Global {
    * This property is only applicable for auto-layout frames
    * @default AUTO
    */
+  readonly primaryAxisSizingMode?: 'FIXED' | 'AUTO';
+  /**
+   * When autolayout is enabled
+   */
+  readonly primaryAxisAlignItems?: 'MIN' | 'CENTER' | 'MAX' | 'SPACE_BETWEEN';
+  /**
+   * When autolayout is enabled
+   */
+  readonly counterAxisAlignItems?: 'MIN' | 'CENTER' | 'MAX';
+  /**
+   * When autolayout is enabled
+   */
   readonly counterAxisSizingMode?: 'FIXED' | 'AUTO';
   /**
    * The horizontal padding between the borders of the frame and its
