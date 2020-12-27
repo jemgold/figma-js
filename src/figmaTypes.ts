@@ -271,6 +271,30 @@ export interface FrameBase extends Global {
   /**
    * When autolayout is enabled
    */
+  readonly paddingLeft?: number;
+  /**
+   * The padding betweeen the left border of the frame and its children.
+   * This property is only applicable for auto-layout frames.
+   * @default 0
+   */
+  readonly paddingRight?: number;
+  /**
+   * The padding betweeen the right border of the frame and its children.
+   * This property is only applicable for auto-layout frames.
+   * @default 0
+   */
+  readonly paddingTop?: number;
+  /**
+   * The padding betweeen the top border of the frame and its children.
+   * This property is only applicable for auto-layout frames.
+   * @default 0
+   */
+  readonly paddingBottom?: number;
+  /**
+   * The padding betweeen the bottom border of the frame and its children.
+   * This property is only applicable for auto-layout frames.
+   * @default 0
+   */
   readonly counterAxisSizingMode?: 'FIXED' | 'AUTO';
   /**
    * The horizontal padding between the borders of the frame and its
