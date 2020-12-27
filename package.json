@@ -1,6 +1,6 @@
 {
-  "name": "figma-js",
-  "version": "1.13.1",
+  "name": "@mikkmartin/figma-js",
+  "version": "1.13.2",
   "description": "A simple wrapper for the Figma API",
   "main": "build/main/index.js",
   "types": "build/main/index.d.ts",
