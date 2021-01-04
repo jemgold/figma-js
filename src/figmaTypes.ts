@@ -1050,7 +1050,7 @@ export interface TeamComponentSetsResponse {
   readonly error: boolean;
   readonly status: number;
   readonly meta: {
-    readonly components: ReadonlyArray<FullComponentMetadata>;
+    readonly component_sets: ReadonlyArray<FullComponentMetadata>;
     readonly cursor: PaginationMeta;
   };
 }
@@ -1059,7 +1059,7 @@ export interface FileComponentSetsResponse {
   readonly error: boolean;
   readonly status: number;
   readonly meta: {
-    readonly components: ReadonlyArray<FullComponentMetadata>;
+    readonly component_sets: ReadonlyArray<FullComponentMetadata>;
   };
 }
 
