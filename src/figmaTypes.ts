@@ -1017,10 +1017,8 @@ export interface ProjectFilesResponse {
 }
 
 interface PaginationMeta {
-  readonly cursor: {
-    readonly before: number;
-    readonly after: number;
-  };
+  readonly before: number;
+  readonly after: number;
 }
 
 export interface TeamComponentsResponse {
