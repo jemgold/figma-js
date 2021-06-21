@@ -1,5 +1,5 @@
 {
-  "name": "@mikkmartin/figma-js",
+  "name": "figma-js",
   "version": "1.13.2",
   "description": "A simple wrapper for the Figma API",
   "main": "build/main/index.js",
