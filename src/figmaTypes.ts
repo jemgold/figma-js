@@ -993,6 +993,12 @@ export interface ComponentResponse {
   readonly meta: FullComponentMetadata;
 }
 
+export interface ComponentSetResponse {
+  readonly error: boolean;
+  readonly status: number;
+  readonly meta: FullComponentMetadata;
+}
+
 export interface StyleResponse {
   readonly error: boolean;
   readonly status: number;
@@ -1035,6 +1041,23 @@ export interface FileComponentsResponse {
   readonly status: number;
   readonly meta: {
     readonly components: ReadonlyArray<FullComponentMetadata>;
+  };
+}
+
+export interface TeamComponentSetsResponse {
+  readonly error: boolean;
+  readonly status: number;
+  readonly meta: {
+    readonly component_sets: ReadonlyArray<FullComponentMetadata>;
+    readonly cursor: PaginationMeta;
+  };
+}
+
+export interface FileComponentSetsResponse {
+  readonly error: boolean;
+  readonly status: number;
+  readonly meta: {
+    readonly component_sets: ReadonlyArray<FullComponentMetadata>;
   };
 }
 

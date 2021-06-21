@@ -265,6 +265,33 @@ export interface ClientInterface {
   readonly component: (key: string) => AxiosPromise<Figma.ComponentResponse>;
 
   /**
+   * Get a paginated list of published component sets within a team library
+   * @param {teamId} String Id of the team to list components from
+   * @see https://www.figma.com/developers/api#get-team-component-sets-endpoint
+   */
+  readonly teamComponentSets: (
+    teamId: string,
+    params?: PaginationParams
+  ) => AxiosPromise<Figma.TeamComponentSetsResponse>;
+
+  /**
+   * Get a list of published component sets within a file
+   * @param {fileId} String Id of the file to list components from
+   * @see https://www.figma.com/developers/api#get-team-component-sets-endpoint
+   */
+  readonly fileComponentSets: (
+    fileId: string
+  ) => AxiosPromise<Figma.FileComponentSetsResponse>;
+
+  /**
+   * Get metadata on a component set by key.
+   * @param {key} The unique identifier of the component.
+   * @see https://www.figma.com/developers/api#get-component-sets-endpoint
+   */
+
+  readonly componentSet: (key: string) => AxiosPromise<Figma.ComponentSetResponse>;
+
+  /**
    * Get a paginated list of published styles within a team library
    * @param {teamId} String Id of the team to list styles from
    * @see https://www.figma.com/developers/api#get-team-styles-endpoint
@@ -356,6 +383,13 @@ export const Client = (opts: ClientOptions): ClientInterface => {
     fileComponents: (fileId) => client.get(`files/${fileId}/components`),
 
     component: (key) => client.get(`components/${key}`),
+
+    teamComponentSets: (teamId, params = {}) =>
+      client.get(`teams/${teamId}/component_sets`, { params }),
+
+    fileComponentSets: (fileId) => client.get(`files/${fileId}/component_sets`),
+
+    componentSet: (key) => client.get(`component_set/${key}`),
 
     teamStyles: (teamId, params = {}) =>
       client.get(`teams/${teamId}/styles`, { params }),
