@@ -92,7 +92,7 @@ export type NodeType =
   | 'FRAME'
   | 'GROUP'
   | 'VECTOR'
-  | 'BOOLEAN'
+  | 'BOOLEAN_OPERATION'
   | 'STAR'
   | 'LINE'
   | 'ELLIPSE'
@@ -109,7 +109,7 @@ export type Node =
   | Frame
   | Group
   | Vector
-  | BooleanGroup
+  | BooleanOperation
   | Star
   | Line
   | Ellipse
@@ -436,8 +436,8 @@ export interface Vector extends VectorBase {
 }
 
 /** A group that has a boolean operation applied to it */
-export interface BooleanGroup extends VectorBase {
-  readonly type: 'BOOLEAN';
+export interface BooleanOperation extends VectorBase {
+  readonly type: 'BOOLEAN_OPERATION';
   /**
    * A string enum with value of "UNION", "INTERSECT", "SUBTRACT", or "EXCLUDE"
    * indicating the type of boolean operation applied
