@@ -1,6 +1,6 @@
 {
   "name": "figma-js",
-  "version": "1.13.2",
+  "version": "1.14.0",
   "description": "A simple wrapper for the Figma API",
   "main": "build/main/index.js",
   "types": "build/main/index.d.ts",
@@ -73,7 +73,7 @@
     "tslint-config-prettier": "^1.18.0",
     "tslint-immutable": "^6.0.1",
     "typedoc": "^0.19.1",
-    "typescript": "^4.0.2"
+    "typescript": "^4.3.4"
   },
   "ava": {
     "failFast": true,
