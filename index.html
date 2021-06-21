@@ -86,23 +86,26 @@
 <span class="hljs-keyword">const</span> token = <span class="hljs-string">&#x27;12345&#x27;</span>;
 
 <span class="hljs-keyword">const</span> client = Figma.Client({
-  personalAccessToken: token
-});</code></pre>
+  <span class="hljs-attr">personalAccessToken</span>: token
+});
+</code></pre>
 				<p>Or if you&#39;re building an app with OAuth authentication, after you get back the OAuth access token…</p>
 				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> Figma <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;figma-js&#x27;</span>;
 
 <span class="hljs-keyword">const</span> token = <span class="hljs-string">&#x27;12345&#x27;</span>;
 
 <span class="hljs-keyword">const</span> client = Figma.Client({
-  accessToken: token
-});</code></pre>
+  <span class="hljs-attr">accessToken</span>: token
+});
+</code></pre>
 				<a href="#doing-cool-things" id="doing-cool-things" style="color: inherit; text-decoration: none;">
 					<h3>Doing cool things</h3>
 				</a>
 				<p>Once you have instantiated a client, have fun!</p>
 				<pre><code class="language-typescript">client.file(<span class="hljs-string">&#x27;file-id&#x27;</span>).then(<span class="hljs-function">(<span class="hljs-params">{ data }</span>) =&gt;</span> {
   <span class="hljs-built_in">console</span>.log(data);
-});</code></pre>
+});
+</code></pre>
 				<a href="#just-reusing-types" id="just-reusing-types" style="color: inherit; text-decoration: none;">
 					<h3>Just reusing types</h3>
 				</a>
@@ -111,7 +114,8 @@
 
 <span class="hljs-keyword">const</span> textNode: Figma.Text = {
   <span class="hljs-comment">// … this should autocomplete if your editor is set up for it!</span>
-};</code></pre>
+};
+</code></pre>
 				<a href="#contributing" id="contributing" style="color: inherit; text-decoration: none;">
 					<h2>Contributing</h2>
 				</a>
@@ -119,7 +123,8 @@
 				<p>Helpful development commands:</p>
 				<pre><code class="language-sh">yarn watch
 yarn docs
-yarn docs:publish</code></pre>
+yarn docs:publish
+</code></pre>
 				<a href="#contributions-welcomed" id="contributions-welcomed" style="color: inherit; text-decoration: none;">
 					<h3>Contributions welcomed</h3>
 				</a>
@@ -134,7 +139,8 @@ yarn docs:publish</code></pre>
 
 <span class="hljs-comment"># instead of git commit</span>
 
-git cz</code></pre>
+git cz
+</code></pre>
 				<a href="#contributors" id="contributors" style="color: inherit; text-decoration: none;">
 					<h2>Contributors</h2>
 				</a>
@@ -155,7 +161,7 @@ git cz</code></pre>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/booleangroup.html" class="tsd-kind-icon">Boolean<wbr>Group</a>
+						<a href="interfaces/booleanoperation.html" class="tsd-kind-icon">Boolean<wbr>Operation</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/canvas.html" class="tsd-kind-icon">Canvas</a>
@@ -188,6 +194,9 @@ git cz</code></pre>
 						<a href="interfaces/componentresponse.html" class="tsd-kind-icon">Component<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/componentsetresponse.html" class="tsd-kind-icon">Component<wbr>Set<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/constraint.html" class="tsd-kind-icon">Constraint</a>
 					</li>
 					<li class=" tsd-kind-interface">
@@ -201,6 +210,9 @@ git cz</code></pre>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/exportsetting.html" class="tsd-kind-icon">Export<wbr>Setting</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/filecomponentsetsresponse.html" class="tsd-kind-icon">File<wbr>Component<wbr>Sets<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/filecomponentsresponse.html" class="tsd-kind-icon">File<wbr>Components<wbr>Response</a>
@@ -315,6 +327,9 @@ git cz</code></pre>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/styleresponse.html" class="tsd-kind-icon">Style<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/teamcomponentsetsresponse.html" class="tsd-kind-icon">Team<wbr>Component<wbr>Sets<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/teamcomponentsresponse.html" class="tsd-kind-icon">Team<wbr>Components<wbr>Response</a>
