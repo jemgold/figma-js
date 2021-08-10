@@ -7,6 +7,10 @@ export interface Global {
   readonly visible?: boolean;
   /** the type of the node, refer to table below for details */
   readonly type: NodeType;
+  /** data written by plugins that is visible only to the plugin that wrote it. Requires the `pluginData` to include the ID of the plugin. */
+  readonly pluginData?: any;
+  /** data written by plugins that is visible to all plugins. Requires the `pluginData` parameter to include the string "shared". */
+  readonly sharedPluginData?: any;
 }
 
 /**
