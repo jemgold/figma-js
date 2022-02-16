@@ -299,7 +299,9 @@ export interface ClientInterface {
    * @see https://www.figma.com/developers/api#get-component-sets-endpoint
    */
 
-  readonly componentSet: (key: string) => AxiosPromise<Figma.ComponentSetResponse>;
+  readonly componentSet: (
+    key: string
+  ) => AxiosPromise<Figma.ComponentSetResponse>;
 
   /**
    * Get a paginated list of published styles within a team library
