@@ -26,6 +26,12 @@ export interface FileParams {
    * Set to "paths" to export vector data
    */
   readonly geometry?: string;
+
+  /**
+   * A comma separated list of plugin IDs and/or the string "shared".
+   * Any data present in the document written by those plugins will be included in the result in the `pluginData` and `sharedPluginData` properties.
+   */
+  readonly plugin_data?: string;
 }
 
 export interface FileNodesParams {
@@ -41,6 +47,12 @@ export interface FileNodesParams {
    * Set to "paths" to export vector data
    */
   readonly geometry?: string;
+
+  /**
+   * A comma separated list of plugin IDs and/or the string "shared".
+   * Any data present in the document written by those plugins will be included in the result in the `pluginData` and `sharedPluginData` properties.
+   */
+  readonly plugin_data?: string;
 }
 
 export type exportFormatOptions = 'jpg' | 'png' | 'svg' | 'pdf';
