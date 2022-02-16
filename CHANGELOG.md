@@ -1,5 +1,10 @@
 # Change Log
 
+# 1.15.0
+
+- Added component set type [#53](https://github.com/jongold/figma-js/pull/53) by [bruno12mota](https://github.com/bruno12mota)
+- Support pluginData and sharedPluginData on files [#54](https://github.com/jongold/figma-js/pull/54) by [jacoblapworth](https://github.com/jacoblapworth)
+
 # 1.14.0
 
 - BooleanGroup is changed to BooleanOperation [#42](https://github.com/jongold/figma-js/pull/42) by [ErgoFriend](https://github.com/ErgoFriend)
