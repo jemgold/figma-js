@@ -101,6 +101,7 @@ export type NodeType =
   | 'TEXT'
   | 'SLICE'
   | 'COMPONENT'
+  | 'COMPONENT_SET'
   | 'INSTANCE';
 
 export type Node =
@@ -118,6 +119,7 @@ export type Node =
   | Text
   | Slice
   | Component
+  | ComponentSet
   | Instance;
 
 /** Node Properties */
@@ -559,6 +561,11 @@ export interface Slice extends Global {
 /** A node that can have instances created of it that share the same properties */
 export interface Component extends FrameBase {
   readonly type: 'COMPONENT';
+}
+
+/** A node that can have multiple component variations */
+export interface ComponentSet extends FrameBase {
+  readonly type: 'COMPONENT_SET';
 }
 
 /**
