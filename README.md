@@ -8,7 +8,7 @@ Cool projects using this:
 
 ## Usage
 
-[Full documentation](http://jongold.github.io/figma-js) is available on the web and most everything is typed with TypeScript.
+[Full documentation](https://jemgold.github.io/figma-js) is available on the web and most everything is typed with TypeScript.
 
 ### Creating a client
 
@@ -72,8 +72,8 @@ yarn docs:publish
 
 ### Contributions welcomed
 
-* [ ] [generate types automatically](https://github.com/jongold/figma-js/issues/1)
-* [ ] [add tests](https://github.com/jongold/figma-js/issues/2)
+* [ ] [generate types automatically](https://github.com/jemgold/figma-js/issues/1)
+* [ ] [add tests](https://github.com/jemgold/figma-js/issues/2)
 
 ### Committing
 
@@ -87,5 +87,5 @@ git cz
 
 ## Contributors
 
-* [@jongold](https://github.com/jongold/) (Airbnb)
+* [@jemgold](https://github.com/jemgold/) (Airbnb)
 * [@chrisdrackett](https://github.com/chrisdrackett/)
