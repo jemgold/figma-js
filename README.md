@@ -8,7 +8,7 @@ Cool projects using this:
 
 ## Usage
 
-[Full documentation](http://jongold.github.io/figma-js) is available on the web and most everything is typed with TypeScript.
+[Full documentation](http://jemgold.github.io/figma-js) is available on the web and most everything is typed with TypeScript.
 
 ### Creating a client
 
