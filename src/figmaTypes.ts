@@ -868,7 +868,7 @@ interface SharedElement extends ComponentMetadata {
   /** Id of the component node within the figma file */
   readonly node_id: string;
   /** URL link to the element's thumbnail image */
-  readonly thumbnail_urlString: string;
+  readonly thumbnail_url: string;
   /** The UTC ISO 8601 time at which the element was created */
   readonly created_at: string;
   /** The UTC ISO 8601 time at which the element was updated */
