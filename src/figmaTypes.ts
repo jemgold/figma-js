@@ -37,7 +37,7 @@ export type ScaleMode = 'FILL' | 'FIT' | 'TILE' | 'STRETCH';
 
 export type PaintTypeSolid = 'SOLID';
 
-export type PaintTypeGraident =
+export type PaintTypeGradient =
   | 'GRADIENT_LINEAR'
   | 'GRADIENT_RADIAL'
   | 'GRADIENT_ANGULAR'
@@ -47,7 +47,7 @@ export type PaintTypeImage = 'IMAGE' | 'EMOJI'; // I'm guessing that EMOJI is li
 
 export type TextType = 'TEXT';
 
-export type PaintType = PaintTypeSolid | PaintTypeGraident | PaintTypeImage;
+export type PaintType = PaintTypeSolid | PaintTypeGradient | PaintTypeImage;
 
 /**
  * how the layer blends with layers below
@@ -690,10 +690,10 @@ export interface LayoutGrid {
 export interface Effect {
   /** Type of effect as a string enum */
   readonly type:
-    | 'INNER_SHADOW'
-    | 'DROP_SHADOW'
-    | 'LAYER_BLUR'
-    | 'BACKGROUND_BLUR';
+  | 'INNER_SHADOW'
+  | 'DROP_SHADOW'
+  | 'LAYER_BLUR'
+  | 'BACKGROUND_BLUR';
   /** Is the effect active? */
   readonly visible: boolean;
   /** Radius of the blur effect (applies to shadows as well) */
