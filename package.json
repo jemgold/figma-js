@@ -54,7 +54,7 @@
     "node": ">=8.9"
   },
   "dependencies": {
-    "axios": "^0.21.1"
+    "axios": "^1.6.0"
   },
   "devDependencies": {
     "ava": "^3.12.1",
