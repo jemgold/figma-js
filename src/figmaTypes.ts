@@ -235,6 +235,8 @@ export interface FrameBase extends Global {
   readonly opacity?: number;
   /** Bounding box of the node in absolute space coordinates */
   readonly absoluteBoundingBox: Rect;
+  /** The bounds of the rendered node in the file in absolute space coordinates */
+  readonly absoluteRenderBounds: Rect;
 
   /**
    * Width and height of element. This is different from the width and height
@@ -403,6 +405,8 @@ export interface VectorBase extends Global {
   readonly opacity?: number;
   /** Bounding box of the node in absolute space coordinates */
   readonly absoluteBoundingBox: Rect;
+  /** The bounds of the rendered node in the file in absolute space coordinates */
+  readonly absoluteRenderBounds: Rect;
 
   /**
    * Width and height of element. This is different from the width and height
@@ -545,6 +549,8 @@ export interface Slice extends Global {
   readonly exportSettings: ReadonlyArray<ExportSetting>;
   /** Bounding box of the node in absolute space coordinates */
   readonly absoluteBoundingBox: Rect;
+  /** The bounds of the rendered node in the file in absolute space coordinates */
+  readonly absoluteRenderBounds: Rect;
   /**
    * Width and height of element. This is different from the width and height
    * of the bounding box in that the absolute bounding box represents the
