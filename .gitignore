@@ -10,3 +10,7 @@ coverage
 package-lock.json
 yarn.lock
 .DS_Store
+
+.yarn
+.pnp.cjs
+.pnp.loader.mjs
