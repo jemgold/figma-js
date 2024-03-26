@@ -36,6 +36,22 @@ const client = Figma.Client({
 });
 ```
 
+Or if you need to use a https proxy agent:
+
+```typescript
+import * as Figma from 'figma-js';
+import { HttpsProxyAgent } from 'https-proxy-agent';
+
+const token = '12345';
+const proxyAgent = new HttpsProxyAgent(process.env.https_proxy);
+
+const client = Figma.Client({
+  accessToken: token,
+  httpsAgent: proxyAgent,
+  proxy: false
+});
+```
+
 ### Doing cool things
 
 Once you have instantiated a client, have fun!

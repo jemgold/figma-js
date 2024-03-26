@@ -1,7 +1,7 @@
 // export * from './lib/number';
 import * as Figma from './figmaTypes';
 export * from './figmaTypes';
-import axios, { AxiosInstance, AxiosPromise } from 'axios';
+import axios, { AxiosInstance, AxiosPromise, AxiosRequestConfig } from 'axios';
 
 export interface FileParams {
   /**
@@ -107,7 +107,10 @@ export interface PaginationParams {
   readonly cursor?: { readonly before?: number; readonly after?: number };
 }
 
-export interface ClientOptions {
+export interface ClientOptions
+  extends Readonly<
+    Pick<AxiosRequestConfig, 'proxy' | 'httpAgent' | 'httpsAgent'>
+  > {
   /** access token returned from OAuth authentication */
   readonly accessToken?: string;
   /** personal access token obtained from account settings */
@@ -340,6 +343,9 @@ export const Client = (opts: ClientOptions): ClientInterface => {
       };
 
   const client = axios.create({
+    proxy: opts.proxy,
+    httpAgent: opts.httpAgent,
+    httpsAgent: opts.httpsAgent,
     baseURL: `https://${opts.apiRoot || 'api.figma.com'}/v1/`,
     headers,
   });
